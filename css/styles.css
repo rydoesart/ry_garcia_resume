@@ -130,14 +130,6 @@ footer a:hover {
     border-bottom: 2px dashed #d3d4d6;
 }
 
-.download-link {
-    position: fixed;
-    top: 5px;
-    left: 5px;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 1rem ;
-}
 
 
 /* Projects
