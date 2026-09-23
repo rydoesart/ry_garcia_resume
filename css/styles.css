@@ -155,7 +155,7 @@ footer a:hover {
     
 }
 
-@media screen and (min-width: 859px){
+@media screen and (min-width: 860px){
     .project-item {
         display: flow-root;
     }
@@ -166,8 +166,22 @@ footer a:hover {
 
     }
 
-    .project-wrapper
 }
+
+@media screen and (max-width: 859px){
+    .project-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+    }
+
+    .project-item img {
+        width: 100%;
+
+    }
+
+}
+
 /* Work Experience
 ------------------------------------*/
 
