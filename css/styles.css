@@ -178,7 +178,9 @@ footer a:hover {
 /* Education
 ------------------------------------*/
 
-
+.education-item p {
+    margin: 0;
+}
 /* FOOTER
 ------------------------------------*/
 footer {
