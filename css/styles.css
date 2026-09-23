@@ -11,6 +11,7 @@ Off-white     #f6f6f6
 /* GLOBAL STYLES 
 ------------------------------------*/
 
+
 html {
     box-sizing: border-box;
 }
@@ -25,7 +26,33 @@ html, body {
 
 body {
     background: #f6f6f6; 
+    line-height: 1.5rem;
+    font-size: 1rem;
+    font-family: 'Jost', sans-serif;
 }
+
+h1, h2, h3 {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+
+    }
+
+
+h1 {
+    font-size: 2rem;
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
 
 /* link styles */
 
@@ -64,11 +91,19 @@ footer a:hover {
 ------------------------------------*/
 .home {
     background: url(../images/bg-home-office-studio.jpg) no-repeat;
-    background-size: cover;   
+    background-size: cover; 
+    display: flex;
+    flex-direction: column;
+
 }
 
 .home .content-wrapper {
+    flex: 1 0 auto; 
+}
+
+.content-bg {
     background: rgb(255, 255, 255, 0.9);
+    padding: 30px;
 }
 
 /* RESUME
@@ -118,6 +153,13 @@ footer a:hover {
 /* Work Experience
 ------------------------------------*/
 
+.work-item {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    column-gap: 20px;
+    
+}
+
 /* Education
 ------------------------------------*/
 
@@ -125,19 +167,27 @@ footer a:hover {
 /* FOOTER
 ------------------------------------*/
 footer {
-    background: #d3d4d6;
+    background: #222222;
+    color: #f6f6f6;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
 .socials {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 .socials li {
     display: inline-block;
-    margin-right: 10px;
+    margin-left: 10px;
 }
 .socials img {
     width: 32px;
+
+}
+
+.socials img:hover {
+    opacity: 0.5;
 }
