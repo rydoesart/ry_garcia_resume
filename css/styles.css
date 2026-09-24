@@ -112,6 +112,18 @@ footer a:hover {
     padding: 30px;
 }
 
+@media screen and (max-width:650px) {
+    .home .content-wrapper {
+        padding: 10px;
+    }   
+
+    .content-bg {
+    padding: 20px;
+    }
+
+    
+}
+
 /* RESUME
 ------------------------------------*/
 .resume header::before{
@@ -220,14 +232,12 @@ footer a:hover {
 }
 /* FOOTER
 ------------------------------------*/
+
 footer {
     background: #222222;
     color: #f6f6f6;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-}
 
+}
 .socials {
     list-style: none;
     padding: 0;
@@ -244,4 +254,25 @@ footer {
 
 .socials img:hover {
     opacity: 0.5;
+}
+
+@media screen and (min-width:860px){
+
+    footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+}
+
+
+@media screen and (max-width:859px){
+
+    footer {
+        text-align: center;
+        padding: 10px;
+    
+
+}
 }
