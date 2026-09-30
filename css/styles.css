@@ -148,8 +148,7 @@ footer a:hover {
 ------------------------------------*/
 
 .resume header::before {
-    background: url("../project-image/POSTERfinal%20poster.png") center / 50% auto no-repeat;
-    background-color: var(--gray-2);
+    background: url("../project-image/POSTERfinal%20poster.png") top center / 40% auto no-repeat;
     content: "";
     display: block;
     height: 12.5rem;
