@@ -108,7 +108,7 @@ footer a:hover {
     display: inline-block;
     font-size: 1.2rem;
     letter-spacing: 0.1em;
-    padding: 7px;
+    padding: 0.4375rem;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -119,8 +119,8 @@ footer a:hover {
 
 .content-wrapper {
     margin: 0 auto;
-    max-width: 900px;
-    padding: 20px;
+    max-width: 56.25rem;
+    padding: 1.25rem;
 }
 
 
@@ -140,7 +140,7 @@ footer a:hover {
 
 .content-bg {
     background: oklch(from var(--gray-1) l c h / 90%);
-    padding: 20px;
+    padding: 1.25rem;
 }
 
 
@@ -148,18 +148,19 @@ footer a:hover {
 ------------------------------------*/
 
 .resume header::before {
-    background: url("../images/bg-ry-banner.jpg") center / cover;
+    background: url("../project-image/POSTERfinal%20poster.png") center / 50% auto no-repeat;
+    background-color: var(--gray-2);
     content: "";
     display: block;
-    height: 200px;
+    height: 12.5rem;
 }
 
 .resume-section {
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
 }
 
 .resume-section h2 {
-    border-bottom: 2px dashed var(--gray-4);
+    border-bottom: 0.125rem dashed var(--gray-4);
 }
 
 
@@ -167,13 +168,12 @@ footer a:hover {
 ------------------------------------*/
 
 .project-item {
-    margin: 30px 0;
+    margin: 1.875rem 0;
 }
 
 .project-item img {
+    display: block;
     height: auto;
-    object-fit: cover;
-    object-position: top;
     width: 100%;
 }
 
@@ -182,7 +182,7 @@ footer a:hover {
 ------------------------------------*/
 
 .work-item {
-    margin: 30px 0;
+    margin: 1.875rem 0;
 }
 
 .work-details p {
@@ -198,7 +198,7 @@ footer a:hover {
 ------------------------------------*/
 
 .education-item {
-    margin: 30px 0;
+    margin: 1.875rem 0;
 }
 
 .education-item p {
@@ -212,7 +212,7 @@ footer a:hover {
 footer {
     background: var(--gray-9);
     color: var(--gray-1);
-    padding: 10px;
+    padding: 0.625rem;
     text-align: center;
 }
 
@@ -223,11 +223,11 @@ footer {
 
 .socials li {
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 0.625rem;
 }
 
 .socials img {
-    width: 32px;
+    width: 2rem;
 }
 
 .socials img:hover {
@@ -241,17 +241,21 @@ footer {
 @media screen and (min-width: 650px) {
 
     .content-wrapper {
-        padding: 30px;
+        padding: 1.875rem;
     }
 
     .content-bg {
-        padding: 30px;
+        padding: 1.875rem;
     }
 
     .project-wrapper {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 1.25rem;
+    }
+
+    .resume header::before {
+        height: 18.75rem;
     }
 }
 
@@ -264,21 +268,21 @@ footer {
 
     .project-item img {
         float: left;
-        height: 168.75px;
-        margin-right: 20px;
-        width: 300px;
+        height: 10.546875rem;
+        margin-right: 1.25rem;
+        width: 18.75rem;
     }
 
     .work-item {
         display: grid;
-        grid-template-columns: 300px 1fr;
-        gap: 20px;
+        grid-template-columns: 18.75rem 1fr;
+        gap: 1.25rem;
     }
 
     footer {
         display: flex;
         justify-content: space-between;
-        padding: 0 20px;
+        padding: 0 1.25rem;
         text-align: left;
     }
 }
