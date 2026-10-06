@@ -165,6 +165,10 @@ footer a:hover {
 
 /* PROJECTS
 ------------------------------------*/
+.project-wrapper {
+    display: grid;
+    gap: 1.25rem;
+}
 
 .project-item {
     margin: 1.875rem 0;
