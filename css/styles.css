@@ -169,19 +169,50 @@ footer a:hover {
 
 .project-wrapper {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.25rem;
+    margin-block-start: 1.875rem;
 }
 
 .project-item {
-    margin-block: 1.875rem;
+    background: var(--gray-1);
+    border: 0.0625rem solid var(--gray-3);
+    border-radius: 0.375rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-inline-size: 0;
+    padding: 1.25rem;
 }
 
 .project-item img {
+    aspect-ratio: 16 / 10;
     display: block;
-    block-size: auto;
     inline-size: 100%;
+    object-fit: cover;
 }
 
+.project-item h3 {
+    margin-block-start: 1rem;
+}
+
+.project-item p {
+    margin-block: 0.5rem 1rem;
+}
+
+.project-item .btn {
+    align-self: flex-start;
+    margin-block-start: auto;
+}
+
+.project-label {
+    align-self: flex-start;
+    background: var(--beige);
+    color: var(--gray-9);
+    margin-block-start: auto;
+    padding: 0.4375rem;
+    text-transform: uppercase;
+}
 
 /* WORK EXPERIENCE
 ------------------------------------*/
