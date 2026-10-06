@@ -214,6 +214,10 @@ footer a:hover {
     text-transform: uppercase;
 }
 
+.corruption-poster img {
+    object-position: top;
+}
+
 /* WORK EXPERIENCE
 ------------------------------------*/
 
