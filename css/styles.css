@@ -149,12 +149,14 @@ footer a:hover {
 ------------------------------------*/
 
 .resume header::before {
-    background: url("../project-image/POSTERfinal%20poster.png") top center / 40% auto no-repeat;
+    background-image: url("../project-image/bg-ry-garcia.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     content: "";
     display: block;
     block-size: 12.5rem;
 }
-
 .resume-section {
     margin-block-end: 2.5rem;
 }
