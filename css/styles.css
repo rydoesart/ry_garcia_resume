@@ -42,7 +42,7 @@ html {
 
 html,
 body {
-    height: 100%;
+    block-size: 100%;
 }
 
 body {
@@ -118,8 +118,9 @@ footer a:hover {
 ------------------------------------*/
 
 .content-wrapper {
-    margin: 0 auto;
-    max-width: 56.25rem;
+    margin-block: 0;
+    margin-inline: auto;
+    max-inline-size: 56.25rem;
     padding: 1.25rem;
 }
 
@@ -151,33 +152,34 @@ footer a:hover {
     background: url("../project-image/POSTERfinal%20poster.png") top center / 40% auto no-repeat;
     content: "";
     display: block;
-    height: 12.5rem;
+    block-size: 12.5rem;
 }
 
 .resume-section {
-    margin-bottom: 2.5rem;
+    margin-block-end: 2.5rem;
 }
 
 .resume-section h2 {
-    border-bottom: 0.125rem dashed var(--gray-4);
+    border-block-end: 0.125rem dashed var(--gray-4);
 }
 
 
 /* PROJECTS
 ------------------------------------*/
+
 .project-wrapper {
     display: grid;
     gap: 1.25rem;
 }
 
 .project-item {
-    margin: 1.875rem 0;
+    margin-block: 1.875rem;
 }
 
 .project-item img {
     display: block;
-    height: auto;
-    width: 100%;
+    block-size: auto;
+    inline-size: 100%;
 }
 
 
@@ -185,7 +187,7 @@ footer a:hover {
 ------------------------------------*/
 
 .work-item {
-    margin: 1.875rem 0;
+    margin-block: 1.875rem;
 }
 
 .work-details p {
@@ -193,7 +195,7 @@ footer a:hover {
 }
 
 .work-summary p:first-child {
-    margin-top: 0;
+    margin-block-start: 0;
 }
 
 
@@ -201,7 +203,7 @@ footer a:hover {
 ------------------------------------*/
 
 .education-item {
-    margin: 1.875rem 0;
+    margin-block: 1.875rem;
 }
 
 .education-item p {
@@ -226,11 +228,11 @@ footer {
 
 .socials li {
     display: inline-block;
-    margin-left: 0.625rem;
+    margin-inline-start: 0.625rem;
 }
 
 .socials img {
-    width: 2rem;
+    inline-size: 2rem;
 }
 
 .socials img:hover {
@@ -258,7 +260,7 @@ footer {
     }
 
     .resume header::before {
-        height: 18.75rem;
+        block-size: 18.75rem;
     }
 }
 
@@ -270,10 +272,10 @@ footer {
     }
 
     .project-item img {
-        float: left;
-        height: 10.546875rem;
-        margin-right: 1.25rem;
-        width: 18.75rem;
+        float: inline-start;
+        block-size: 10.546875rem;
+        margin-inline-end: 1.25rem;
+        inline-size: 18.75rem;
     }
 
     .work-item {
@@ -285,7 +287,7 @@ footer {
     footer {
         display: flex;
         justify-content: space-between;
-        padding: 0 1.25rem;
-        text-align: left;
+        padding-inline: 1.25rem;
+        text-align: start;
     }
 }
