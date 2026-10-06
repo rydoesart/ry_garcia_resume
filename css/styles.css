@@ -298,15 +298,8 @@ footer {
 
 @media screen and (min-width: 860px) {
 
-    .project-item {
-        display: flow-root;
-    }
-
-    .project-item img {
-        float: inline-start;
-        block-size: 10.546875rem;
-        margin-inline-end: 1.25rem;
-        inline-size: 18.75rem;
+    .project-wrapper {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .work-item {
