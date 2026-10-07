@@ -112,7 +112,6 @@ footer a:hover {
     text-decoration: none;
     text-transform: uppercase;
     border-radius: 0.75rem;
-    corner-shape: squircle;
 }
 
 
@@ -217,7 +216,7 @@ footer a:hover {
     padding: 0.4375rem;
     text-transform: uppercase;
     border-radius: 0.75rem;
-    corner-shape: squircle;
+    
 }
 
 .corruption-poster img {
