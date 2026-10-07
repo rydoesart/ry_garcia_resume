@@ -195,6 +195,11 @@ footer a:hover {
     object-fit: cover;
 }
 
+.project-placeholder-art {
+    aspect-ratio: 16 / 10;
+    background: var(--gray-2);
+}
+
 .project-item h3 {
     margin-block-start: 1rem;
 }
