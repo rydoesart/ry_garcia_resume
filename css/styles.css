@@ -103,7 +103,9 @@ footer a:hover {
 ------------------------------------*/
 
 .logo {
-    max-inline-size: 5.625rem;
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    object-fit: contain;
 }
 
 .navWrap {
