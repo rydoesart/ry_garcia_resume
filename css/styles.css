@@ -102,7 +102,16 @@ footer a:hover {
 /* NAVIGATION
 ------------------------------------*/
 
+.navLogo {
+    display: grid;
+    place-items: center;
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    flex: none;
+}
+
 .logo {
+    display: block;
     inline-size: 2.5rem;
     block-size: 2.5rem;
     object-fit: contain;
