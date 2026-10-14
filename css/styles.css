@@ -197,6 +197,11 @@ footer a:hover {
     transition: background-color 0.14s ease-in-out, color 0.14s ease-in-out;
 }
 
+.navWrap nav .current-page {
+    color: var(--beige);
+    font-weight: 600;
+}
+
 .navWrap nav ul li a:hover,
 .navWrap nav ul li a:focus-visible {
     background-color: var(--gray-8);
