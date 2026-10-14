@@ -30,6 +30,49 @@ Beige
 
     --body-font: "Jost", sans-serif;
     --heading-font: "Poppins", sans-serif;
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-2-5: 0.625rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-7: 1.875rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+
+    --logo-size: 2.5rem;
+    --menu-icon-size: 1.75rem;
+    --content-max-inline-size: 62.5rem;
+    --work-column-inline-size: 18.75rem;
+    --hero-block-size-small: 12.5rem;
+    --hero-block-size-large: 18.75rem;
+    --visually-hidden-size: 0.0625rem;
+
+    --border-thin: 0.0625rem;
+    --border-strong: 0.125rem;
+    --radius-card: 0.375rem;
+    --radius-pill: 0.75rem;
+
+    --text-base: 1rem;
+    --text-xl: 2rem;
+    --text-lg: 1.5rem;
+    --text-md: 1.25rem;
+    --text-button: 1.2rem;
+    --space-button: 0.4375rem;
+    --tracking-wide: 0.1em;
+    --font-weight-regular: 400;
+    --font-weight-semibold: 600;
+    --opacity-muted: 0.5;
+
+    --duration-fast: 0.14s;
+    --duration-menu: 0.22s;
+    --ease-standard: ease-in-out;
+    --z-menu: 1;
+    --z-navigation: 99;
 }
 
 html {
@@ -49,8 +92,8 @@ body {
     background: var(--gray-1);
     color: var(--gray-9);
     font-family: var(--body-font);
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: var(--text-base);
+    line-height: 1.5;
     margin: 0;
 }
 
@@ -59,21 +102,21 @@ h2,
 h3 {
     font-family: var(--heading-font);
     font-style: normal;
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
     margin: 0;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: var(--text-xl);
     line-height: 1.5;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: var(--text-lg);
 }
 
 h3 {
-    font-size: 1.25rem;
+    font-size: var(--text-md);
 }
 
 
@@ -105,28 +148,28 @@ footer a:hover {
 .navLogo {
     display: grid;
     place-items: center;
-    inline-size: 2.5rem;
-    block-size: 2.5rem;
+    inline-size: var(--logo-size);
+    block-size: var(--logo-size);
     flex: none;
 }
 
 .logo {
     display: block;
-    inline-size: 2.5rem;
-    block-size: 2.5rem;
+    inline-size: var(--logo-size);
+    block-size: var(--logo-size);
     object-fit: contain;
 }
 
 .navWrap {
     position: sticky;
     inset-block-start: 0;
-    z-index: 99;
-    min-block-size: 3rem;
+    z-index: var(--z-navigation);
+    min-block-size: var(--space-12);
     inline-size: 100%;
     background-color: var(--gray-9);
-    border-block-end: 0.0625rem solid var(--gray-7);
-    box-shadow: 0 0.0625rem 0.5rem oklch(from var(--gray-9) l c h / 35%);
-    padding-inline: 1.5rem;
+    border-block-end: var(--border-thin) solid var(--gray-7);
+    box-shadow: 0 var(--border-thin) var(--space-2) oklch(from var(--gray-9) l c h / 35%);
+    padding-inline: var(--space-6);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -134,8 +177,8 @@ footer a:hover {
 
 #navToggle {
     position: absolute;
-    inline-size: 1px;
-    block-size: 1px;
+    inline-size: var(--visually-hidden-size);
+    block-size: var(--visually-hidden-size);
     overflow: hidden;
     clip-path: inset(50%);
     white-space: nowrap;
@@ -145,18 +188,18 @@ footer a:hover {
     position: relative;
     display: grid;
     place-items: center;
-    inline-size: 2.5rem;
-    block-size: 2.5rem;
+    inline-size: var(--space-10);
+    block-size: var(--space-10);
     cursor: pointer;
 }
 
 .navToggleLabel > span {
     position: relative;
     display: block;
-    inline-size: 1.75rem;
-    block-size: 0.125rem;
+    inline-size: var(--menu-icon-size);
+    block-size: var(--border-strong);
     background: var(--gray-1);
-    transition: background-color 0.14s ease-in-out;
+    transition: background-color var(--duration-fast) var(--ease-standard);
 }
 
 .navToggleLabel > span::before,
@@ -169,32 +212,32 @@ footer a:hover {
     inline-size: 100%;
     block-size: 100%;
     background: var(--gray-1);
-    transition: transform 0.14s ease-in-out;
+    transition: transform var(--duration-fast) var(--ease-standard);
 }
 
 .navToggleLabel > span::before {
-    transform: translateY(-0.5rem);
+    transform: translateY(calc(-1 * var(--space-2)));
 }
 
 .navToggleLabel > span::after {
-    transform: translateY(0.5rem);
+    transform: translateY(var(--space-2));
 }
 
 #navToggle:focus-visible + .navToggleLabel {
-    outline: 0.125rem solid var(--green);
-    outline-offset: 0.125rem;
+    outline: var(--border-strong) solid var(--green);
+    outline-offset: var(--border-strong);
 }
 
 .navWrap nav {
     position: absolute;
     inset-block-start: 100%;
     inset-inline-start: 0;
-    z-index: 1;
+    z-index: var(--z-menu);
     inline-size: 100%;
     background: var(--gray-9);
     transform: translateX(-110%);
     visibility: hidden;
-    transition: transform 0.22s ease-in-out, visibility 0.22s;
+    transition: transform var(--duration-menu) var(--ease-standard), visibility var(--duration-menu);
 }
 
 .navWrap nav ul {
@@ -207,16 +250,16 @@ footer a:hover {
     display: block;
     text-decoration: none;
     inline-size: 100%;
-    padding: 0.75rem 1rem;
+    padding: var(--space-3) var(--space-4);
     color: var(--gray-1);
     font-family: var(--body-font);
-    border-block-end: 0.0625rem solid var(--gray-7);
-    transition: background-color 0.14s ease-in-out, color 0.14s ease-in-out;
+    border-block-end: var(--border-thin) solid var(--gray-7);
+    transition: background-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard);
 }
 
 .navWrap nav .current-page {
     color: var(--beige);
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
 }
 
 .navWrap nav ul li a:hover,
@@ -228,16 +271,16 @@ footer a:hover {
 .navWrap nav .btn {
     background: var(--green);
     border: 0;
-    border-radius: 0.375rem;
+    border-radius: var(--radius-card);
     box-shadow: none;
     color: var(--gray-1);
     inline-size: fit-content;
-    padding: 0.5rem 0.75rem;
-    letter-spacing: 0.1em;
+    padding: var(--space-2) var(--space-3);
+    letter-spacing: var(--tracking-wide);
     text-shadow: none;
     display: flex;
     justify-content: center;
-    margin: 0.75rem auto;
+    margin: var(--space-3) auto;
 }
 
 .navWrap nav .btn:hover,
@@ -271,12 +314,12 @@ footer a:hover {
     background: var(--green);
     color: var(--gray-1);
     display: inline-block;
-    font-size: 1.2rem;
-    letter-spacing: 0.1em;
-    padding: 0.4375rem;
+    font-size: var(--text-button);
+    letter-spacing: var(--tracking-wide);
+    padding: var(--space-button);
     text-decoration: none;
     text-transform: uppercase;
-    border-radius: 0.75rem;
+    border-radius: var(--radius-pill);
 }
 
 
@@ -286,8 +329,8 @@ footer a:hover {
 .content-wrapper {
     margin-block: 0;
     margin-inline: auto;
-    max-inline-size: 62.5rem;
-    padding: 1.25rem;
+    max-inline-size: var(--content-max-inline-size);
+    padding: var(--space-5);
 }
 
 
@@ -307,7 +350,7 @@ footer a:hover {
 
 .content-bg {
     background: oklch(from var(--gray-1) l c h / 90%);
-    padding: 1.25rem;
+    padding: var(--space-5);
 }
 
 
@@ -321,14 +364,14 @@ footer a:hover {
     background-size: cover;
     content: "";
     display: block;
-    block-size: 12.5rem;
+    block-size: var(--hero-block-size-small);
 }
 .resume-section {
-    margin-block-end: 2.5rem;
+    margin-block-end: var(--space-10);
 }
 
 .resume-section h2 {
-    border-block-end: 0.125rem dashed var(--gray-4);
+    border-block-end: var(--border-strong) dashed var(--gray-4);
 }
 
 
@@ -338,21 +381,21 @@ footer a:hover {
 .project-wrapper {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 1.25rem;
-    margin-block-start: 1.875rem;
+    gap: var(--space-5);
+    margin-block-start: var(--space-7);
 }
 
 .project-item {
     background: var(--gray-1);
-    border: 0.0625rem solid var(--gray-3);
-    border-radius: 0.375rem;
+    border: var(--border-thin) solid var(--gray-3);
+    border-radius: var(--radius-card);
     display: grid;
     grid-template-rows: subgrid;
     grid-row: span 4;
-    row-gap: 0.75rem;
+    row-gap: var(--space-3);
     margin: 0;
     min-inline-size: 0;
-    padding: 1.25rem;
+    padding: var(--space-5);
 }
 
 .project-item img {
@@ -385,9 +428,9 @@ footer a:hover {
     background: var(--beige);
     color: var(--gray-9);
     margin: 0;
-    padding: 0.4375rem;
+    padding: var(--space-button);
     text-transform: uppercase;
-    border-radius: 0.75rem;
+    border-radius: var(--radius-pill);
     
 }
 
@@ -399,7 +442,7 @@ footer a:hover {
 ------------------------------------*/
 
 .work-item {
-    margin-block: 1.875rem;
+    margin-block: var(--space-7);
 }
 
 .work-details p {
@@ -415,7 +458,7 @@ footer a:hover {
 ------------------------------------*/
 
 .education-item {
-    margin-block: 1.875rem;
+    margin-block: var(--space-7);
 }
 
 .education-item p {
@@ -429,7 +472,7 @@ footer a:hover {
 footer {
     background: var(--gray-9);
     color: var(--gray-1);
-    padding: 0.625rem;
+    padding: var(--space-2-5);
     text-align: center;
 }
 
@@ -440,15 +483,15 @@ footer {
 
 .socials li {
     display: inline-block;
-    margin-inline-start: 0.625rem;
+    margin-inline-start: var(--space-2-5);
 }
 
 .socials img {
-    inline-size: 2rem;
+    inline-size: var(--space-8);
 }
 
 .socials img:hover {
-    opacity: 0.5;
+    opacity: var(--opacity-muted);
 }
 
 
@@ -462,7 +505,7 @@ footer {
     }
 
     .navWrap {
-        min-block-size: 4rem;
+        min-block-size: var(--space-16);
     }
 
     .navToggleLabel {
@@ -481,12 +524,12 @@ footer {
     .navWrap nav ul {
         display: flex;
         align-items: center;
-        gap: 0.25rem;
+        gap: var(--space-1);
     }
 
     .navWrap nav ul li a {
         inline-size: auto;
-        padding: 0.5rem 0.625rem;
+        padding: var(--space-2) var(--space-2-5);
         border: 0;
     }
 
@@ -495,21 +538,21 @@ footer {
     }
 
     .content-wrapper {
-        padding: 1.875rem;
+        padding: var(--space-7);
     }
 
     .content-bg {
-        padding: 1.875rem;
+        padding: var(--space-7);
     }
 
     .project-wrapper {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 1.25rem;
+        gap: var(--space-5);
     }
 
     .resume header::before {
-        block-size: 18.75rem;
+        block-size: var(--hero-block-size-large);
     }
 }
 
@@ -522,14 +565,14 @@ footer {
 
     .work-item {
         display: grid;
-        grid-template-columns: 18.75rem 1fr;
-        gap: 1.25rem;
+        grid-template-columns: var(--work-column-inline-size) 1fr;
+        gap: var(--space-5);
     }
 
     footer {
         display: flex;
         justify-content: space-between;
-        padding-inline: 1.25rem;
+        padding-inline: var(--space-5);
         text-align: start;
     }
 }
