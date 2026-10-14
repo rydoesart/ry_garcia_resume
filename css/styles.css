@@ -421,6 +421,7 @@ footer a:hover {
 .project-item .btn {
     align-self: start;
     margin: 0;
+    text-align: center;
 }
 
 .project-label {
