@@ -482,12 +482,16 @@ footer a:hover {
 
 @container contact (inline-size < 24rem) and (block-size <= 14rem) {
     #contactPopover .card {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
         align-content: center;
+        align-items: center;
     }
 
     #contactPopover .card > img,
-    #contactPopover .project-placeholder-art,
+    #contactPopover .project-placeholder-art {
+        inline-size: min(100%, 45cqb);
+    }
+
     #contactPopover h2,
     #contactPopover .contact-bio {
         display: none;
