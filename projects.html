@@ -22,10 +22,27 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="resume.html">Resume</a></li>
             <li><a href="projects.html" class="current-page" aria-current="page">Projects</a></li>
-            <li><a href="#" class="btn">Contact</a></li>
+            <li><button type="button" class="btn" popovertarget="contactPopover">Contact</button></li>
           </ul>
         </nav>
       </div>
+
+    <div id="contactPopover" popover aria-labelledby="contactHeading">
+      <div class="card">
+        <img src="images/pogi.png" alt="Ry Garcia">
+        <div class="contact-details">
+          <h2 id="contactHeading">Ry Garcia</h2>
+          <p class="contact-bio">
+            I’m a graphic design and web development student who enjoys learning
+            new skills, exploring creative ideas, and building websites that are
+            both creative and functional.
+          </p>
+          <p><a href="mailto:ry.garcia@example.com">ry.garcia@example.com</a></p>
+          <p><a href="tel:+13035550142">(303) 555-0142</a></p>
+        </div>
+        <button type="button" popovertarget="contactPopover" popovertargetaction="hide" aria-label="Close contact">&#215;</button>
+      </div>
+    </div>
     
         <header>
           <div class="content-wrapper">
