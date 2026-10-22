@@ -431,6 +431,33 @@ footer a:hover {
     color: var(--gray-9);
 }
 
+#contactPopover button {
+    position: absolute;
+    inset-block-start: var(--space-2);
+    inset-inline-end: var(--space-2);
+    inline-size: var(--space-8);
+    block-size: var(--space-8);
+    display: grid;
+    place-items: center;
+    padding: 0;
+    background: transparent;
+    color: var(--gray-6);
+    border: 0;
+    border-radius: var(--radius-card);
+    font: inherit;
+    font-size: var(--text-lg);
+    line-height: 1;
+    letter-spacing: var(--tracking-wide);
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard);
+}
+
+#contactPopover button:hover,
+#contactPopover button:focus-visible {
+    background: transparent;
+    color: var(--gray-9);
+}
+
 /* CONTENT WRAPPER
 ------------------------------------*/
 
