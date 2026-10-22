@@ -474,6 +474,13 @@ footer a:hover {
     }
 }
 
+@container contact (inline-size >= 28rem) {
+    #contactPopover .contact-bio {
+        display: block;
+    }
+}
+
+
 /* CONTENT WRAPPER
 ------------------------------------*/
 
