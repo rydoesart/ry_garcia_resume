@@ -355,7 +355,14 @@ footer a:hover {
     resize: both;
     overflow: auto;
     direction: rtl;
+    background: var(--gray-1);
+    color: var(--gray-9);
+    font-family: var(--body-font);
+    border: var(--border-thin) solid var(--gray-3);
+    border-radius: var(--radius-card);
     border-end-end-radius: 0;
+    box-shadow: 0 var(--space-2) var(--space-6) oklch(from var(--gray-9) l c h / 35%);
+    padding: 0;
 }
 
 /* CONTENT WRAPPER
