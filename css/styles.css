@@ -458,6 +458,12 @@ footer a:hover {
     color: var(--gray-9);
 }
 
+#contactPopover a:focus-visible,
+#contactPopover button:focus-visible {
+    outline: var(--border-strong) solid var(--green);
+    outline-offset: var(--border-strong);
+}
+
 /* CONTENT WRAPPER
 ------------------------------------*/
 
