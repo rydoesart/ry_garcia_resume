@@ -388,6 +388,18 @@ footer a:hover {
     line-height: 1.35;
 }
 
+#contactPopover .card > img,
+#contactPopover .project-placeholder-art {
+    display: block;
+    inline-size: var(--contact-image-size);
+    max-inline-size: 100%;
+    aspect-ratio: 1;
+    align-self: center;
+    object-fit: cover;
+    border: var(--border-strong) solid var(--gray-3);
+    border-radius: 50%;
+}
+
 /* CONTENT WRAPPER
 ------------------------------------*/
 
