@@ -365,6 +365,10 @@ footer a:hover {
     padding: 0;
 }
 
+#contactPopover::backdrop {
+    background: oklch(from var(--gray-9) l c h / 50%);
+}
+
 /* CONTENT WRAPPER
 ------------------------------------*/
 
