@@ -480,6 +480,20 @@ footer a:hover {
     }
 }
 
+@container contact (inline-size < 24rem) and (block-size <= 14rem) {
+    #contactPopover .card {
+        grid-template-columns: minmax(0, 1fr);
+        align-content: center;
+    }
+
+    #contactPopover .card > img,
+    #contactPopover .project-placeholder-art,
+    #contactPopover h2,
+    #contactPopover .contact-bio {
+        display: none;
+    }
+}
+
 
 /* CONTENT WRAPPER
 ------------------------------------*/
