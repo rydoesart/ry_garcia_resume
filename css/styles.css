@@ -332,24 +332,19 @@ footer a:hover {
 /* CONTACT POPOVER
 ------------------------------------*/
 
-.navWrap button[popovertarget="contactPopover"] {
-    anchor-name: --contact-button;
-}
-
 #contactPopover {
     position: fixed;
-    position-anchor: --contact-button;
-    position-area: bottom span-left;
-    position-try-fallbacks: flip-block, bottom span-all, top span-all;
     inset: auto;
+    inset-block-start: var(--space-12);
+    inset-inline-end: var(--space-2);
     margin-block: var(--space-2);
     margin-inline: 0;
-    inline-size: min(100vi, max(33vi, 26rem));
-    min-inline-size: min(100vi, var(--contact-min-inline-size));
-    max-inline-size: 100vi;
+    inline-size: min(calc(100vi - var(--space-4)), max(33vi, 26rem));
+    min-inline-size: min(calc(100vi - var(--space-4)), var(--contact-min-inline-size));
+    max-inline-size: calc(100vi - var(--space-4));
     block-size: var(--contact-block-size);
-    min-block-size: min(var(--contact-min-block-size), calc(100vb - var(--space-4)));
-    max-block-size: calc(100vb - var(--space-4));
+    min-block-size: min(var(--contact-min-block-size), calc(100vb - var(--space-16)));
+    max-block-size: calc(100vb - var(--space-16));
     container-type: size;
     container-name: contact;
     resize: both;
@@ -676,6 +671,11 @@ footer {
 ------------------------------------*/
 
 @media screen and (min-width: 650px) {
+
+    #contactPopover {
+        inset-block-start: var(--space-16);
+        max-block-size: calc(100vb - var(--space-16) - var(--space-4));
+    }
 
     #navToggle {
         display: none;
