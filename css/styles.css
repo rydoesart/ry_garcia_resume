@@ -332,8 +332,15 @@ footer a:hover {
 /* CONTACT POPOVER
 ------------------------------------*/
 
+.navWrap button[popovertarget="contactPopover"] {
+    anchor-name: --contact-button;
+}
+
 #contactPopover {
     position: fixed;
+    position-anchor: --contact-button;
+    position-area: bottom span-left;
+    position-try-fallbacks: flip-block, bottom span-all, top span-all;
     inset: auto;
     margin-block: var(--space-2);
     margin-inline: 0;
