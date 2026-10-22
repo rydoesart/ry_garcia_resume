@@ -464,6 +464,16 @@ footer a:hover {
     outline-offset: var(--border-strong);
 }
 
+@container contact (inline-size >= 24rem) {
+    #contactPopover .card {
+        grid-template-columns: minmax(0, var(--contact-image-size)) minmax(0, 1fr);
+    }
+
+    #contactPopover .contact-bio {
+        display: none;
+    }
+}
+
 /* CONTENT WRAPPER
 ------------------------------------*/
 
