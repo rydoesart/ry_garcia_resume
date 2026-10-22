@@ -400,6 +400,37 @@ footer a:hover {
     border-radius: 50%;
 }
 
+#contactPopover .contact-details {
+    display: grid;
+    align-content: start;
+    gap: clamp(var(--space-1), 2cqb, var(--space-2));
+    min-inline-size: 0;
+}
+
+#contactPopover h2 {
+    font-size: var(--text-md);
+    border-block-end: var(--border-strong) dashed var(--gray-4);
+    padding-block-end: clamp(var(--space-1), 2cqb, var(--space-2));
+}
+
+#contactPopover p {
+    margin: 0;
+}
+
+#contactPopover .contact-bio {
+    display: block;
+}
+
+#contactPopover a {
+    font-weight: var(--font-weight-semibold);
+    overflow-wrap: anywhere;
+    text-underline-offset: var(--border-strong);
+}
+
+#contactPopover a:hover {
+    color: var(--gray-9);
+}
+
 /* CONTENT WRAPPER
 ------------------------------------*/
 
