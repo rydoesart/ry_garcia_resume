@@ -329,6 +329,24 @@ footer a:hover {
 }
 
 
+/* CONTACT POPOVER
+------------------------------------*/
+
+#contactPopover {
+    position: fixed;
+    inset: auto;
+    margin-block: var(--space-2);
+    margin-inline: 0;
+    inline-size: min(100vi, max(33vi, 26rem));
+    min-inline-size: min(100vi, var(--contact-min-inline-size));
+    max-inline-size: 100vi;
+    block-size: var(--contact-block-size);
+    min-block-size: min(var(--contact-min-block-size), calc(100vb - var(--space-4)));
+    max-block-size: calc(100vb - var(--space-4));
+    container-type: size;
+    container-name: contact;
+}
+
 /* CONTENT WRAPPER
 ------------------------------------*/
 
