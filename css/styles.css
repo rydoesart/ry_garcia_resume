@@ -45,7 +45,7 @@ Beige
     --space-16: 4rem;
 
     --logo-size: 2.5rem;
-    --contact-block-size: 12.5rem;
+    --contact-block-size: 18rem;
     --contact-min-inline-size: 22rem;
     --contact-min-block-size: 12.5rem;
     --contact-image-size: clamp(7rem, min(30cqi, 60cqb), 12rem);
