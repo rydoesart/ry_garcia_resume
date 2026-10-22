@@ -335,18 +335,16 @@ footer a:hover {
 #contactPopover {
     position: fixed;
     inset: auto;
-    inset-block-start: var(--space-12);
-    inset-inline-end: var(--space-2);
-    margin-block: var(--space-2);
-    margin-inline: 0;
+    top: calc(var(--space-12) + var(--space-2));
+    right: var(--space-2);
+    margin: 0;
     inline-size: min(calc(100vi - var(--space-4)), max(33vi, 26rem));
     min-inline-size: min(calc(100vi - var(--space-4)), var(--contact-min-inline-size));
     max-inline-size: calc(100vi - var(--space-4));
     block-size: var(--contact-block-size);
     min-block-size: min(var(--contact-min-block-size), calc(100vb - var(--space-16)));
     max-block-size: calc(100vb - var(--space-16));
-    container-type: size;
-    container-name: contact;
+    container: contact / size;
     resize: both;
     overflow: auto;
     direction: rtl;
@@ -367,8 +365,8 @@ footer a:hover {
 #contactPopover .card {
     position: relative;
     direction: ltr;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     inline-size: 100%;
     block-size: 100%;
     min-inline-size: 0;
@@ -386,16 +384,18 @@ footer a:hover {
 #contactPopover .card > img,
 #contactPopover .project-placeholder-art {
     display: block;
+    flex: 0 0 var(--contact-image-size);
     inline-size: var(--contact-image-size);
     max-inline-size: 100%;
     aspect-ratio: 1;
-    align-self: center;
+    align-self: flex-start;
     object-fit: cover;
     border: var(--border-strong) solid var(--gray-3);
     border-radius: 50%;
 }
 
 #contactPopover .contact-details {
+    flex: 1 1 13rem;
     display: grid;
     align-content: start;
     gap: var(--space-2);
@@ -459,24 +459,10 @@ footer a:hover {
     outline-offset: var(--border-strong);
 }
 
-@container contact (inline-size >= 24rem) {
+/* Respond to the popover's actual size, including manual resizing. */
+@container contact (width < 24rem) or (height <= 14rem) {
     #contactPopover .card {
-        grid-template-columns: minmax(0, var(--contact-image-size)) minmax(0, 1fr);
-    }
-
-    #contactPopover .contact-bio {
-        display: none;
-    }
-}
-
-@container contact (inline-size >= 28rem) {
-    #contactPopover .contact-bio {
-        display: block;
-    }
-}
-
-@container contact (inline-size < 24rem) and (block-size <= 14rem) {
-    #contactPopover .card {
+        display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
         align-content: center;
         align-items: center;
@@ -484,15 +470,14 @@ footer a:hover {
 
     #contactPopover .card > img,
     #contactPopover .project-placeholder-art {
-        inline-size: min(100%, 45cqb);
+        inline-size: min(100%, var(--contact-image-size));
+        align-self: center;
     }
 
-    #contactPopover h2,
     #contactPopover .contact-bio {
         display: none;
     }
 }
-
 
 /* CONTENT WRAPPER
 ------------------------------------*/
@@ -673,7 +658,8 @@ footer {
 @media screen and (min-width: 650px) {
 
     #contactPopover {
-        inset-block-start: var(--space-16);
+        top: calc(var(--space-16) + var(--space-2));
+        min-block-size: min(var(--contact-min-block-size), calc(100vb - var(--space-16) - var(--space-4)));
         max-block-size: calc(100vb - var(--space-16) - var(--space-4));
     }
 
