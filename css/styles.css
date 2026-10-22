@@ -369,6 +369,25 @@ footer a:hover {
     background: oklch(from var(--gray-9) l c h / 50%);
 }
 
+#contactPopover .card {
+    position: relative;
+    direction: ltr;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    inline-size: 100%;
+    block-size: 100%;
+    min-inline-size: 0;
+    min-block-size: 0;
+    overflow: auto;
+    align-content: start;
+    align-items: start;
+    gap: clamp(var(--space-1), 3cqb, var(--space-3)) var(--space-4);
+    padding: clamp(var(--space-2), 4cqb, var(--space-4));
+    padding-block-start: var(--space-10);
+    font-size: var(--text-base);
+    line-height: 1.35;
+}
+
 /* CONTENT WRAPPER
 ------------------------------------*/
 
