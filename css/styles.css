@@ -48,7 +48,7 @@ Beige
     --contact-block-size: 18rem;
     --contact-min-inline-size: 22rem;
     --contact-min-block-size: 12.5rem;
-    --contact-image-size: clamp(7rem, min(30cqi, 60cqb), 12rem);
+    --contact-image-size: 8rem;
     --menu-icon-size: 1.75rem;
     --content-max-inline-size: 62.5rem;
     --work-column-inline-size: 18.75rem;
@@ -381,8 +381,8 @@ footer a:hover {
     overflow: auto;
     align-content: start;
     align-items: start;
-    gap: clamp(var(--space-1), 3cqb, var(--space-3)) var(--space-4);
-    padding: clamp(var(--space-2), 4cqb, var(--space-4));
+    gap: var(--space-3) var(--space-4);
+    padding: var(--space-4);
     padding-block-start: var(--space-10);
     font-size: var(--text-base);
     line-height: 1.35;
@@ -403,14 +403,14 @@ footer a:hover {
 #contactPopover .contact-details {
     display: grid;
     align-content: start;
-    gap: clamp(var(--space-1), 2cqb, var(--space-2));
+    gap: var(--space-2);
     min-inline-size: 0;
 }
 
 #contactPopover h2 {
     font-size: var(--text-md);
     border-block-end: var(--border-strong) dashed var(--gray-4);
-    padding-block-end: clamp(var(--space-1), 2cqb, var(--space-2));
+    padding-block-end: var(--space-2);
 }
 
 #contactPopover p {
