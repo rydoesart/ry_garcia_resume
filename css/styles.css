@@ -352,6 +352,10 @@ footer a:hover {
     max-block-size: calc(100vb - var(--space-4));
     container-type: size;
     container-name: contact;
+    resize: both;
+    overflow: auto;
+    direction: rtl;
+    border-end-end-radius: 0;
 }
 
 /* CONTENT WRAPPER
