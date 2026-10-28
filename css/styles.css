@@ -340,8 +340,8 @@ footer a:hover {
     position-area: bottom span-left;
     position-try-fallbacks: flip-block, --contact-bottom-span-all, --contact-top-span-all;
     margin: 0;
-    inline-size: min(calc(100vi - var(--space-4)), max(33vi, 26rem));
-    min-inline-size: min(calc(100vi - var(--space-4)), var(--contact-min-inline-size));
+    inline-size: min(calc(100vi - var(--space-4)), max(33.333vi, var(--contact-min-inline-size)));
+    min-inline-size: 0;
     max-inline-size: calc(100vi - var(--space-4));
     block-size: var(--contact-block-size);
     min-block-size: min(var(--contact-min-block-size), calc(100vb - var(--space-16)));
@@ -666,12 +666,6 @@ footer {
 ------------------------------------*/
 
 @media screen and (min-width: 650px) {
-
-    #contactPopover {
-        top: calc(var(--space-16) + var(--space-2));
-        min-block-size: min(var(--contact-min-block-size), calc(100vb - var(--space-16) - var(--space-4)));
-        max-block-size: calc(100vb - var(--space-16) - var(--space-4));
-    }
 
     #navToggle {
         display: none;
