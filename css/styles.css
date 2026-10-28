@@ -336,8 +336,9 @@ footer a:hover {
 #contactPopover {
     position: fixed;
     inset: auto;
-    top: calc(var(--space-12) + var(--space-2));
-    right: var(--space-2);
+    position-anchor: --contact-button;
+    position-area: bottom span-left;
+    position-try-fallbacks: flip-block, --contact-bottom-span-all, --contact-top-span-all;
     margin: 0;
     inline-size: min(calc(100vi - var(--space-4)), max(33vi, 26rem));
     min-inline-size: min(calc(100vi - var(--space-4)), var(--contact-min-inline-size));
@@ -357,6 +358,14 @@ footer a:hover {
     border-end-end-radius: 0;
     box-shadow: 0 var(--space-2) var(--space-6) oklch(from var(--gray-9) l c h / 35%);
     padding: 0;
+}
+
+@position-try --contact-bottom-span-all {
+    position-area: bottom span-all;
+}
+
+@position-try --contact-top-span-all {
+    position-area: top span-all;
 }
 
 #contactPopover::backdrop {
