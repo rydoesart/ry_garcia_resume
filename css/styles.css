@@ -273,6 +273,7 @@ footer a:hover {
 }
 
 .navWrap nav .btn {
+    anchor-name: --contact-button;
     background: var(--green);
     border: 0;
     border-radius: var(--radius-card);
