@@ -347,7 +347,7 @@ footer a:hover {
     min-block-size: min(var(--contact-min-block-size), calc(100vb - var(--space-16)));
     max-block-size: calc(100vb - var(--space-16));
     container: contact / size;
-    resize: horizontal;
+    resize: both;
     overflow: auto;
     direction: rtl;
     background: var(--gray-1);
