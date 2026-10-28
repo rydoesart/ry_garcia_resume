@@ -375,8 +375,8 @@ footer a:hover {
 #contactPopover .card {
     position: relative;
     direction: ltr;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     inline-size: 100%;
     block-size: 100%;
     min-inline-size: 0;
@@ -469,11 +469,11 @@ footer a:hover {
     outline-offset: var(--border-strong);
 }
 
-/* Respond to the popover's actual size, including manual resizing. */
-@container contact (width < 24rem) or (height <= 14rem) {
+/* Keep narrow popovers stacked, then add columns as their width allows. */
+@container contact (inline-size >= 24rem) and (inline-size < 28rem) {
     #contactPopover .card {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+        grid-template-columns: var(--contact-image-size) minmax(0, 1fr);
         align-content: center;
         align-items: center;
     }
@@ -486,6 +486,24 @@ footer a:hover {
 
     #contactPopover .contact-bio {
         display: none;
+    }
+}
+
+@container contact (inline-size >= 28rem) {
+    #contactPopover .card {
+        grid-template-columns: var(--contact-image-size) minmax(0, 1fr);
+        align-content: center;
+        align-items: center;
+    }
+
+    #contactPopover .card > img,
+    #contactPopover .project-placeholder-art {
+        inline-size: min(100%, var(--contact-image-size));
+        align-self: center;
+    }
+
+    #contactPopover .contact-bio {
+        display: block;
     }
 }
 
