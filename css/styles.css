@@ -739,11 +739,12 @@ footer {
     margin-inline-start: var(--space-2-5);
 }
 
-.socials img {
+.socials .github-icon {
     inline-size: var(--space-8);
+    block-size: var(--space-8);
 }
 
-.socials img:hover {
+.socials a:hover .github-icon {
     opacity: var(--opacity-muted);
 }
 
