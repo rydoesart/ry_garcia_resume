@@ -74,7 +74,6 @@ Beige
 
     --duration-fast: 0.14s;
     --duration-menu: 0.22s;
-    --duration-logo: 2.2s;
     --ease-standard: ease-in-out;
     --z-menu: 1;
     --z-navigation: 99;
@@ -162,23 +161,38 @@ footer a:hover {
     display: block;
     inline-size: var(--logo-size);
     block-size: var(--logo-size);
-    object-fit: contain;
     filter: invert(1);
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .navLogo .logo {
+    .navLogo .logo-r {
+        transform-box: fill-box;
         transform-origin: center bottom;
-        animation: monogram-hop var(--duration-logo) cubic-bezier(0.22, 0.68, 0.24, 1) 1 both;
+        animation: logo-r-hop 2.2s cubic-bezier(0.2, 0.72, 0.3, 1) 1 both;
+    }
+
+    .navLogo .logo-g {
+        transform-box: fill-box;
+        transform-origin: center bottom;
+        animation: logo-g-land 2.2s ease-out 1 both;
     }
 }
 
-@keyframes monogram-hop {
-    0%, 16%, 100% { transform: none; }
-    34% { transform: translateY(-4px) rotate(-4deg); }
-    48% { transform: translateY(0) rotate(0); }
-    56% { transform: translateY(-1px) rotate(1deg); }
-    66%, 84% { transform: none; }
+@keyframes logo-r-hop {
+    0%, 12%, 100% { transform: none; }
+    28% { transform: translate(-14px, 7px) rotate(-8deg); }
+    43% { transform: translate(-7px, -18px) rotate(-5deg); }
+    56% { transform: translate(2px, 2px) rotate(2deg); }
+    63% { transform: translateY(4px); }
+    71% { transform: translateY(-2px); }
+    82%, 90% { transform: none; }
+}
+
+@keyframes logo-g-land {
+    0%, 55%, 100% { transform: none; }
+    62% { transform: scaleY(0.93); }
+    70% { transform: scaleY(1.015); }
+    78%, 88% { transform: none; }
 }
 
 .navWrap {
