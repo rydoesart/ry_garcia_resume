@@ -759,7 +759,7 @@ footer {
     footer {
         display: flex;
         justify-content: space-between;
-        padding-inline: var(--space-5);
+        padding-inline: var(--space-12);
         text-align: start;
     }
 }
