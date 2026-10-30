@@ -74,6 +74,7 @@ Beige
 
     --duration-fast: 0.14s;
     --duration-menu: 0.22s;
+    --duration-logo: 2.9s;
     --ease-standard: ease-in-out;
     --z-menu: 1;
     --z-navigation: 99;
@@ -150,19 +151,85 @@ footer a:hover {
 ------------------------------------*/
 
 .navLogo {
+    position: relative;
     display: grid;
     place-items: center;
     inline-size: var(--logo-size);
     block-size: var(--logo-size);
     flex: none;
+    overflow: visible;
 }
 
 .logo {
+    position: absolute;
+    inset: 0;
     display: block;
     inline-size: var(--logo-size);
     block-size: var(--logo-size);
     object-fit: contain;
     filter: invert(1);
+    overflow: visible;
+}
+
+.logo-g {
+    animation: logo-g-exit var(--duration-logo) ease-in 1 both;
+}
+
+.logo-r {
+    transform-box: fill-box;
+    transform-origin: 24% 87%;
+    animation: logo-r-hop var(--duration-logo) cubic-bezier(0.2, 0.72, 0.25, 1) 1 both;
+}
+
+.logo-g-top {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: logo-g-top-reveal var(--duration-logo) ease-out 1 both;
+}
+
+.logo-final {
+    opacity: 0;
+    animation: logo-final-reveal var(--duration-logo) ease-out 1 both;
+}
+
+@keyframes logo-r-hop {
+    0%, 12% { transform: translate(-7rem, -0.5rem) rotate(-14deg); }
+    38% { transform: translate(-4.5rem, -1.375rem) rotate(-7deg); }
+    62% { transform: translate(-2rem, -1rem) rotate(3deg); }
+    78% { transform: translate(-0.5rem, -0.25rem) rotate(4deg); }
+    92% { transform: none; opacity: 1; }
+    100% { transform: none; opacity: 0; }
+}
+
+@keyframes logo-g-exit {
+    0%, 76% { opacity: 1; }
+    90%, 100% { opacity: 0; }
+}
+
+@keyframes logo-g-top-reveal {
+    0%, 64% { opacity: 0; transform: translateY(-0.25rem) scale(0.92); }
+    73% { opacity: 1; transform: none; }
+    84%, 100% { opacity: 0; transform: none; }
+}
+
+@keyframes logo-final-reveal {
+    0%, 78% { opacity: 0; }
+    92%, 100% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logo-g,
+    .logo-r,
+    .logo-g-top {
+        display: none;
+        animation: none;
+    }
+
+    .logo-final {
+        opacity: 1;
+        animation: none;
+    }
 }
 
 .navWrap {
