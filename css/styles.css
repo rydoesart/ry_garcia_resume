@@ -781,6 +781,71 @@ footer a:hover {
     background: var(--gray-2);
 }
 
+.animation-stage--liquid-ink {
+    aspect-ratio: 9 / 16;
+    align-self: start;
+    background:
+        radial-gradient(ellipse at 30% 20%, oklch(from var(--green) l c h / 22%), transparent 56%),
+        radial-gradient(ellipse at 75% 74%, oklch(from var(--gray-4) l c h / 42%), transparent 58%),
+        var(--gray-1);
+    overflow: hidden;
+    position: relative;
+}
+
+.animation-showcase .animation-stage {
+    align-self: start;
+    inline-size: 100%;
+}
+
+.animation-stage--liquid-ink::before,
+.animation-stage--liquid-ink::after {
+    content: "";
+    position: absolute;
+    inset: -18%;
+    border-radius: 58% 42% 64% 36% / 42% 62% 38% 58%;
+    filter: blur(19px);
+    will-change: transform, border-radius;
+}
+
+.animation-stage--liquid-ink::before {
+    background:
+        radial-gradient(ellipse at 38% 42%, oklch(from var(--green) l c h / 80%), transparent 56%),
+        radial-gradient(ellipse at 67% 66%, oklch(from var(--gray-5) l c h / 78%), transparent 58%);
+    animation: ink-flow-one 9s ease-in-out infinite alternate;
+}
+
+.animation-stage--liquid-ink::after {
+    inset: -24%;
+    background:
+        radial-gradient(ellipse at 68% 35%, oklch(from var(--gray-6) l c h / 58%), transparent 54%),
+        radial-gradient(ellipse at 32% 76%, oklch(from var(--green) l c h / 62%), transparent 60%);
+    animation: ink-flow-two 12s ease-in-out infinite alternate;
+}
+
+@keyframes ink-flow-one {
+    0% {
+        border-radius: 58% 42% 64% 36% / 42% 62% 38% 58%;
+        transform: translate3d(-10%, -8%, 0) rotate(-20deg) scale(0.86);
+    }
+
+    100% {
+        border-radius: 38% 62% 42% 58% / 60% 40% 62% 38%;
+        transform: translate3d(12%, 10%, 0) rotate(24deg) scale(1.16);
+    }
+}
+
+@keyframes ink-flow-two {
+    0% {
+        border-radius: 44% 56% 36% 64% / 58% 38% 62% 42%;
+        transform: translate3d(10%, -10%, 0) rotate(24deg) scale(1.18);
+    }
+
+    100% {
+        border-radius: 64% 36% 58% 42% / 38% 64% 36% 62%;
+        transform: translate3d(-12%, 9%, 0) rotate(-22deg) scale(0.86);
+    }
+}
+
 .project-item h3 {
     margin: 0;
 }
