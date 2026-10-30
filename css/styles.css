@@ -74,6 +74,7 @@ Beige
 
     --duration-fast: 0.14s;
     --duration-menu: 0.22s;
+    --duration-logo: 2.8s;
     --ease-standard: ease-in-out;
     --z-menu: 1;
     --z-navigation: 99;
@@ -167,6 +168,67 @@ footer a:hover {
     block-size: var(--logo-size);
     object-fit: contain;
     filter: invert(1);
+}
+
+.logo-intro {
+    display: none;
+}
+
+.logo-final {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .logo-intro {
+        display: block;
+    }
+
+    .logo-g {
+        animation: logo-g-exit var(--duration-logo) ease-in 1 both;
+    }
+
+    .logo-r {
+        transform-origin: 50% 80%;
+        animation: logo-r-hop var(--duration-logo) cubic-bezier(0.2, 0.72, 0.25, 1) 1 both;
+    }
+
+    .logo-g-top {
+        opacity: 0;
+        transform-origin: center;
+        animation: logo-g-top-reveal var(--duration-logo) ease-out 1 both;
+    }
+
+    .logo-final {
+        opacity: 0;
+        animation: logo-final-reveal var(--duration-logo) ease-out 1 both;
+    }
+}
+
+@keyframes logo-r-hop {
+    0%, 12% { transform: translate(-24px, -1px) rotate(-10deg); }
+    31% { transform: translate(-19px, -13px) rotate(-8deg); }
+    47% { transform: translate(-9px, -5px) rotate(4deg); }
+    56% { transform: translate(0, 0) rotate(0); }
+    62% { transform: translate(2px, 2px) rotate(5deg); }
+    68% { transform: translate(-1px, -1px) rotate(-4deg); }
+    74%, 84% { transform: none; opacity: 1; }
+    100% { transform: none; opacity: 0; }
+}
+
+@keyframes logo-g-exit {
+    0%, 78% { opacity: 1; }
+    88%, 100% { opacity: 0; }
+}
+
+@keyframes logo-g-top-reveal {
+    0%, 55% { opacity: 0; transform: translateY(-2px) scale(0.94); }
+    66% { opacity: 1; transform: none; }
+    82%, 100% { opacity: 0; transform: none; }
+}
+
+@keyframes logo-final-reveal {
+    0%, 78% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .navWrap {
