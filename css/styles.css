@@ -162,6 +162,7 @@ footer a:hover {
     inline-size: var(--logo-size);
     block-size: var(--logo-size);
     object-fit: contain;
+    filter: invert(1);
 }
 
 .navWrap {
