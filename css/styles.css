@@ -636,6 +636,12 @@ footer a:hover {
     flex: 1 0 auto;
 }
 
+.home .content-bg {
+    max-inline-size: 50rem;
+    margin-inline: auto;
+    padding-block: var(--space-10);
+}
+
 .content-bg {
     background: oklch(from var(--gray-1) l c h / 90%);
     padding: var(--space-5);
