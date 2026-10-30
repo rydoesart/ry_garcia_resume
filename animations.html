@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Showcase | Ry Garcia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+
+  <body class="projects resume">
+    <div class="navWrap">
+      <a href="index.html" class="navLogo" aria-label="Home">
+        <svg class="logo" viewBox="0 0 500 500" role="img" aria-label="Ry Garcia monogram">
+          <use class="logo-g" href="logo%20animation/monogram.svg#logo-g"></use>
+          <use class="logo-r" href="logo%20animation/monogram.svg#logo-r"></use>
+        </svg>
+      </a>
+      <input type="checkbox" id="navToggle" class="navToggle" aria-label="Toggle navigation" aria-controls="primaryNavigation">
+      <label for="navToggle" class="navToggleLabel"><span></span></label>
+      <nav id="primaryNavigation" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><button type="button" class="btn" popovertarget="contactPopover">Contact</button></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="contactPopover" popover role="dialog" aria-labelledby="contactHeading">
+      <div class="card">
+        <img src="images/pogi.png" alt="Ry Garcia">
+        <div class="contact-details">
+          <h2 id="contactHeading">Ry Garcia</h2>
+          <p class="contact-bio">
+            I’m a graphic design and web development student who enjoys learning
+            new skills, exploring creative ideas, and building websites that are
+            both creative and functional.
+          </p>
+          <p><a href="mailto:ry.garcia@example.com">ry.garcia@example.com</a></p>
+          <p><a href="tel:+13035550142">(303) 555-0142</a></p>
+        </div>
+        <button type="button" popovertarget="contactPopover" popovertargetaction="hide" aria-label="Close contact" autofocus>&#215;</button>
+      </div>
+    </div>
+
+    <header>
+      <div class="content-wrapper">
+        <h1>Ry Garcia</h1>
+        <h2>Graphic Designer &amp; Web Developer</h2>
+      </div>
+    </header>
+
+    <main class="content-wrapper">
+      <section class="resume-section" aria-labelledby="animation-showcase-heading">
+        <h2 id="animation-showcase-heading">Animation Showcase</h2>
+        <p>Three motion studies exploring distinct visual effects.</p>
+
+        <div class="project-wrapper">
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        © 2026 by Ry Garcia |
+        <a href="mailto:gdanryllxd@gmail.com">gdanryllxd@gmail.com</a>
+      </p>
+
+      <ul class="socials">
+        <li>
+          <a href="https://github.com/rydoesart/ry_garcia_resume" target="_blank" rel="noopener" aria-label="GitHub repository">
+            <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.334-5.467-5.931 0-1.31.469-2.381 1.235-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.295-1.23 3.295-1.23.655 1.652.243 2.873.12 3.176.77.84 1.232 1.911 1.232 3.221 0 4.609-2.807 5.628-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.903-.015 3.297 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12Z"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
