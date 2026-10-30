@@ -643,8 +643,7 @@ footer a:hover {
     inline-size: 100%;
     max-inline-size: 34rem;
     margin-inline: auto;
-    padding-block: var(--space-10);
-    aspect-ratio: 5 / 6;
+    padding-block: var(--space-6);
 }
 
 .content-bg {
