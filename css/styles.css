@@ -28,6 +28,7 @@ Green on hover and focus
 
     --body-font: "Jost", sans-serif;
     --heading-font: "Poppins", sans-serif;
+    --bar-inline-inset: clamp(var(--space-6), 15vw, 12rem);
 
     --space-1: 0.25rem;
     --space-2: 0.5rem;
@@ -252,7 +253,7 @@ footer a:hover {
     background-color: var(--gray-9);
     border-block-end: var(--border-thin) solid var(--gray-7);
     box-shadow: 0 var(--border-thin) var(--space-2) oklch(from var(--gray-9) l c h / 35%);
-    padding-inline: var(--space-6);
+    padding-inline: var(--bar-inline-inset);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -895,7 +896,7 @@ footer p,
     footer {
         display: flex;
         justify-content: space-between;
-        padding-inline: var(--space-12);
+        padding-inline: var(--bar-inline-inset);
         text-align: start;
     }
 }
