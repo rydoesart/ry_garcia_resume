@@ -352,11 +352,11 @@ footer a:hover {
 
 .navWrap nav .btn {
     anchor-name: --contact-button;
-    background: var(--gray-1);
-    border: 0;
+    background: transparent;
+    border: var(--border-thin) solid var(--gray-1);
     border-radius: var(--radius-card);
     box-shadow: none;
-    color: var(--gray-9);
+    color: var(--gray-1);
     inline-size: fit-content;
     font: inherit;
     padding-block: var(--space-button);
@@ -371,6 +371,7 @@ footer a:hover {
 .navWrap nav .btn:hover,
 .navWrap nav .btn:focus-visible {
     background: var(--green);
+    border-color: var(--green);
     color: var(--gray-1);
 }
 
