@@ -843,7 +843,7 @@ footer p,
 
     .navWrap nav ul li a::after {
         inset-inline: var(--space-2-5);
-        inset-block-end: calc(-1 * var(--space-3));
+        inset-block-end: calc(-1 * var(--space-5));
     }
 
     .navWrap nav .btn {
