@@ -167,7 +167,7 @@ footer a:hover {
 @media (prefers-reduced-motion: no-preference) {
     .navLogo .logo {
         transform-origin: center;
-        animation: logo-impact 3s cubic-bezier(0.2, 0.72, 0.25, 1) 1 both;
+        animation: logo-impact 3.6s cubic-bezier(0.4, 0, 0.6, 1) 1 both;
     }
 
     .navLogo .logo-r,
@@ -177,11 +177,11 @@ footer a:hover {
     }
 
     .navLogo .logo-g {
-        animation: logo-g-assemble 3s cubic-bezier(0.2, 0.72, 0.25, 1) 1 both;
+        animation: logo-g-assemble 3.6s cubic-bezier(0.4, 0, 0.6, 1) 1 both;
     }
 
     .navLogo .logo-r {
-        animation: logo-r-assemble 3s cubic-bezier(0.18, 0.74, 0.22, 1) 1 both;
+        animation: logo-r-assemble 3.6s cubic-bezier(0.4, 0, 0.6, 1) 1 both;
     }
 }
 
