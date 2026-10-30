@@ -1054,3 +1054,45 @@ footer p,
         padding-inline: var(--bar-inline-inset);
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .home::before {
+        animation: home-fluid-reduced-one 48s ease-in-out infinite alternate;
+        will-change: auto;
+    }
+
+    .home::after {
+        animation: home-fluid-reduced-two 56s ease-in-out infinite alternate;
+        will-change: auto;
+    }
+
+    .animation-stage--liquid-ink::before {
+        animation: ink-flow-reduced-one 32s ease-in-out infinite alternate;
+        will-change: auto;
+    }
+
+    .animation-stage--liquid-ink::after {
+        animation: ink-flow-reduced-two 38s ease-in-out infinite alternate;
+        will-change: auto;
+    }
+}
+
+@keyframes home-fluid-reduced-one {
+    from { transform: translate3d(-50%, -50%, 0) scale(1); }
+    to { transform: translate3d(-52%, -48%, 0) scale(1.02); }
+}
+
+@keyframes home-fluid-reduced-two {
+    from { transform: translate3d(-50%, -50%, 0) scale(1.01); }
+    to { transform: translate3d(-48%, -52%, 0) scale(0.99); }
+}
+
+@keyframes ink-flow-reduced-one {
+    from { transform: translate3d(-1%, -1%, 0) scale(1); }
+    to { transform: translate3d(2%, 1%, 0) scale(1.02); }
+}
+
+@keyframes ink-flow-reduced-two {
+    from { transform: translate3d(1%, -1%, 0) scale(1.01); }
+    to { transform: translate3d(-2%, 1%, 0) scale(0.99); }
+}
