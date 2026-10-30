@@ -4,16 +4,15 @@ COLOR PALETTE
 Neutral shades:
 --gray-1 through --gray-9
 
-Accent colours:
-Green
-Beige
+Interactive accents:
+Green on hover and focus
 */
 
 /* GLOBAL STYLES
 ------------------------------------*/
 
 :root {
-    --neutral: oklch(45% 0.02 100);
+    --neutral: oklch(45% 0 0);
 
     --gray-1: oklch(from var(--neutral) 97% c h);
     --gray-2: oklch(from var(--neutral) 92% c h);
@@ -26,7 +25,6 @@ Beige
     --gray-9: oklch(from var(--neutral) 28% c h);
 
     --green: oklch(50% 0.13 150);
-    --beige: oklch(72% 0.04 70);
 
     --body-font: "Jost", sans-serif;
     --heading-font: "Poppins", sans-serif;
@@ -128,16 +126,16 @@ h3 {
 ------------------------------------*/
 
 a {
-    color: var(--green);
+    color: var(--gray-9);
 }
 
 a:hover {
-    color: var(--beige);
+    color: var(--green);
     text-decoration: none;
 }
 
 footer a {
-    color: var(--beige);
+    color: var(--gray-1);
 }
 
 footer a:hover {
@@ -342,23 +340,23 @@ footer a:hover {
 }
 
 .navWrap nav .current-page {
-    color: var(--beige);
+    color: var(--gray-1);
     font-weight: var(--font-weight-semibold);
 }
 
 .navWrap nav ul li a:hover,
 .navWrap nav ul li a:focus-visible {
-    background-color: var(--gray-8);
-    color: var(--beige);
+    background-color: var(--green);
+    color: var(--gray-1);
 }
 
 .navWrap nav .btn {
     anchor-name: --contact-button;
-    background: var(--green);
+    background: var(--gray-1);
     border: 0;
     border-radius: var(--radius-card);
     box-shadow: none;
-    color: var(--gray-1);
+    color: var(--gray-9);
     inline-size: fit-content;
     font: inherit;
     padding-block: var(--space-button);
@@ -372,8 +370,8 @@ footer a:hover {
 
 .navWrap nav .btn:hover,
 .navWrap nav .btn:focus-visible {
-    background: var(--beige);
-    color: var(--gray-9);
+    background: var(--green);
+    color: var(--gray-1);
 }
 
 #navToggle:checked ~ nav {
@@ -398,7 +396,7 @@ footer a:hover {
 ------------------------------------*/
 
 .btn {
-    background: var(--green);
+    background: var(--gray-9);
     color: var(--gray-1);
     display: inline-block;
     font-size: var(--text-button);
@@ -407,6 +405,13 @@ footer a:hover {
     text-decoration: none;
     text-transform: uppercase;
     border-radius: var(--radius-pill);
+    transition: background-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard);
+}
+
+.btn:hover,
+.btn:focus-visible {
+    background: var(--green);
+    color: var(--gray-1);
 }
 
 
@@ -513,7 +518,7 @@ footer a:hover {
 }
 
 #contactPopover a:hover {
-    color: var(--gray-9);
+    color: var(--green);
 }
 
 #contactPopover button {
@@ -540,7 +545,7 @@ footer a:hover {
 #contactPopover button:hover,
 #contactPopover button:focus-visible {
     background: transparent;
-    color: var(--gray-9);
+    color: var(--green);
 }
 
 #contactPopover a:focus-visible,
@@ -690,8 +695,8 @@ footer a:hover {
 
 .project-label {
     align-self: start;
-    background: var(--beige);
-    color: var(--gray-9);
+    background: var(--gray-9);
+    color: var(--gray-1);
     margin: 0;
     padding: var(--space-button);
     text-transform: uppercase;
@@ -757,7 +762,7 @@ footer {
 }
 
 .socials a:hover .github-icon {
-    opacity: var(--opacity-muted);
+    color: var(--green);
 }
 
 
