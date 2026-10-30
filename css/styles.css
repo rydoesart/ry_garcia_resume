@@ -150,14 +150,18 @@ footer a:hover {
 ------------------------------------*/
 
 .navLogo {
+    position: relative;
     display: grid;
     place-items: center;
     inline-size: var(--logo-size);
     block-size: var(--logo-size);
     flex: none;
+    overflow: visible;
 }
 
 .logo {
+    position: absolute;
+    inset: 0;
     display: block;
     inline-size: var(--logo-size);
     block-size: var(--logo-size);
