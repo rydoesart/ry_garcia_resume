@@ -186,22 +186,22 @@ footer a:hover {
 }
 
 @keyframes logo-g-assemble {
-    0% { opacity: 0; transform: translate(150px, 0) rotate(28deg) scale(0.72); }
-    18% { opacity: 1; transform: translate(96px, 0) rotate(19deg) scale(0.8); }
-    54% { transform: translate(-8px, -3px) rotate(-6deg) scale(1.06); }
-    65% { transform: translate(6px, 2px) rotate(4deg) scale(0.96); }
-    75% { transform: translate(-3px, -1px) rotate(-2deg) scale(1.02); }
-    84% { transform: translate(1px, 0) rotate(1deg) scale(0.995); }
+    0% { opacity: 0; transform: translate(150px, 0) scale(0.72); }
+    18% { opacity: 1; transform: translate(96px, 0) scale(0.8); }
+    54% { transform: translate(-8px, -3px) scale(1.06); }
+    65% { transform: translate(6px, 2px) scale(0.96); }
+    75% { transform: translate(-3px, -1px) scale(1.02); }
+    84% { transform: translate(1px, 0) scale(0.995); }
     94%, 100% { opacity: 1; transform: none; }
 }
 
 @keyframes logo-r-assemble {
-    0% { opacity: 0; transform: translate(-145px, 0) rotate(-30deg) scale(0.7); }
-    18% { opacity: 1; transform: translate(-92px, 0) rotate(-20deg) scale(0.8); }
-    54% { transform: translate(8px, 3px) rotate(6deg) scale(1.06); }
-    65% { transform: translate(-6px, -2px) rotate(-4deg) scale(0.96); }
-    75% { transform: translate(3px, 1px) rotate(2deg) scale(1.02); }
-    84% { transform: translate(-1px, 0) rotate(-1deg) scale(0.995); }
+    0% { opacity: 0; transform: translate(-145px, 0) scale(0.7); }
+    18% { opacity: 1; transform: translate(-92px, 0) scale(0.8); }
+    54% { transform: translate(8px, 3px) scale(1.06); }
+    65% { transform: translate(-6px, -2px) scale(0.96); }
+    75% { transform: translate(3px, 1px) scale(1.02); }
+    84% { transform: translate(-1px, 0) scale(0.995); }
     94%, 100% { opacity: 1; transform: none; }
 }
 
