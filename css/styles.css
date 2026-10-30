@@ -330,6 +330,7 @@ footer a:hover {
 }
 
 .navWrap nav ul li a {
+    position: relative;
     display: block;
     text-decoration: none;
     inline-size: 100%;
@@ -337,7 +338,18 @@ footer a:hover {
     color: var(--gray-1);
     font-family: var(--body-font);
     border-block-end: var(--border-thin) solid var(--gray-7);
-    transition: background-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard);
+    transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.navWrap nav ul li a::after {
+    content: "";
+    position: absolute;
+    inset-inline: var(--space-4);
+    inset-block-end: 0;
+    block-size: var(--border-strong);
+    background: var(--green);
+    opacity: 0;
+    transition: opacity var(--duration-fast) var(--ease-standard);
 }
 
 .navWrap nav .current-page {
@@ -347,8 +359,13 @@ footer a:hover {
 
 .navWrap nav ul li a:hover,
 .navWrap nav ul li a:focus-visible {
-    background-color: var(--green);
+    background-color: transparent;
     color: var(--gray-1);
+}
+
+.navWrap nav ul li a:hover::after,
+.navWrap nav ul li a:focus-visible::after {
+    opacity: 1;
 }
 
 .navWrap nav .btn {
@@ -822,6 +839,11 @@ footer p,
         inline-size: auto;
         padding: var(--space-2) var(--space-2-5);
         border: 0;
+    }
+
+    .navWrap nav ul li a::after {
+        inset-inline: var(--space-2-5);
+        inset-block-end: calc(-1 * var(--space-3));
     }
 
     .navWrap nav .btn {
