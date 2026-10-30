@@ -165,34 +165,36 @@ footer a:hover {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .navLogo .logo-r {
+    .navLogo .logo-r,
+    .navLogo .logo-g {
         transform-box: fill-box;
-        transform-origin: center bottom;
-        animation: logo-r-hop 2.2s cubic-bezier(0.2, 0.72, 0.3, 1) 1 both;
+        transform-origin: center;
     }
 
     .navLogo .logo-g {
-        transform-box: fill-box;
-        transform-origin: center bottom;
-        animation: logo-g-land 2.2s ease-out 1 both;
+        animation: logo-g-assemble 3s cubic-bezier(0.2, 0.72, 0.25, 1) 1 both;
+    }
+
+    .navLogo .logo-r {
+        animation: logo-r-assemble 3s cubic-bezier(0.18, 0.74, 0.22, 1) 1 both;
     }
 }
 
-@keyframes logo-r-hop {
-    0%, 12%, 100% { transform: none; }
-    28% { transform: translate(-14px, 7px) rotate(-8deg); }
-    43% { transform: translate(-7px, -18px) rotate(-5deg); }
-    56% { transform: translate(2px, 2px) rotate(2deg); }
-    63% { transform: translateY(4px); }
-    71% { transform: translateY(-2px); }
-    82%, 90% { transform: none; }
+@keyframes logo-g-assemble {
+    0% { opacity: 0; transform: translate(-95px, 70px) rotate(-24deg) scale(0.74); }
+    12% { opacity: 0.65; }
+    32% { opacity: 1; transform: translate(14px, -10px) rotate(13deg) scale(1.12); }
+    47% { transform: translate(-8px, 6px) rotate(-6deg) scale(0.96); }
+    59% { transform: translate(3px, -2px) rotate(2deg) scale(1.015); }
+    70%, 86%, 100% { opacity: 1; transform: none; }
 }
 
-@keyframes logo-g-land {
-    0%, 55%, 100% { transform: none; }
-    62% { transform: scaleY(0.93); }
-    70% { transform: scaleY(1.015); }
-    78%, 88% { transform: none; }
+@keyframes logo-r-assemble {
+    0%, 14% { opacity: 0; transform: translate(95px, -100px) rotate(35deg) scale(0.68); }
+    29% { opacity: 1; transform: translate(-12px, 10px) rotate(18deg) scale(0.88); }
+    45% { transform: translate(-6px, -18px) rotate(-10deg) scale(1.1); }
+    57% { transform: translate(5px, 4px) rotate(4deg) scale(0.97); }
+    68%, 84%, 100% { opacity: 1; transform: none; }
 }
 
 .navWrap {
