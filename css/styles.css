@@ -632,6 +632,40 @@ footer a:hover {
     background: #fff;
     display: flex;
     flex-direction: column;
+    isolation: isolate;
+    position: relative;
+}
+
+.home::before,
+.home::after {
+    content: "";
+    position: fixed;
+    z-index: 0;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    inline-size: min(90vw, 76rem);
+    block-size: min(88vh, 60rem);
+    border-radius: 62% 38% 55% 45% / 46% 58% 42% 54%;
+    filter: blur(68px);
+    opacity: 0.6;
+    pointer-events: none;
+    will-change: transform, border-radius;
+}
+
+.home::before {
+    background:
+        radial-gradient(ellipse at 32% 38%, oklch(from var(--green) l c h / 76%), transparent 62%),
+        radial-gradient(ellipse at 68% 64%, oklch(from var(--gray-4) l c h / 86%), transparent 66%);
+    animation: home-fluid-flow 16s ease-in-out infinite alternate;
+}
+
+.home::after {
+    inline-size: min(78vw, 64rem);
+    block-size: min(78vh, 54rem);
+    background:
+        radial-gradient(ellipse at 68% 32%, oklch(from var(--green) l c h / 62%), transparent 64%),
+        radial-gradient(ellipse at 36% 72%, oklch(from var(--gray-5) l c h / 74%), transparent 68%);
+    animation: home-fluid-drift 22s ease-in-out infinite alternate;
 }
 
 .home .content-wrapper {
@@ -639,6 +673,8 @@ footer a:hover {
     align-items: center;
     justify-content: center;
     flex: 1 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .home .content-bg {
@@ -650,6 +686,13 @@ footer a:hover {
     max-inline-size: 34rem;
     margin-inline: auto;
     padding-block: var(--space-6);
+    position: relative;
+    z-index: 1;
+}
+
+.home footer {
+    position: relative;
+    z-index: 1;
 }
 
 .content-bg {
@@ -657,6 +700,29 @@ footer a:hover {
     padding: var(--space-5);
 }
 
+@keyframes home-fluid-flow {
+    0% {
+        border-radius: 62% 38% 55% 45% / 46% 58% 42% 54%;
+        transform: translate3d(-60%, -44%, 0) rotate(-18deg) scale(0.9);
+    }
+
+    100% {
+        border-radius: 42% 58% 38% 62% / 58% 40% 60% 42%;
+        transform: translate3d(-40%, -56%, 0) rotate(22deg) scale(1.14);
+    }
+}
+
+@keyframes home-fluid-drift {
+    0% {
+        border-radius: 54% 46% 42% 58% / 40% 60% 44% 56%;
+        transform: translate3d(-40%, -60%, 0) rotate(20deg) scale(1.12);
+    }
+
+    100% {
+        border-radius: 38% 62% 58% 42% / 62% 42% 58% 38%;
+        transform: translate3d(-58%, -40%, 0) rotate(-18deg) scale(0.9);
+    }
+}
 
 /* RESUME
 ------------------------------------*/
@@ -801,6 +867,11 @@ footer {
     min-block-size: calc(var(--space-12) + var(--space-4));
     padding: var(--space-2) var(--bar-inline-inset);
     text-align: start;
+}
+
+.home footer {
+    position: relative;
+    z-index: 1;
 }
 
 footer p,
