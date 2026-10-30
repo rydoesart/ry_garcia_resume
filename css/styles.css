@@ -167,7 +167,7 @@ footer a:hover {
 @media (prefers-reduced-motion: no-preference) {
     .navLogo .logo {
         transform-origin: center;
-        animation: logo-impact 1.9s cubic-bezier(0.2, 0.8, 0.2, 1) 1 both;
+        animation: logo-impact 2.4s linear 1 both;
     }
 
     .navLogo .logo-r,
@@ -177,57 +177,61 @@ footer a:hover {
     }
 
     .navLogo .logo-g {
-        animation: logo-g-assemble 1.9s cubic-bezier(0.2, 0.8, 0.2, 1) 1 both;
+        animation: logo-g-assemble 2.4s linear 1 both;
     }
 
     .navLogo .logo-r {
-        animation: logo-r-assemble 1.9s cubic-bezier(0.2, 0.8, 0.2, 1) 1 both;
+        animation: logo-r-assemble 2.4s linear 1 both;
     }
 }
 
 @keyframes logo-g-assemble {
-    0% { opacity: 0; transform: translate(150px, 0) scale(0.72); }
-    12% {
-        opacity: 1;
-        transform: translate(86px, 0) scale(0.82);
-        animation-timing-function: cubic-bezier(0.25, 0.65, 0.7, 0.82);
-    }
-    52% {
-        transform: translate(0, 0) scale(1);
-        animation-timing-function: linear;
+    0% { opacity: 1; transform: translate(650px, 0) scale(0.8); }
+    30% { transform: translate(300px, 0) scale(0.88); }
+    48% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0.12, 0.7, 0.25, 1);
     }
     54% {
-        transform: translate(38px, 2px) scale(1.05);
+        transform: translate(110px, 0) scale(1.12);
+        animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    68% { transform: translate(-6px, -1px) scale(0.99); }
-    82% { transform: translate(2px, 0) scale(1.005); }
-    100% { opacity: 1; transform: none; }
+    68% {
+        transform: translate(-28px, 0) scale(0.96);
+        animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    80% { transform: translate(10px, 0) scale(1.025); }
+    90% { transform: translate(-3px, 0) scale(0.995); }
+    100% { transform: none; }
 }
 
 @keyframes logo-r-assemble {
-    0% { opacity: 0; transform: translate(-145px, 0) scale(0.7); }
-    12% {
-        opacity: 1;
-        transform: translate(-82px, 0) scale(0.82);
-        animation-timing-function: cubic-bezier(0.25, 0.65, 0.7, 0.82);
-    }
-    52% {
-        transform: translate(0, 0) scale(1);
-        animation-timing-function: linear;
+    0% { opacity: 1; transform: translate(-650px, 0) scale(0.8); }
+    30% { transform: translate(-300px, 0) scale(0.88); }
+    48% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0.12, 0.7, 0.25, 1);
     }
     54% {
-        transform: translate(-38px, -2px) scale(1.05);
+        transform: translate(-110px, 0) scale(1.12);
+        animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    68% { transform: translate(6px, 1px) scale(0.99); }
-    82% { transform: translate(-2px, 0) scale(1.005); }
-    100% { opacity: 1; transform: none; }
+    68% {
+        transform: translate(28px, 0) scale(0.96);
+        animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    80% { transform: translate(-10px, 0) scale(1.025); }
+    90% { transform: translate(3px, 0) scale(0.995); }
+    100% { transform: none; }
 }
 
 @keyframes logo-impact {
-    0%, 50% { transform: scale(0.97); }
-    59% { transform: scale(1.025); }
-    74% { transform: scale(0.99); }
-    88%, 100% { transform: scale(1); }
+    0%, 46% { transform: scale(0.96); }
+    54% { transform: scale(1.12); }
+    68% { transform: scale(0.96); }
+    80% { transform: scale(1.025); }
+    90% { transform: scale(0.995); }
+    100% { transform: scale(1); }
 }
 
 .navWrap {
