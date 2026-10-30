@@ -744,21 +744,35 @@ footer a:hover {
 footer {
     background: var(--gray-9);
     color: var(--gray-1);
-    padding: var(--space-2-5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    font-size: clamp(0.75rem, 3.8vw, var(--text-base));
+    min-block-size: var(--space-12);
+    padding: var(--space-2);
     text-align: center;
 }
 
+footer p,
 .socials {
+    margin: 0;
+}
+
+.socials {
+    display: flex;
+    flex: none;
     list-style: none;
     padding: 0;
 }
 
 .socials li {
     display: inline-block;
-    margin-inline-start: var(--space-2-5);
+    margin: 0;
 }
 
 .socials .github-icon {
+    display: block;
     inline-size: var(--space-8);
     block-size: var(--space-8);
 }
@@ -778,6 +792,10 @@ footer {
     }
 
     .navWrap {
+        min-block-size: var(--space-16);
+    }
+
+    footer {
         min-block-size: var(--space-16);
     }
 
