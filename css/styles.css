@@ -691,6 +691,7 @@ footer a:hover {
     background: var(--gray-1);
     border: var(--border-thin) solid var(--gray-3);
     border-radius: var(--radius-card);
+    box-shadow: 0 var(--space-2) var(--space-5) oklch(from var(--gray-9) l c h / 12%);
     display: grid;
     grid-template-rows: subgrid;
     grid-row: span 4;
