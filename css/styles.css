@@ -186,13 +186,13 @@ footer a:hover {
 }
 
 @keyframes logo-g-assemble {
-    0% { opacity: 1; transform: translate(0, 600px) scale(0.8); }
-    9% { transform: translate(-72px, 469px) scale(0.83); }
-    18% { transform: translate(-118px, 402px) scale(0.87); }
-    27% { transform: translate(-135px, 295px) scale(0.91); }
-    36% { transform: translate(-124px, 190px) scale(0.95); }
-    40% { transform: translate(-104px, 95px) scale(0.98); }
-    44% { transform: translate(-40px, 34px) scale(0.99); }
+    0% { opacity: 1; transform: translate(600px, 0) scale(0.8); }
+    9% { transform: translate(469px, 72px) scale(0.83); }
+    18% { transform: translate(402px, 118px) scale(0.87); }
+    27% { transform: translate(295px, 135px) scale(0.91); }
+    36% { transform: translate(190px, 124px) scale(0.95); }
+    40% { transform: translate(95px, 104px) scale(0.98); }
+    44% { transform: translate(34px, 40px) scale(0.99); }
     48% {
         transform: none;
         animation-timing-function: cubic-bezier(0.12, 0.7, 0.25, 1);
@@ -211,13 +211,13 @@ footer a:hover {
 }
 
 @keyframes logo-r-assemble {
-    0% { opacity: 1; transform: translate(0, -600px) scale(0.8); }
-    9% { transform: translate(72px, -469px) scale(0.83); }
-    18% { transform: translate(118px, -402px) scale(0.87); }
-    27% { transform: translate(135px, -295px) scale(0.91); }
-    36% { transform: translate(124px, -190px) scale(0.95); }
-    40% { transform: translate(104px, -95px) scale(0.98); }
-    44% { transform: translate(40px, -34px) scale(0.99); }
+    0% { opacity: 1; transform: translate(-600px, 0) scale(0.8); }
+    9% { transform: translate(-469px, -72px) scale(0.83); }
+    18% { transform: translate(-402px, -118px) scale(0.87); }
+    27% { transform: translate(-295px, -135px) scale(0.91); }
+    36% { transform: translate(-190px, -124px) scale(0.95); }
+    40% { transform: translate(-95px, -104px) scale(0.98); }
+    44% { transform: translate(-34px, -40px) scale(0.99); }
     48% {
         transform: none;
         animation-timing-function: cubic-bezier(0.12, 0.7, 0.25, 1);
