@@ -629,8 +629,7 @@ footer a:hover {
 ------------------------------------*/
 
 .home {
-    background: url("../project-image/bg-ry-garcia.jpg") no-repeat;
-    background-size: cover;
+    background: #fff;
     display: flex;
     flex-direction: column;
 }
@@ -643,6 +642,7 @@ footer a:hover {
 }
 
 .home .content-bg {
+    background: oklch(from var(--gray-1) l c h / 70%);
     display: flex;
     flex-direction: column;
     justify-content: center;
