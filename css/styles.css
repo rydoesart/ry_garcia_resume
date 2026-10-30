@@ -743,14 +743,6 @@ footer a:hover {
     color: var(--gray-1);
 }
 
-.project-item .btn:disabled,
-.project-item .btn:disabled:hover {
-    background: transparent;
-    border-color: var(--gray-9);
-    color: var(--gray-9);
-    cursor: not-allowed;
-}
-
 .project-label {
     align-self: start;
     background: transparent;
