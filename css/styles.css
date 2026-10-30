@@ -186,8 +186,8 @@ footer a:hover {
 }
 
 @keyframes logo-g-assemble {
-    0% { opacity: 1; transform: translate(650px, 0) scale(0.8); }
-    30% { transform: translate(300px, 0) scale(0.88); }
+    0% { opacity: 1; transform: translate(0, 600px) scale(0.8); }
+    30% { transform: translate(0, 300px) scale(0.88); }
     48% {
         transform: none;
         animation-timing-function: cubic-bezier(0.12, 0.7, 0.25, 1);
@@ -206,8 +206,8 @@ footer a:hover {
 }
 
 @keyframes logo-r-assemble {
-    0% { opacity: 1; transform: translate(-650px, 0) scale(0.8); }
-    30% { transform: translate(-300px, 0) scale(0.88); }
+    0% { opacity: 1; transform: translate(0, -600px) scale(0.8); }
+    30% { transform: translate(0, -300px) scale(0.88); }
     48% {
         transform: none;
         animation-timing-function: cubic-bezier(0.12, 0.7, 0.25, 1);
