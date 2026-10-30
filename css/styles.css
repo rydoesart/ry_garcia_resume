@@ -729,6 +729,8 @@ footer a:hover {
     border: var(--border-thin) solid var(--gray-9);
     border-radius: var(--radius-card);
     color: var(--gray-9);
+    font-family: var(--body-font);
+    line-height: inherit;
     margin: 0;
     padding: var(--space-button) var(--space-2-5);
     text-align: center;
@@ -739,6 +741,14 @@ footer a:hover {
     background: var(--green);
     border-color: var(--green);
     color: var(--gray-1);
+}
+
+.project-item .btn:disabled,
+.project-item .btn:disabled:hover {
+    background: transparent;
+    border-color: var(--gray-9);
+    color: var(--gray-9);
+    cursor: not-allowed;
 }
 
 .project-label {
