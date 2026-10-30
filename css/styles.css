@@ -165,6 +165,11 @@ footer a:hover {
 }
 
 @media (prefers-reduced-motion: no-preference) {
+    .navLogo .logo {
+        transform-origin: center;
+        animation: logo-impact 3s cubic-bezier(0.2, 0.72, 0.25, 1) 1 both;
+    }
+
     .navLogo .logo-r,
     .navLogo .logo-g {
         transform-box: fill-box;
@@ -195,6 +200,16 @@ footer a:hover {
     45% { transform: translate(-6px, -18px) rotate(-10deg) scale(1.1); }
     57% { transform: translate(5px, 4px) rotate(4deg) scale(0.97); }
     68%, 84%, 100% { opacity: 1; transform: none; }
+}
+
+@keyframes logo-impact {
+    0%, 12% { transform: scale(0.76); }
+    29% { transform: scale(1.2); }
+    43% { transform: scale(1.55); }
+    57% { transform: scale(1.38); }
+    67% { transform: scale(0.92); }
+    78% { transform: scale(1.04); }
+    88%, 100% { transform: scale(1); }
 }
 
 .navWrap {
