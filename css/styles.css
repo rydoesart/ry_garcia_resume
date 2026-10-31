@@ -654,8 +654,8 @@ footer a:hover {
 
 .home::before {
     background:
-        radial-gradient(ellipse at 32% 38%, oklch(from var(--green) l c h / 76%) 0%, transparent 62%),
-        radial-gradient(ellipse at 68% 64%, oklch(from var(--gray-4) l c h / 86%) 0%, transparent 66%);
+        radial-gradient(ellipse at 32% 38%, rgb(0 0 0 / 42%) 0%, transparent 62%),
+        radial-gradient(ellipse at 68% 64%, rgb(255 255 255 / 90%) 0%, transparent 66%);
     background-size: 150% 150%, 160% 160%;
     background-position: 0% 20%, 100% 80%;
     background-repeat: no-repeat;
@@ -666,8 +666,8 @@ footer a:hover {
     inline-size: min(78vw, 64rem);
     block-size: min(78vh, 54rem);
     background:
-        radial-gradient(ellipse at 68% 32%, oklch(from var(--green) l c h / 62%) 0%, transparent 64%),
-        radial-gradient(ellipse at 36% 72%, oklch(from var(--gray-5) l c h / 74%) 0%, transparent 68%);
+        radial-gradient(ellipse at 68% 32%, rgb(0 0 0 / 30%) 0%, transparent 64%),
+        radial-gradient(ellipse at 36% 72%, rgb(255 255 255 / 76%) 0%, transparent 68%);
     background-size: 165% 165%, 150% 150%;
     background-position: 100% 0%, 0% 100%;
     background-repeat: no-repeat;
