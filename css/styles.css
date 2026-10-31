@@ -761,14 +761,15 @@ footer a:hover {
 ------------------------------------*/
 
 .resume header::before {
-    background-image: url("../project-image/bg-ry-garcia.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #fff;
+    background-image: radial-gradient(circle, #000 2px, transparent 2.5px);
+    background-position: 14px 14px;
+    background-size: 28px 28px;
     content: "";
     display: block;
     block-size: var(--hero-block-size-small);
 }
+
 .resume-section {
     margin-block-end: var(--space-10);
 }
