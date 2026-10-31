@@ -893,6 +893,72 @@ footer a:hover {
     inline-size: 100%;
 }
 
+.animation-stage--magnetic-particles {
+    --particle-center-position: 50%;
+    --particle-center-translation: -50% -50%;
+    --particle-orbit-clockwise: 1turn;
+    --particle-orbit-counterclockwise: -1turn;
+    --particle-shadow-blur: 0;
+    --particle-primary-size: var(--space-1);
+    --particle-secondary-size: var(--space-2-5);
+    --particle-primary-duration: 22s;
+    --particle-secondary-duration: 31s;
+    --particle-primary-x-one: var(--space-8);
+    --particle-primary-y-one: calc(var(--space-3) * -1);
+    --particle-primary-x-two: calc(var(--space-7) * -1);
+    --particle-primary-y-two: calc(var(--space-6) * -1);
+    --particle-primary-x-three: var(--space-4);
+    --particle-primary-y-three: var(--space-8);
+    --particle-secondary-x-one: calc(var(--space-5) * -1);
+    --particle-secondary-y-one: var(--space-7);
+    --particle-secondary-x-two: var(--space-8);
+    --particle-secondary-y-two: calc(var(--space-4) * -1);
+    --particle-secondary-x-three: calc(var(--space-8) * -1);
+    --particle-secondary-y-three: calc(var(--space-3) * -1);
+    background: radial-gradient(circle at center, var(--gray-1), var(--gray-2));
+    isolation: isolate;
+    overflow: clip;
+    position: relative;
+}
+
+.animation-stage--magnetic-particles::before,
+.animation-stage--magnetic-particles::after {
+    background: transparent;
+    border-radius: 50%;
+    content: "";
+    inset-block-start: var(--particle-center-position);
+    inset-inline-start: var(--particle-center-position);
+    position: absolute;
+    translate: var(--particle-center-translation);
+}
+
+.animation-stage--magnetic-particles::before {
+    animation: magnetic-particle-orbit var(--particle-primary-duration) linear infinite;
+    block-size: var(--particle-primary-size);
+    box-shadow:
+        var(--particle-primary-x-one) var(--particle-primary-y-one) var(--particle-shadow-blur) var(--gray-9),
+        var(--particle-primary-x-two) var(--particle-primary-y-two) var(--particle-shadow-blur) var(--gray-8),
+        var(--particle-primary-x-three) var(--particle-primary-y-three) var(--particle-shadow-blur) var(--gray-9);
+    inline-size: var(--particle-primary-size);
+}
+
+.animation-stage--magnetic-particles::after {
+    --particle-orbit: var(--particle-orbit-counterclockwise);
+    animation: magnetic-particle-orbit var(--particle-secondary-duration) linear infinite;
+    block-size: var(--particle-secondary-size);
+    box-shadow:
+        var(--particle-secondary-x-one) var(--particle-secondary-y-one) var(--particle-shadow-blur) var(--gray-6),
+        var(--particle-secondary-x-two) var(--particle-secondary-y-two) var(--particle-shadow-blur) var(--gray-7),
+        var(--particle-secondary-x-three) var(--particle-secondary-y-three) var(--particle-shadow-blur) var(--gray-5);
+    inline-size: var(--particle-secondary-size);
+}
+
+@keyframes magnetic-particle-orbit {
+    to {
+        rotate: var(--particle-orbit, var(--particle-orbit-clockwise));
+    }
+}
+
 .animation-stage--liquid-ink::before,
 .animation-stage--liquid-ink::after {
     content: "";
@@ -1236,6 +1302,11 @@ footer p,
     .animation-stage--liquid-ink::after {
         animation: ink-flow-reduced-two 38s ease-in-out infinite alternate;
         will-change: auto;
+    }
+
+    .animation-stage--magnetic-particles::before,
+    .animation-stage--magnetic-particles::after {
+        animation: none;
     }
 }
 
