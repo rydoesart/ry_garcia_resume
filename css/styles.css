@@ -1168,6 +1168,10 @@ footer p,
     .resume header::before {
         block-size: var(--hero-block-size-large);
     }
+
+    .resume header::after {
+        block-size: var(--hero-block-size-large);
+    }
 }
 
 
@@ -1189,6 +1193,10 @@ footer p,
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .resume header::after {
+        animation: none;
+    }
+
     .home::before {
         animation: home-fluid-reduced-one 48s ease-in-out infinite alternate;
         background-position: 0% 20%, 100% 80%;
