@@ -2190,3 +2190,36 @@ footer p,
     .animation-showcase .particle-field__dot { animation: none; }
 }
 
+/* Carry the animation showcase's monochrome atmosphere onto the home page. */
+.home {
+    background: #fff;
+    color: #000;
+}
+
+.home::before {
+    background:
+        radial-gradient(ellipse at 32% 38%, #000 0%, rgb(0 0 0 / 88%) 48%, transparent 76%),
+        radial-gradient(ellipse at 68% 66%, #000 0%, rgb(0 0 0 / 76%) 42%, transparent 72%);
+}
+
+.home::after {
+    background:
+        radial-gradient(ellipse at 68% 35%, #000 0%, rgb(0 0 0 / 82%) 46%, transparent 74%),
+        radial-gradient(ellipse at 32% 76%, #000 0%, rgb(0 0 0 / 78%) 44%, transparent 72%);
+}
+
+.home::before,
+.home::after {
+    opacity: 1;
+    filter: blur(42px);
+}
+
+.home .content-bg {
+    background: rgb(255 255 255 / 82%);
+    border-color: rgb(0 0 0 / 36%);
+    color: #000;
+}
+
+.home .content-bg a {
+    color: #000;
+}
