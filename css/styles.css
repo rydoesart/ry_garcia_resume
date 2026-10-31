@@ -161,7 +161,6 @@ footer a:hover {
     display: block;
     inline-size: var(--logo-size);
     block-size: var(--logo-size);
-    filter: invert(1);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -250,11 +249,11 @@ footer a:hover {
     z-index: var(--z-navigation);
     min-block-size: calc(var(--space-12) + var(--space-4));
     inline-size: 100%;
-    background-color: oklch(from var(--gray-9) l c h / 92%);
+    background-color: #fff;
     -webkit-backdrop-filter: blur(var(--space-3));
     backdrop-filter: blur(var(--space-3));
-    border-block-end: var(--border-thin) solid var(--gray-7);
-    box-shadow: 0 var(--border-thin) var(--space-2) oklch(from var(--gray-9) l c h / 35%);
+    border-block-end: var(--border-thin) solid var(--gray-3);
+    box-shadow: 0 var(--border-thin) var(--space-2) oklch(from var(--gray-9) l c h / 15%);
     padding-inline: var(--bar-inline-inset);
     display: flex;
     align-items: center;
@@ -284,7 +283,7 @@ footer a:hover {
     display: block;
     inline-size: var(--menu-icon-size);
     block-size: var(--border-strong);
-    background: var(--gray-1);
+    background: #000;
     transition: background-color var(--duration-fast) var(--ease-standard);
 }
 
@@ -297,7 +296,7 @@ footer a:hover {
     inset-block-start: 0;
     inline-size: 100%;
     block-size: 100%;
-    background: var(--gray-1);
+    background: #000;
     transition: transform var(--duration-fast) var(--ease-standard);
 }
 
@@ -310,7 +309,7 @@ footer a:hover {
 }
 
 #navToggle:focus-visible + .navToggleLabel {
-    outline: var(--border-strong) solid var(--green);
+    outline: var(--border-strong) solid #000;
     outline-offset: var(--border-strong);
 }
 
@@ -320,7 +319,7 @@ footer a:hover {
     inset-inline-start: 0;
     z-index: var(--z-menu);
     inline-size: 100%;
-    background: var(--gray-9);
+    background: #fff;
     transform: translateX(-110%);
     visibility: hidden;
     transition: transform var(--duration-menu) var(--ease-standard), visibility var(--duration-menu);
@@ -338,9 +337,9 @@ footer a:hover {
     text-decoration: none;
     inline-size: 100%;
     padding: var(--space-3) var(--space-4);
-    color: var(--gray-1);
+    color: #000;
     font-family: var(--body-font);
-    border-block-end: var(--border-thin) solid var(--gray-7);
+    border-block-end: var(--border-thin) solid var(--gray-3);
     transition: color var(--duration-fast) var(--ease-standard);
 }
 
@@ -350,20 +349,20 @@ footer a:hover {
     inset-inline: var(--space-4);
     inset-block-end: 0;
     block-size: var(--border-strong);
-    background: var(--green);
+    background: #000;
     opacity: 0;
     transition: opacity var(--duration-fast) var(--ease-standard);
 }
 
 .navWrap nav .current-page {
-    color: var(--gray-1);
+    color: #000;
     font-weight: var(--font-weight-semibold);
 }
 
 .navWrap nav ul li a:hover,
 .navWrap nav ul li a:focus-visible {
     background-color: transparent;
-    color: var(--gray-1);
+    color: #000;
 }
 
 .navWrap nav ul li a:hover::after,
@@ -374,10 +373,10 @@ footer a:hover {
 .navWrap nav .btn {
     anchor-name: --contact-button;
     background: transparent;
-    border: var(--border-thin) solid var(--gray-1);
+    border: var(--border-thin) solid #000;
     border-radius: var(--radius-card);
     box-shadow: none;
-    color: var(--gray-1);
+    color: #000;
     inline-size: fit-content;
     font: inherit;
     padding-block: var(--space-button);
@@ -391,9 +390,9 @@ footer a:hover {
 
 .navWrap nav .btn:hover,
 .navWrap nav .btn:focus-visible {
-    background: var(--green);
-    border-color: var(--green);
-    color: var(--gray-1);
+    background: #000;
+    border-color: #000;
+    color: #fff;
 }
 
 #navToggle:checked ~ nav {
