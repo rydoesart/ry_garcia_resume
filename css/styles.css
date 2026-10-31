@@ -1006,9 +1006,9 @@ footer a:hover {
 
 .project-item .btn:hover,
 .project-item .btn:focus-visible {
-    background: var(--green);
-    border-color: var(--green);
-    color: var(--gray-1);
+    background: #000;
+    border-color: #000;
+    color: #fff;
 }
 
 .project-label {
