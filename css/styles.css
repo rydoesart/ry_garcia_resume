@@ -760,6 +760,12 @@ footer a:hover {
 /* RESUME
 ------------------------------------*/
 
+.resume header {
+    isolation: isolate;
+    overflow: hidden;
+    position: relative;
+}
+
 .resume header::before {
     background-color: #fff;
     background-image: radial-gradient(circle, #000 1px, transparent 1.4px);
@@ -768,6 +774,30 @@ footer a:hover {
     content: "";
     display: block;
     block-size: var(--hero-block-size-small);
+    position: relative;
+    z-index: -1;
+}
+
+.resume header::after {
+    background-color: #000;
+    background-image: radial-gradient(circle, rgb(255 255 255 / 92%) 2px, transparent 2.4px);
+    background-position: 12px 12px;
+    background-size: 24px 24px;
+    background-repeat: repeat;
+    block-size: var(--hero-block-size-small);
+    content: "";
+    inline-size: 100%;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    clip-path: polygon(0 0, 20% 0, 40% 100%, 20% 100%);
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.resume header > .content-wrapper {
+    position: relative;
+    z-index: 2;
 }
 
 .resume-section {
