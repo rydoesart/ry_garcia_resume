@@ -762,9 +762,9 @@ footer a:hover {
 
 .resume header::before {
     background-color: #fff;
-    background-image: radial-gradient(circle, #000 2px, transparent 2.5px);
-    background-position: 14px 14px;
-    background-size: 28px 28px;
+    background-image: radial-gradient(circle, #000 1px, transparent 1.4px);
+    background-position: 12px 12px;
+    background-size: 24px 24px;
     content: "";
     display: block;
     block-size: var(--hero-block-size-small);
