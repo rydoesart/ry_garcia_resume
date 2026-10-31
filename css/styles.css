@@ -2084,3 +2084,58 @@ footer p,
     from { background-position: 0% 20%, 100% 80%; }
     to { background-position: 10% 30%, 90% 70%; }
 }
+
+/* Focused refinements for the Magnetic Particles and 5D Perspective studies. */
+.animation-showcase .animation-stage--magnetic-particles {
+    --particle-zero: 0;
+    --particle-white: #fff;
+    --particle-black: #000;
+    --particle-stage-background: #000;
+    background: #000;
+}
+
+.animation-showcase .particle-field__layer {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+    padding: 2.5%;
+}
+
+.animation-showcase .particle-field__layer--far { padding: 0 4% 5% 0; }
+.animation-showcase .particle-field__layer--middle { padding: 3% 0 0 3%; }
+.animation-showcase .particle-field__layer--near { padding: 0 2% 2% 0; }
+
+.animation-showcase .particle-field__dot {
+    --particle-dot-color: #fff;
+    --particle-dot-size: 2px;
+    --particle-layer-opacity: 1;
+    --particle-start-opacity: 1;
+    --particle-end-opacity: 1;
+    --particle-drift-inline: 0px;
+    --particle-drift-block: 0px;
+    animation: particle-atmosphere var(--particle-duration, 54s) ease-in-out infinite alternate;
+    animation-delay: var(--particle-delay, 0s);
+    align-self: center;
+    background: #fff;
+    block-size: var(--particle-dot-size);
+    border-radius: 50%;
+    inline-size: var(--particle-dot-size);
+    inset: auto;
+    opacity: 1;
+    position: relative;
+    scale: 1;
+    translate: 0 0;
+}
+
+.animation-showcase .particle-field__layer--far .particle-field__dot { --particle-dot-size: 1px; }
+.animation-showcase .particle-field__layer--middle .particle-field__dot { --particle-dot-size: 2px; }
+.animation-showcase .particle-field__layer--near .particle-field__dot { --particle-dot-size: 3px; }
+.animation-showcase .particle-field__dot:nth-child(3n) { --particle-drift-inline: 22px; --particle-drift-block: -16px; --particle-duration: 23s; --particle-delay: -7s; }
+.animation-showcase .particle-field__dot:nth-child(3n + 1) { --particle-drift-inline: -18px; --particle-drift-block: 20px; --particle-duration: 29s; --particle-delay: -17s; }
+.animation-showcase .particle-field__dot:nth-child(3n + 2) { --particle-drift-inline: 12px; --particle-drift-block: 24px; --particle-duration: 26s; --particle-delay: -11s; }
+
+@keyframes particle-atmosphere {
+    0%, 100% { translate: calc(var(--particle-drift-inline) * -1) calc(var(--particle-drift-block) * -1); }
+    50% { translate: var(--particle-drift-inline) var(--particle-drift-block); }
+}
+
