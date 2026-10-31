@@ -2139,3 +2139,20 @@ footer p,
     50% { translate: var(--particle-drift-inline) var(--particle-drift-block); }
 }
 
+.animation-showcase .animation-stage--liquid-ink {
+    --ink-black: #000;
+    background: #000;
+}
+
+.animation-showcase .animation-stage--liquid-ink::before {
+    background:
+        radial-gradient(ellipse at 32% 38%, rgb(255 255 255 / 94%) 0%, rgb(255 255 255 / 42%) 36%, transparent 68%),
+        radial-gradient(ellipse at 68% 66%, rgb(255 255 255 / 76%) 0%, transparent 66%);
+}
+
+.animation-showcase .animation-stage--liquid-ink::after {
+    background:
+        radial-gradient(ellipse at 68% 35%, rgb(255 255 255 / 68%) 0%, transparent 62%),
+        radial-gradient(ellipse at 32% 76%, rgb(255 255 255 / 88%) 0%, transparent 62%);
+}
+
