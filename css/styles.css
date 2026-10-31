@@ -684,6 +684,8 @@ footer a:hover {
 
 .home .content-bg {
     background: oklch(from var(--gray-1) l c h / 70%);
+    border: var(--border-thin) solid oklch(from var(--gray-9) l c h / 18%);
+    border-radius: var(--radius-pill);
     display: flex;
     flex-direction: column;
     justify-content: center;
