@@ -894,8 +894,7 @@ footer a:hover {
 }
 
 .animation-stage--magnetic-particles {
-    --particle-center-position: 50%;
-    --particle-center-translation: -50% -50%;
+    --particle-zero: 0;
     --particle-orbit-clockwise: 1turn;
     --particle-orbit-counterclockwise: -1turn;
     --particle-orbit-timing: linear;
@@ -921,19 +920,24 @@ footer a:hover {
     --particle-secondary-y-three: calc(var(--space-3) * -1);
     background: radial-gradient(circle at center, var(--gray-1), var(--gray-2));
     isolation: isolate;
-    overflow: clip;
+    overflow-block: clip;
+    overflow-inline: clip;
     position: relative;
 }
 
 .animation-stage--magnetic-particles::before,
 .animation-stage--magnetic-particles::after {
     background: var(--particle-core-background);
-    border-radius: var(--particle-shape-radius);
+    border-start-start-radius: var(--particle-shape-radius);
+    border-start-end-radius: var(--particle-shape-radius);
+    border-end-start-radius: var(--particle-shape-radius);
+    border-end-end-radius: var(--particle-shape-radius);
     content: "";
-    inset-block-start: var(--particle-center-position);
-    inset-inline-start: var(--particle-center-position);
+    inset-block: var(--particle-zero);
+    inset-inline: var(--particle-zero);
+    margin-block: auto;
+    margin-inline: auto;
     position: absolute;
-    translate: var(--particle-center-translation);
 }
 
 .animation-stage--magnetic-particles::before {
