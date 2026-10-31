@@ -2156,3 +2156,37 @@ footer p,
         radial-gradient(ellipse at 32% 76%, rgb(255 255 255 / 88%) 0%, transparent 62%);
 }
 
+.animation-showcase .animation-stage--five-d {
+    aspect-ratio: var(--animation-stage-aspect-ratio);
+    align-self: stretch;
+    --five-d-world-color: #fff;
+    --five-d-edge-color: rgb(255 255 255 / 74%);
+    --five-d-dim-color: rgb(255 255 255 / 42%);
+    --five-d-haze-color: rgb(255 255 255 / 18%);
+    --five-d-background: #000;
+    --five-d-zoom: 2.5;
+    --five-d-perspective: 34rem;
+    inline-size: 100%;
+    max-inline-size: 100%;
+    box-sizing: border-box;
+    background: #000;
+}
+
+.animation-showcase .project-item--five-d {
+    grid-column: auto;
+}
+
+.animation-showcase .five-d-world {
+    transform-style: preserve-3d;
+    translate: 0 -26%;
+}
+.animation-showcase .five-d-layer { filter: drop-shadow(0 0 8px rgb(255 255 255 / 12%)); }
+.animation-showcase .five-d-portal { clip-path: polygon(8% 0, 92% 0, 100% 12%, 100% 88%, 92% 100%, 8% 100%, 0 88%, 0 12%); }
+.animation-showcase .five-d-portal::before { border-color: rgb(255 255 255 / 68%); }
+.animation-showcase .five-d-portal::after { border-color: rgb(255 255 255 / 36%); filter: blur(1px); }
+.animation-showcase .five-d-polyhedron__face { background: linear-gradient(145deg, rgb(255 255 255 / 20%), transparent 68%); }
+
+@media (prefers-reduced-motion: reduce) {
+    .animation-showcase .particle-field__dot { animation: none; }
+}
+
