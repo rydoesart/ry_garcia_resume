@@ -520,7 +520,7 @@ footer a:hover {
 
 #contactPopover h2 {
     font-size: var(--text-md);
-    border-block-end: var(--border-strong) dashed var(--gray-4);
+    border-block-end: var(--border-thin) solid #000;
     padding-block-end: var(--space-2);
 }
 
@@ -814,11 +814,13 @@ footer a:hover {
 }
 
 .resume-section {
-    margin-block-end: var(--space-10);
+    margin-block-end: var(--space-8);
 }
 
 .resume-section h2 {
-    border-block-end: var(--border-strong) dashed var(--gray-4);
+    border-block-end: var(--border-thin) solid #000;
+    margin-block-end: var(--space-4);
+    padding-block-end: var(--space-2);
 }
 
 
