@@ -654,18 +654,24 @@ footer a:hover {
 
 .home::before {
     background:
-        radial-gradient(ellipse at 32% 38%, oklch(from var(--green) l c h / 76%), transparent 62%),
-        radial-gradient(ellipse at 68% 64%, oklch(from var(--gray-4) l c h / 86%), transparent 66%);
-    animation: home-fluid-flow 16s ease-in-out infinite alternate;
+        radial-gradient(ellipse at 32% 38%, oklch(from var(--green) l c h / 76%) 0%, transparent 62%),
+        radial-gradient(ellipse at 68% 64%, oklch(from var(--gray-4) l c h / 86%) 0%, transparent 66%);
+    background-size: 150% 150%, 160% 160%;
+    background-position: 0% 20%, 100% 80%;
+    background-repeat: no-repeat;
+    animation: home-fluid-flow 19s ease-in-out infinite alternate;
 }
 
 .home::after {
     inline-size: min(78vw, 64rem);
     block-size: min(78vh, 54rem);
     background:
-        radial-gradient(ellipse at 68% 32%, oklch(from var(--green) l c h / 62%), transparent 64%),
-        radial-gradient(ellipse at 36% 72%, oklch(from var(--gray-5) l c h / 74%), transparent 68%);
-    animation: home-fluid-drift 22s ease-in-out infinite alternate;
+        radial-gradient(ellipse at 68% 32%, oklch(from var(--green) l c h / 62%) 0%, transparent 64%),
+        radial-gradient(ellipse at 36% 72%, oklch(from var(--gray-5) l c h / 74%) 0%, transparent 68%);
+    background-size: 165% 165%, 150% 150%;
+    background-position: 100% 0%, 0% 100%;
+    background-repeat: no-repeat;
+    animation: home-fluid-drift 29s ease-in-out -9s infinite alternate-reverse;
 }
 
 .home .content-wrapper {
@@ -703,11 +709,25 @@ footer a:hover {
 @keyframes home-fluid-flow {
     0% {
         border-radius: 62% 38% 55% 45% / 46% 58% 42% 54%;
+        background-position: 0% 20%, 100% 80%;
         transform: translate3d(-60%, -44%, 0) rotate(-18deg) scale(0.9);
+    }
+
+    36% {
+        border-radius: 43% 57% 51% 49% / 62% 39% 61% 38%;
+        background-position: 75% 0%, 20% 100%;
+        transform: translate3d(-42%, -60%, 0) rotate(10deg) scale(1.08);
+    }
+
+    72% {
+        border-radius: 66% 34% 39% 61% / 41% 65% 35% 59%;
+        background-position: 100% 70%, 0% 25%;
+        transform: translate3d(-56%, -38%, 0) rotate(-12deg) scale(0.96);
     }
 
     100% {
         border-radius: 42% 58% 38% 62% / 58% 40% 60% 42%;
+        background-position: 15% 100%, 88% 0%;
         transform: translate3d(-40%, -56%, 0) rotate(22deg) scale(1.14);
     }
 }
@@ -715,11 +735,25 @@ footer a:hover {
 @keyframes home-fluid-drift {
     0% {
         border-radius: 54% 46% 42% 58% / 40% 60% 44% 56%;
+        background-position: 100% 0%, 0% 100%;
         transform: translate3d(-40%, -60%, 0) rotate(20deg) scale(1.12);
+    }
+
+    32% {
+        border-radius: 61% 39% 49% 51% / 36% 59% 41% 64%;
+        background-position: 10% 85%, 90% 15%;
+        transform: translate3d(-55%, -42%, 0) rotate(-10deg) scale(0.96);
+    }
+
+    68% {
+        border-radius: 40% 60% 63% 37% / 57% 43% 60% 40%;
+        background-position: 0% 20%, 100% 80%;
+        transform: translate3d(-43%, -57%, 0) rotate(16deg) scale(1.1);
     }
 
     100% {
         border-radius: 38% 62% 58% 42% / 62% 42% 58% 38%;
+        background-position: 90% 100%, 12% 0%;
         transform: translate3d(-58%, -40%, 0) rotate(-18deg) scale(0.9);
     }
 }
@@ -1114,11 +1148,13 @@ footer p,
 @media (prefers-reduced-motion: reduce) {
     .home::before {
         animation: home-fluid-reduced-one 48s ease-in-out infinite alternate;
+        background-position: 0% 20%, 100% 80%;
         will-change: auto;
     }
 
     .home::after {
         animation: home-fluid-reduced-two 56s ease-in-out infinite alternate;
+        background-position: 100% 0%, 0% 100%;
         will-change: auto;
     }
 
@@ -1138,13 +1174,27 @@ footer p,
 }
 
 @keyframes home-fluid-reduced-one {
-    from { transform: translate3d(-50%, -50%, 0) scale(1); }
-    to { transform: translate3d(-52%, -48%, 0) scale(1.02); }
+    from {
+        background-position: 0% 20%, 100% 80%;
+        transform: translate3d(-50%, -50%, 0) scale(1);
+    }
+
+    to {
+        background-position: 12% 32%, 88% 68%;
+        transform: translate3d(-52%, -48%, 0) scale(1.02);
+    }
 }
 
 @keyframes home-fluid-reduced-two {
-    from { transform: translate3d(-50%, -50%, 0) scale(1.01); }
-    to { transform: translate3d(-48%, -52%, 0) scale(0.99); }
+    from {
+        background-position: 100% 0%, 0% 100%;
+        transform: translate3d(-50%, -50%, 0) scale(1.01);
+    }
+
+    to {
+        background-position: 88% 14%, 12% 86%;
+        transform: translate3d(-48%, -52%, 0) scale(0.99);
+    }
 }
 
 @keyframes ink-flow-reduced-one {
