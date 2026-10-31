@@ -646,16 +646,16 @@ footer a:hover {
     inline-size: min(90vw, 76rem);
     block-size: min(88vh, 60rem);
     border-radius: 62% 38% 55% 45% / 46% 58% 42% 54%;
-    filter: blur(68px);
-    opacity: 0.6;
+    filter: blur(54px);
+    opacity: 0.82;
     pointer-events: none;
     will-change: transform, border-radius;
 }
 
 .home::before {
     background:
-        radial-gradient(ellipse at 32% 38%, rgb(0 0 0 / 42%) 0%, transparent 62%),
-        radial-gradient(ellipse at 68% 64%, rgb(255 255 255 / 90%) 0%, transparent 66%);
+        radial-gradient(ellipse at 32% 38%, rgb(0 0 0 / 72%) 0%, rgb(32 32 32 / 52%) 36%, transparent 62%),
+        radial-gradient(ellipse at 68% 64%, rgb(255 255 255 / 82%) 0%, transparent 66%);
     background-size: 150% 150%, 160% 160%;
     background-position: 0% 20%, 100% 80%;
     background-repeat: no-repeat;
@@ -666,7 +666,7 @@ footer a:hover {
     inline-size: min(78vw, 64rem);
     block-size: min(78vh, 54rem);
     background:
-        radial-gradient(ellipse at 68% 32%, rgb(0 0 0 / 30%) 0%, transparent 64%),
+        radial-gradient(ellipse at 68% 32%, rgb(0 0 0 / 58%) 0%, rgb(32 32 32 / 40%) 38%, transparent 64%),
         radial-gradient(ellipse at 36% 72%, rgb(255 255 255 / 76%) 0%, transparent 68%);
     background-size: 165% 165%, 150% 150%;
     background-position: 100% 0%, 0% 100%;
