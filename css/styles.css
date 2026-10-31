@@ -51,6 +51,7 @@ Green on hover and focus
     --contact-min-block-size: 12.5rem;
     --contact-image-size: 8rem;
     --menu-icon-size: 1.75rem;
+    --animation-stage-aspect-ratio: 9 / 16;
     --content-max-inline-size: 62.5rem;
     --work-column-inline-size: 18.75rem;
     --hero-block-size-small: 12.5rem;
@@ -874,7 +875,7 @@ footer a:hover {
 }
 
 .animation-stage--liquid-ink {
-    aspect-ratio: 9 / 16;
+    aspect-ratio: var(--animation-stage-aspect-ratio);
     align-self: start;
     background:
         radial-gradient(ellipse at 30% 20%, rgb(255 255 255 / 54%), transparent 56%),
@@ -884,13 +885,17 @@ footer a:hover {
     background-position: 0% 20%, 100% 80%;
     background-repeat: no-repeat;
     animation: ink-base-drift 16s ease-in-out infinite alternate;
-    overflow: hidden;
+    overflow-block: hidden;
+    overflow-inline: hidden;
     position: relative;
 }
 
 .animation-showcase .animation-stage {
     align-self: start;
+    aspect-ratio: var(--animation-stage-aspect-ratio);
     inline-size: 100%;
+    overflow-block: hidden;
+    overflow-inline: hidden;
 }
 
 .animation-stage--magnetic-particles {
@@ -920,8 +925,6 @@ footer a:hover {
     --particle-secondary-y-three: calc(var(--space-3) * -1);
     background: radial-gradient(circle at center, var(--gray-1), var(--gray-2));
     isolation: isolate;
-    overflow-block: clip;
-    overflow-inline: clip;
     position: relative;
 }
 
@@ -1005,8 +1008,6 @@ footer a:hover {
     --glass-sheen-mask: radial-gradient(ellipse var(--glass-orb-mask-inline-radius) var(--glass-orb-mask-block-radius) at center, var(--black) 93%, transparent 100%);
     background: linear-gradient(var(--glass-stage-angle), var(--gray-2), var(--gray-1));
     isolation: isolate;
-    overflow-block: clip;
-    overflow-inline: clip;
     position: relative;
 }
 
