@@ -788,6 +788,10 @@ footer a:hover {
         radial-gradient(ellipse at 30% 20%, rgb(255 255 255 / 54%), transparent 56%),
         radial-gradient(ellipse at 75% 74%, rgb(0 0 0 / 22%), transparent 58%),
         var(--gray-1);
+    background-size: 180% 180%, 170% 170%, auto;
+    background-position: 0% 20%, 100% 80%;
+    background-repeat: no-repeat;
+    animation: ink-base-drift 16s ease-in-out infinite alternate;
     overflow: hidden;
     position: relative;
 }
@@ -814,7 +818,7 @@ footer a:hover {
     background-size: 135% 135%, 145% 145%;
     background-position: 0% 20%, 100% 80%;
     background-repeat: no-repeat;
-    animation: ink-flow-one 3.8s ease-in-out infinite alternate;
+    animation: ink-flow-one 8s ease-in-out infinite alternate;
 }
 
 .animation-stage--liquid-ink::after {
@@ -825,7 +829,25 @@ footer a:hover {
     background-size: 140% 140%, 135% 135%;
     background-position: 100% 0%, 0% 100%;
     background-repeat: no-repeat;
-    animation: ink-flow-two 5.2s ease-in-out infinite alternate;
+    animation: ink-flow-two 13s ease-in-out -4s infinite alternate-reverse;
+}
+
+@keyframes ink-base-drift {
+    0% {
+        background-position: 0% 20%, 100% 80%;
+    }
+
+    34% {
+        background-position: 85% 0%, 15% 100%;
+    }
+
+    68% {
+        background-position: 100% 75%, 0% 25%;
+    }
+
+    100% {
+        background-position: 10% 100%, 90% 0%;
+    }
 }
 
 @keyframes ink-flow-one {
@@ -833,6 +855,18 @@ footer a:hover {
         border-radius: 58% 42% 64% 36% / 42% 62% 38% 58%;
         background-position: 0% 20%, 100% 80%;
         transform: translate3d(-16%, -13%, 0) rotate(-28deg) scale(0.78);
+    }
+
+    36% {
+        border-radius: 43% 57% 51% 49% / 62% 39% 61% 38%;
+        background-position: 70% 0%, 20% 100%;
+        transform: translate3d(12%, -20%, 0) rotate(12deg) scale(1.08);
+    }
+
+    72% {
+        border-radius: 66% 34% 39% 61% / 41% 65% 35% 59%;
+        background-position: 100% 70%, 0% 25%;
+        transform: translate3d(-8%, 18%, 0) rotate(-8deg) scale(0.92);
     }
 
     100% {
@@ -847,6 +881,18 @@ footer a:hover {
         border-radius: 44% 56% 36% 64% / 58% 38% 62% 42%;
         background-position: 100% 0%, 0% 100%;
         transform: translate3d(16%, -15%, 0) rotate(32deg) scale(1.24);
+    }
+
+    32% {
+        border-radius: 61% 39% 49% 51% / 36% 59% 41% 64%;
+        background-position: 15% 85%, 85% 10%;
+        transform: translate3d(-8%, 20%, 0) rotate(-10deg) scale(0.94);
+    }
+
+    68% {
+        border-radius: 40% 60% 63% 37% / 57% 43% 60% 40%;
+        background-position: 0% 20%, 100% 80%;
+        transform: translate3d(18%, -8%, 0) rotate(18deg) scale(1.14);
     }
 
     100% {
@@ -1076,6 +1122,10 @@ footer p,
         will-change: auto;
     }
 
+    .animation-stage--liquid-ink {
+        animation: ink-base-reduced 48s ease-in-out infinite alternate;
+    }
+
     .animation-stage--liquid-ink::before {
         animation: ink-flow-reduced-one 32s ease-in-out infinite alternate;
         will-change: auto;
@@ -1105,4 +1155,9 @@ footer p,
 @keyframes ink-flow-reduced-two {
     from { transform: translate3d(1%, -1%, 0) scale(1.01); }
     to { transform: translate3d(-2%, 1%, 0) scale(0.99); }
+}
+
+@keyframes ink-base-reduced {
+    from { background-position: 0% 20%, 100% 80%; }
+    to { background-position: 10% 30%, 90% 70%; }
 }
