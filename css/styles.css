@@ -900,73 +900,274 @@ footer a:hover {
 
 .animation-stage--magnetic-particles {
     --particle-zero: 0;
-    --particle-orbit-clockwise: 1turn;
-    --particle-orbit-counterclockwise: -1turn;
-    --particle-orbit-timing: linear;
-    --particle-orbit-iteration: infinite;
-    --particle-shadow-blur: 0;
-    --particle-shape-radius: 50%;
-    --particle-core-background: transparent;
-    --particle-primary-size: var(--space-1);
-    --particle-secondary-size: var(--space-2-5);
-    --particle-primary-duration: 22s;
-    --particle-secondary-duration: 31s;
-    --particle-primary-x-one: var(--space-8);
-    --particle-primary-y-one: calc(var(--space-3) * -1);
-    --particle-primary-x-two: calc(var(--space-7) * -1);
-    --particle-primary-y-two: calc(var(--space-6) * -1);
-    --particle-primary-x-three: var(--space-4);
-    --particle-primary-y-three: var(--space-8);
-    --particle-secondary-x-one: calc(var(--space-5) * -1);
-    --particle-secondary-y-one: var(--space-7);
-    --particle-secondary-x-two: var(--space-8);
-    --particle-secondary-y-two: calc(var(--space-4) * -1);
-    --particle-secondary-x-three: calc(var(--space-8) * -1);
-    --particle-secondary-y-three: calc(var(--space-3) * -1);
-    background: radial-gradient(circle at center, var(--gray-1), var(--gray-2));
+    --particle-stage-background: radial-gradient(ellipse at 50% 45%, var(--gray-8), var(--gray-9));
+    background: var(--particle-stage-background);
     isolation: isolate;
     position: relative;
 }
 
-.animation-stage--magnetic-particles::before,
-.animation-stage--magnetic-particles::after {
-    background: var(--particle-core-background);
-    border-start-start-radius: var(--particle-shape-radius);
-    border-start-end-radius: var(--particle-shape-radius);
-    border-end-start-radius: var(--particle-shape-radius);
-    border-end-end-radius: var(--particle-shape-radius);
-    content: "";
+.particle-field__layer {
+    --particle-layer-duration: 38s;
+    --particle-layer-rest-inline: 0rem;
+    --particle-layer-rest-block: 0rem;
+    --particle-layer-drift-inline: var(--space-3);
+    --particle-layer-drift-block: calc(var(--space-6) * -1);
+    animation: particle-layer-float var(--particle-layer-duration) ease-in-out infinite;
     inset-block: var(--particle-zero);
     inset-inline: var(--particle-zero);
-    margin-block: auto;
-    margin-inline: auto;
+    opacity: var(--particle-layer-opacity);
     position: absolute;
+    translate: var(--particle-layer-rest-inline) var(--particle-layer-rest-block);
 }
 
-.animation-stage--magnetic-particles::before {
-    animation: magnetic-particle-orbit var(--particle-primary-duration) var(--particle-orbit-timing) var(--particle-orbit-iteration);
-    block-size: var(--particle-primary-size);
-    box-shadow:
-        var(--particle-primary-x-one) var(--particle-primary-y-one) var(--particle-shadow-blur) var(--gray-9),
-        var(--particle-primary-x-two) var(--particle-primary-y-two) var(--particle-shadow-blur) var(--gray-8),
-        var(--particle-primary-x-three) var(--particle-primary-y-three) var(--particle-shadow-blur) var(--gray-9);
-    inline-size: var(--particle-primary-size);
+.particle-field__layer--far {
+    --particle-dot-color: var(--gray-4);
+    --particle-dot-size: var(--space-1);
+    --particle-layer-duration: 43s;
+    --particle-layer-rest-inline: calc(var(--space-4) * -1);
+    --particle-layer-rest-block: calc(var(--space-2) * -1);
+    --particle-layer-drift-inline: calc(var(--space-5) * -1);
+    --particle-layer-drift-block: var(--space-4);
+    --particle-layer-opacity: 0.72;
 }
 
-.animation-stage--magnetic-particles::after {
-    --particle-orbit: var(--particle-orbit-counterclockwise);
-    animation: magnetic-particle-orbit var(--particle-secondary-duration) var(--particle-orbit-timing) var(--particle-orbit-iteration);
-    block-size: var(--particle-secondary-size);
-    box-shadow:
-        var(--particle-secondary-x-one) var(--particle-secondary-y-one) var(--particle-shadow-blur) var(--gray-6),
-        var(--particle-secondary-x-two) var(--particle-secondary-y-two) var(--particle-shadow-blur) var(--gray-7),
-        var(--particle-secondary-x-three) var(--particle-secondary-y-three) var(--particle-shadow-blur) var(--gray-5);
-    inline-size: var(--particle-secondary-size);
+.particle-field__layer--middle {
+    --particle-dot-color: var(--gray-2);
+    --particle-dot-size: var(--space-1);
+    --particle-layer-duration: 34s;
+    --particle-layer-rest-inline: 0rem;
+    --particle-layer-rest-block: 0rem;
+    --particle-layer-drift-inline: var(--space-4);
+    --particle-layer-drift-block: calc(var(--space-5) * -1);
+    --particle-layer-opacity: 0.86;
 }
 
-@keyframes magnetic-particle-orbit {
-    to {
-        rotate: var(--particle-orbit, var(--particle-orbit-clockwise));
+.particle-field__layer--near {
+    --particle-dot-color: var(--gray-1);
+    --particle-dot-size: var(--space-2);
+    --particle-layer-duration: 29s;
+    --particle-layer-rest-inline: var(--space-4);
+    --particle-layer-rest-block: var(--space-2);
+    --particle-layer-drift-inline: calc(var(--space-3) * -1);
+    --particle-layer-drift-block: var(--space-3);
+    --particle-layer-opacity: 1;
+}
+
+.particle-field__dot {
+    --particle-start-inline: 50%;
+    --particle-start-block: 50%;
+    --particle-middle-inline: 50%;
+    --particle-middle-block: 50%;
+    --particle-start-opacity: 0.42;
+    --particle-middle-opacity: 0.12;
+    --particle-start-scale: 0.7;
+    --particle-middle-scale: 1;
+    --particle-duration: 18s;
+    --particle-delay: 0s;
+    animation: particle-float var(--particle-duration) ease-in-out infinite var(--particle-delay);
+    background: var(--particle-dot-color);
+    block-size: var(--particle-dot-size);
+    border-radius: 50%;
+    inset-block-start: var(--particle-start-block);
+    inset-inline-start: var(--particle-start-inline);
+    inline-size: var(--particle-dot-size);
+    opacity: var(--particle-start-opacity);
+    position: absolute;
+    transform: translate(var(--particle-zero), var(--particle-zero)) scale(var(--particle-start-scale));
+}
+
+.particle-field__dot:nth-child(1) {
+    --particle-start-inline: 10%;
+    --particle-start-block: 13%;
+    --particle-middle-inline: 22%;
+    --particle-middle-block: 22%;
+    --particle-duration: 17s;
+    --particle-delay: -8s;
+}
+
+.particle-field__dot:nth-child(2) {
+    --particle-start-inline: 76%;
+    --particle-start-block: 9%;
+    --particle-middle-inline: 62%;
+    --particle-middle-block: 17%;
+    --particle-start-opacity: 0.58;
+    --particle-middle-opacity: 0.16;
+    --particle-start-scale: 1.1;
+    --particle-middle-scale: 0.68;
+    --particle-duration: 23s;
+    --particle-delay: -15s;
+}
+
+.particle-field__dot:nth-child(3) {
+    --particle-start-inline: 34%;
+    --particle-start-block: 42%;
+    --particle-middle-inline: 45%;
+    --particle-middle-block: 32%;
+    --particle-start-opacity: 0.36;
+    --particle-middle-opacity: 0.72;
+    --particle-start-scale: 0.62;
+    --particle-middle-scale: 1.16;
+    --particle-duration: 29s;
+    --particle-delay: -21s;
+}
+
+.particle-field__dot:nth-child(4) {
+    --particle-start-inline: 83%;
+    --particle-start-block: 68%;
+    --particle-middle-inline: 68%;
+    --particle-middle-block: 78%;
+    --particle-start-opacity: 0.68;
+    --particle-middle-opacity: 0.2;
+    --particle-start-scale: 0.92;
+    --particle-middle-scale: 0.6;
+    --particle-duration: 20s;
+    --particle-delay: -5s;
+}
+
+.particle-field__dot:nth-child(5) {
+    --particle-start-inline: 19%;
+    --particle-start-block: 84%;
+    --particle-middle-inline: 31%;
+    --particle-middle-block: 73%;
+    --particle-start-opacity: 0.28;
+    --particle-middle-opacity: 0.64;
+    --particle-start-scale: 0.58;
+    --particle-middle-scale: 1.24;
+    --particle-duration: 26s;
+    --particle-delay: -18s;
+}
+
+.particle-field__dot:nth-child(6) {
+    --particle-start-inline: 52%;
+    --particle-start-block: 25%;
+    --particle-middle-inline: 41%;
+    --particle-middle-block: 15%;
+    --particle-start-opacity: 0.52;
+    --particle-middle-opacity: 0.18;
+    --particle-start-scale: 1;
+    --particle-middle-scale: 0.68;
+    --particle-duration: 31s;
+    --particle-delay: -12s;
+}
+
+.particle-field__dot:nth-child(7) {
+    --particle-start-inline: 59%;
+    --particle-start-block: 58%;
+    --particle-middle-inline: 74%;
+    --particle-middle-block: 47%;
+    --particle-start-opacity: 0.3;
+    --particle-middle-opacity: 0.7;
+    --particle-start-scale: 0.62;
+    --particle-middle-scale: 1.12;
+    --particle-duration: 21s;
+    --particle-delay: -19s;
+}
+
+.particle-field__dot:nth-child(8) {
+    --particle-start-inline: 91%;
+    --particle-start-block: 39%;
+    --particle-middle-inline: 79%;
+    --particle-middle-block: 51%;
+    --particle-start-opacity: 0.7;
+    --particle-middle-opacity: 0.24;
+    --particle-start-scale: 0.86;
+    --particle-middle-scale: 0.58;
+    --particle-duration: 27s;
+    --particle-delay: -6s;
+}
+
+.particle-field__dot:nth-child(9) {
+    --particle-start-inline: 45%;
+    --particle-start-block: 93%;
+    --particle-middle-inline: 56%;
+    --particle-middle-block: 81%;
+    --particle-start-opacity: 0.38;
+    --particle-middle-opacity: 0.68;
+    --particle-start-scale: 0.72;
+    --particle-middle-scale: 1.18;
+    --particle-duration: 24s;
+    --particle-delay: -16s;
+}
+
+.particle-field__dot:nth-child(10) {
+    --particle-start-inline: 5%;
+    --particle-start-block: 51%;
+    --particle-middle-inline: 17%;
+    --particle-middle-block: 42%;
+    --particle-start-opacity: 0.48;
+    --particle-middle-opacity: 0.14;
+    --particle-start-scale: 0.84;
+    --particle-middle-scale: 0.58;
+    --particle-duration: 32s;
+    --particle-delay: -24s;
+}
+
+.particle-field__dot:nth-child(11) {
+    --particle-start-inline: 68%;
+    --particle-start-block: 27%;
+    --particle-middle-inline: 81%;
+    --particle-middle-block: 34%;
+    --particle-start-opacity: 0.32;
+    --particle-middle-opacity: 0.7;
+    --particle-start-scale: 0.64;
+    --particle-middle-scale: 1.18;
+    --particle-duration: 22s;
+    --particle-delay: -10s;
+}
+
+.particle-field__dot:nth-child(12) {
+    --particle-start-inline: 39%;
+    --particle-start-block: 64%;
+    --particle-middle-inline: 52%;
+    --particle-middle-block: 55%;
+    --particle-start-opacity: 0.68;
+    --particle-middle-opacity: 0.2;
+    --particle-start-scale: 1.04;
+    --particle-middle-scale: 0.62;
+    --particle-duration: 28s;
+    --particle-delay: -20s;
+}
+
+.particle-field__dot:nth-child(13) {
+    --particle-start-inline: 94%;
+    --particle-start-block: 89%;
+    --particle-middle-inline: 78%;
+    --particle-middle-block: 78%;
+    --particle-start-opacity: 0.38;
+    --particle-middle-opacity: 0.66;
+    --particle-start-scale: 0.7;
+    --particle-middle-scale: 1.12;
+    --particle-duration: 25s;
+    --particle-delay: -14s;
+}
+
+@keyframes particle-layer-float {
+    0%,
+    100% {
+        translate: var(--particle-layer-rest-inline) var(--particle-layer-rest-block);
+    }
+
+    50% {
+        translate:
+            calc(var(--particle-layer-rest-inline) + var(--particle-layer-drift-inline))
+            calc(var(--particle-layer-rest-block) + var(--particle-layer-drift-block));
+    }
+}
+
+@keyframes particle-float {
+    0%,
+    100% {
+        inset-block-start: var(--particle-start-block);
+        inset-inline-start: var(--particle-start-inline);
+        opacity: var(--particle-start-opacity);
+        transform: translate(var(--particle-zero), var(--particle-zero)) scale(var(--particle-start-scale));
+    }
+
+    50% {
+        inset-block-start: var(--particle-middle-block);
+        inset-inline-start: var(--particle-middle-inline);
+        opacity: var(--particle-middle-opacity);
+        transform: translate(var(--particle-zero), var(--particle-zero)) scale(var(--particle-middle-scale));
     }
 }
 
@@ -1406,8 +1607,8 @@ footer p,
         will-change: auto;
     }
 
-    .animation-stage--magnetic-particles::before,
-    .animation-stage--magnetic-particles::after {
+    .particle-field__layer,
+    .particle-field__dot {
         animation: none;
     }
 
