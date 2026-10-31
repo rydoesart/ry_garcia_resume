@@ -898,7 +898,11 @@ footer a:hover {
     --particle-center-translation: -50% -50%;
     --particle-orbit-clockwise: 1turn;
     --particle-orbit-counterclockwise: -1turn;
+    --particle-orbit-timing: linear;
+    --particle-orbit-iteration: infinite;
     --particle-shadow-blur: 0;
+    --particle-shape-radius: 50%;
+    --particle-core-background: transparent;
     --particle-primary-size: var(--space-1);
     --particle-secondary-size: var(--space-2-5);
     --particle-primary-duration: 22s;
@@ -923,8 +927,8 @@ footer a:hover {
 
 .animation-stage--magnetic-particles::before,
 .animation-stage--magnetic-particles::after {
-    background: transparent;
-    border-radius: 50%;
+    background: var(--particle-core-background);
+    border-radius: var(--particle-shape-radius);
     content: "";
     inset-block-start: var(--particle-center-position);
     inset-inline-start: var(--particle-center-position);
@@ -933,7 +937,7 @@ footer a:hover {
 }
 
 .animation-stage--magnetic-particles::before {
-    animation: magnetic-particle-orbit var(--particle-primary-duration) linear infinite;
+    animation: magnetic-particle-orbit var(--particle-primary-duration) var(--particle-orbit-timing) var(--particle-orbit-iteration);
     block-size: var(--particle-primary-size);
     box-shadow:
         var(--particle-primary-x-one) var(--particle-primary-y-one) var(--particle-shadow-blur) var(--gray-9),
@@ -944,7 +948,7 @@ footer a:hover {
 
 .animation-stage--magnetic-particles::after {
     --particle-orbit: var(--particle-orbit-counterclockwise);
-    animation: magnetic-particle-orbit var(--particle-secondary-duration) linear infinite;
+    animation: magnetic-particle-orbit var(--particle-secondary-duration) var(--particle-orbit-timing) var(--particle-orbit-iteration);
     block-size: var(--particle-secondary-size);
     box-shadow:
         var(--particle-secondary-x-one) var(--particle-secondary-y-one) var(--particle-shadow-blur) var(--gray-6),
