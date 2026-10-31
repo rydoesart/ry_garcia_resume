@@ -779,6 +779,7 @@ footer a:hover {
 }
 
 .resume header::after {
+    animation: resume-dot-shimmer 11s linear infinite;
     background-color: #000;
     background-image: radial-gradient(circle, rgb(255 255 255 / 92%) 2px, transparent 2.4px);
     background-position: 12px 12px;
@@ -798,6 +799,18 @@ footer a:hover {
 .resume header > .content-wrapper {
     position: relative;
     z-index: 2;
+}
+
+@keyframes resume-dot-shimmer {
+    0%,
+    3% {
+        clip-path: polygon(-40% 0, -20% 0, 0% 100%, -20% 100%);
+    }
+
+    88%,
+    100% {
+        clip-path: polygon(120% 0, 140% 0, 160% 100%, 140% 100%);
+    }
 }
 
 .resume-section {
