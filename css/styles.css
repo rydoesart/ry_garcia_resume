@@ -785,8 +785,8 @@ footer a:hover {
     aspect-ratio: 9 / 16;
     align-self: start;
     background:
-        radial-gradient(ellipse at 30% 20%, oklch(from var(--green) l c h / 22%), transparent 56%),
-        radial-gradient(ellipse at 75% 74%, oklch(from var(--gray-4) l c h / 42%), transparent 58%),
+        radial-gradient(ellipse at 30% 20%, rgb(255 255 255 / 54%), transparent 56%),
+        radial-gradient(ellipse at 75% 74%, rgb(0 0 0 / 22%), transparent 58%),
         var(--gray-1);
     overflow: hidden;
     position: relative;
@@ -809,8 +809,8 @@ footer a:hover {
 
 .animation-stage--liquid-ink::before {
     background:
-        radial-gradient(ellipse at 32% 38%, oklch(from var(--green) l c h / 100%) 0%, oklch(from var(--green) l c h / 72%) 36%, transparent 68%),
-        radial-gradient(ellipse at 68% 66%, oklch(from var(--gray-6) l c h / 88%) 0%, transparent 66%);
+        radial-gradient(ellipse at 32% 38%, rgb(0 0 0 / 72%) 0%, rgb(32 32 32 / 58%) 36%, transparent 68%),
+        radial-gradient(ellipse at 68% 66%, rgb(255 255 255 / 82%) 0%, transparent 66%);
     background-size: 135% 135%, 145% 145%;
     background-position: 0% 20%, 100% 80%;
     background-repeat: no-repeat;
@@ -820,8 +820,8 @@ footer a:hover {
 .animation-stage--liquid-ink::after {
     inset: -20%;
     background:
-        radial-gradient(ellipse at 68% 35%, oklch(from var(--gray-7) l c h / 82%) 0%, transparent 62%),
-        radial-gradient(ellipse at 32% 76%, oklch(from var(--green) l c h / 96%) 0%, transparent 62%);
+        radial-gradient(ellipse at 68% 35%, rgb(0 0 0 / 56%) 0%, transparent 62%),
+        radial-gradient(ellipse at 32% 76%, rgb(255 255 255 / 76%) 0%, transparent 62%);
     background-size: 140% 140%, 135% 135%;
     background-position: 100% 0%, 0% 100%;
     background-repeat: no-repeat;
