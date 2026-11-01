@@ -1373,8 +1373,9 @@ footer a:hover {
     }
 }
 
-.animation-stage--five-d {
+.animation-showcase .animation-stage--five-d {
     --five-d-zero: 0;
+    --five-d-zoom: 1.5;
     --five-d-perspective: 46rem;
     --five-d-view-tilt-x: 28deg;
     --five-d-view-tilt-y: -8deg;
@@ -1391,6 +1392,7 @@ footer a:hover {
     perspective: var(--five-d-perspective);
     perspective-origin: center;
     position: relative;
+    aspect-ratio: 16 / 10;
 }
 
 .five-d-world {
@@ -1398,6 +1400,7 @@ footer a:hover {
     inset-block: var(--five-d-zero);
     inset-inline: var(--five-d-zero);
     position: absolute;
+    scale: var(--five-d-zoom);
     transform-style: preserve-3d;
 }
 
@@ -2064,6 +2067,10 @@ footer p,
 
     .animation-showcase {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .animation-showcase .project-item--five-d {
+        grid-column: span 2;
     }
 
     .resume header::before {
