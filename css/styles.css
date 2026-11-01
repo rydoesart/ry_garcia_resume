@@ -1373,97 +1373,6 @@ footer a:hover {
     }
 }
 
-.animation-stage--liquid-glass {
-    --glass-zero: 0;
-    --glass-orb-inline-size: 46%;
-    --glass-orb-block-size: 72%;
-    --glass-orb-mask-inline-radius: 23%;
-    --glass-orb-mask-block-radius: 36%;
-    --glass-orb-radius: 50%;
-    --glass-orb-border-size: var(--border-thin);
-    --glass-orb-edge-color: oklch(from var(--gray-1) l c h / 78%);
-    --glass-orb-highlight-color: oklch(from var(--gray-1) l c h / 88%);
-    --glass-orb-soft-highlight-color: oklch(from var(--gray-1) l c h / 42%);
-    --glass-orb-shadow-color: oklch(from var(--gray-9) l c h / 28%);
-    --glass-orb-surface-color: oklch(from var(--gray-4) l c h / 22%);
-    --glass-stage-angle: 135deg;
-    --glass-orb-angle: 145deg;
-    --glass-sheen-angle: 90deg;
-    --glass-orb-background: linear-gradient(var(--glass-orb-angle), var(--glass-orb-highlight-color), var(--glass-orb-surface-color) 45%, var(--glass-orb-shadow-color));
-    --glass-orb-shadow:
-        var(--glass-zero) var(--space-3) var(--space-8) var(--glass-orb-shadow-color),
-        inset var(--glass-zero) var(--glass-zero) var(--space-3) var(--glass-orb-soft-highlight-color);
-    --glass-orb-blur: var(--space-3);
-    --glass-orb-rest-translation: var(--glass-zero) var(--glass-zero);
-    --glass-orb-float-translation: var(--glass-zero) calc(var(--space-2) * -1);
-    --glass-orb-rest-rotation: var(--glass-zero);
-    --glass-orb-float-rotation: 0.01turn;
-    --glass-motion-duration: 7s;
-    --glass-sheen-duration: 5s;
-    --glass-motion-easing: var(--ease-standard);
-    --glass-motion-iteration: infinite;
-    --glass-motion-direction: alternate;
-    --glass-sheen-background: linear-gradient(var(--glass-sheen-angle), transparent 38%, var(--glass-orb-highlight-color) 50%, transparent 62%);
-    --glass-sheen-background-size: 220% 100%;
-    --glass-sheen-start-position: 100% center;
-    --glass-sheen-end-position: 0% center;
-    --glass-sheen-rest-position: center center;
-    --glass-sheen-mask: radial-gradient(ellipse var(--glass-orb-mask-inline-radius) var(--glass-orb-mask-block-radius) at center, var(--black) 93%, transparent 100%);
-    background: linear-gradient(var(--glass-stage-angle), var(--gray-2), var(--gray-1));
-    isolation: isolate;
-    position: relative;
-}
-
-.animation-stage--liquid-glass::before,
-.animation-stage--liquid-glass::after {
-    content: "";
-    inset-block: var(--glass-zero);
-    inset-inline: var(--glass-zero);
-    pointer-events: none;
-    position: absolute;
-}
-
-.animation-stage--liquid-glass::before {
-    animation: liquid-glass-float var(--glass-motion-duration) var(--glass-motion-easing) var(--glass-motion-iteration) var(--glass-motion-direction);
-    backdrop-filter: blur(var(--glass-orb-blur));
-    background: var(--glass-orb-background);
-    block-size: var(--glass-orb-block-size);
-    border-block: var(--glass-orb-border-size) solid var(--glass-orb-edge-color);
-    border-inline: var(--glass-orb-border-size) solid var(--glass-orb-edge-color);
-    border-start-start-radius: var(--glass-orb-radius);
-    border-start-end-radius: var(--glass-orb-radius);
-    border-end-start-radius: var(--glass-orb-radius);
-    border-end-end-radius: var(--glass-orb-radius);
-    box-shadow: var(--glass-orb-shadow);
-    inline-size: var(--glass-orb-inline-size);
-    margin-block: auto;
-    margin-inline: auto;
-    rotate: var(--glass-orb-rest-rotation);
-    translate: var(--glass-orb-rest-translation);
-}
-
-.animation-stage--liquid-glass::after {
-    animation: liquid-glass-sheen var(--glass-sheen-duration) var(--glass-motion-easing) var(--glass-motion-iteration);
-    background-image: var(--glass-sheen-background);
-    background-position: var(--glass-sheen-start-position);
-    background-repeat: no-repeat;
-    background-size: var(--glass-sheen-background-size);
-    mask-image: var(--glass-sheen-mask);
-}
-
-@keyframes liquid-glass-float {
-    to {
-        rotate: var(--glass-orb-float-rotation);
-        translate: var(--glass-orb-float-translation);
-    }
-}
-
-@keyframes liquid-glass-sheen {
-    to {
-        background-position: var(--glass-sheen-end-position);
-    }
-}
-
 .animation-stage--five-d {
     --five-d-zero: 0;
     --five-d-perspective: 46rem;
@@ -2174,7 +2083,7 @@ footer p,
     }
 
     .animation-showcase {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .work-item {
@@ -2233,19 +2142,6 @@ footer p,
         animation: none;
     }
 
-    .animation-stage--liquid-glass::before,
-    .animation-stage--liquid-glass::after {
-        animation: none;
-    }
-
-    .animation-stage--liquid-glass::before {
-        rotate: var(--glass-orb-rest-rotation);
-        translate: var(--glass-orb-rest-translation);
-    }
-
-    .animation-stage--liquid-glass::after {
-        background-position: var(--glass-sheen-rest-position);
-    }
 }
 
 @keyframes home-fluid-reduced-one {
