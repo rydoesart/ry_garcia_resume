@@ -1400,7 +1400,6 @@ footer a:hover {
     inset-block: var(--five-d-zero);
     inset-inline: var(--five-d-zero);
     position: absolute;
-    scale: var(--five-d-zoom);
     transform-style: preserve-3d;
 }
 
@@ -1732,11 +1731,11 @@ footer a:hover {
 @keyframes five-d-world-tilt {
     0%,
     100% {
-        transform: rotateX(var(--five-d-view-tilt-x)) rotateY(var(--five-d-view-tilt-y));
+        transform: rotateX(var(--five-d-view-tilt-x)) rotateY(var(--five-d-view-tilt-y)) scale(var(--five-d-zoom));
     }
 
     50% {
-        transform: rotateX(calc(var(--five-d-view-tilt-x) - 8deg)) rotateY(calc(var(--five-d-view-tilt-y) + 10deg)) rotateZ(var(--five-d-view-turn));
+        transform: rotateX(calc(var(--five-d-view-tilt-x) - 8deg)) rotateY(calc(var(--five-d-view-tilt-y) + 10deg)) rotateZ(var(--five-d-view-turn)) scale(var(--five-d-zoom));
     }
 }
 
@@ -2269,7 +2268,7 @@ footer p,
     --five-d-dim-color: rgb(255 255 255 / 42%);
     --five-d-haze-color: rgb(255 255 255 / 18%);
     --five-d-background: #000;
-    --five-d-zoom: 2.5;
+    --five-d-zoom: 1.6;
     --five-d-perspective: 34rem;
     inline-size: 100%;
     max-inline-size: 100%;
