@@ -1,0 +1,49 @@
+/* Collection layout */
+
+.dimensions {
+    --motion-stroke: var(--border-thin);
+    --motion-transition: 650ms;
+    --motion-easing: cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.dimensions .dimensions-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-5);
+}
+
+.dimensions-card {
+    box-shadow: none;
+    grid-template-rows: auto auto auto 1fr;
+    grid-row: auto;
+    align-content: start;
+}
+
+.dimensions-card h3 {
+    font-size: clamp(1rem, 1.8vw, var(--text-md));
+    line-height: 1.4;
+}
+
+/* Collection captions */
+
+.dimensions-intro {
+    max-inline-size: 36rem;
+}
+
+.dimensions-label {
+    color: var(--gray-7);
+    font-size: 0.6875rem;
+    letter-spacing: 0.16em;
+}
+
+.dimensions-caption {
+    color: var(--gray-7);
+    font-size: 0.9375rem;
+}
+
+/* Desktop collection layout */
+
+@media (min-width: 860px) {
+    .dimensions .dimensions-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
