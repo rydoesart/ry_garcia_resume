@@ -1227,6 +1227,11 @@ footer p,
 }
 
 @media (prefers-reduced-motion: reduce) {
+    #contactPopover,
+    #contactPopover::backdrop {
+        transition: none;
+    }
+
     .banner-dot {
         animation: none;
         opacity: 0.65;
