@@ -315,3 +315,38 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .dimensions-stage * {
+        animation: none;
+        transition: none;
+    }
+
+    .field-dot {
+        opacity: 0.65;
+        transform: translateY(calc(sin(var(--column) * 22deg + var(--row) * 10deg) * 1.2cqi));
+    }
+
+    .form-model {
+        --form-turn: 24deg;
+        --form-brake: 0deg;
+    }
+
+    .dimensions-stage--field:is(:hover, :focus-visible) .magnetic-field {
+        transform: rotate(-9deg);
+    }
+
+    .dimensions-stage--depth:is(:hover, :focus-visible) .depth-camera {
+        perspective: 80cqi;
+    }
+
+    .dimensions-stage--depth:is(:hover, :focus-visible) .depth-flight {
+        transform: rotateX(0deg) rotateY(0deg) translateZ(0);
+    }
+
+    .dimensions-stage--form:is(:hover, :focus-visible) .form-model {
+        --form-distance: 3.6;
+    }
+}
