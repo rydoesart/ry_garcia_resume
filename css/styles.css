@@ -778,6 +778,8 @@ footer a:hover {
     --banner-dot-edge: 0.0875rem;
     --banner-grid-size: clamp(1.25rem, 2.2vw, 1.75rem);
     --banner-grid-offset: calc(var(--banner-grid-size) / 2);
+    --banner-cycle: 14s;
+    --banner-easing: cubic-bezier(0.45, 0, 0.55, 1);
     isolation: isolate;
     overflow: hidden;
     position: relative;
@@ -796,7 +798,7 @@ footer a:hover {
 }
 
 .resume header::after {
-    animation: resume-dot-shimmer 11s linear infinite;
+    animation: resume-dot-shimmer var(--banner-cycle) var(--banner-easing) infinite;
     background-color: #000;
     background-image: radial-gradient(circle, #fff var(--banner-dot-size), transparent var(--banner-dot-edge));
     background-position: var(--banner-grid-offset) var(--banner-grid-offset);
@@ -832,11 +834,11 @@ footer a:hover {
 
 @keyframes resume-dot-shimmer {
     0%,
-    3% {
+    8% {
         --banner-sweep: -28%;
     }
 
-    88%,
+    92%,
     100% {
         --banner-sweep: 128%;
     }
