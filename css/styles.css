@@ -778,8 +778,8 @@ footer a:hover {
     --banner-dot-edge: 0.0875rem;
     --banner-grid-size: clamp(1.25rem, 2.2vw, 1.75rem);
     --banner-grid-offset: calc(var(--banner-grid-size) / 2);
-    --banner-cycle: 14s;
-    --banner-easing: cubic-bezier(0.45, 0, 0.55, 1);
+    --banner-cycle: 18s;
+    --banner-easing: linear;
     isolation: isolate;
     overflow: hidden;
     position: relative;
