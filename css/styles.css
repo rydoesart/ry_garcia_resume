@@ -678,8 +678,20 @@ footer a:hover {
     position: relative;
 }
 
+/* Home motion phase */
+
+@property --home-phase {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
 .home::before,
 .home::after {
+    --home-drift-inline: 6%;
+    --home-drift-block: 5%;
+    --home-tilt: 8deg;
+    --home-growth: 0.035;
     content: "";
     position: fixed;
     z-index: 0;
@@ -691,14 +703,18 @@ footer a:hover {
     filter: blur(42px);
     opacity: 1;
     pointer-events: none;
-    will-change: transform, border-radius;
+    transform:
+        translate3d(calc(-50% + cos(var(--home-phase)) * var(--home-drift-inline)), calc(-50% + sin(var(--home-phase)) * var(--home-drift-block)), 0)
+        rotate(calc(sin(var(--home-phase) + 20deg) * var(--home-tilt)))
+        scale(calc(1 + cos(var(--home-phase) * 2) * var(--home-growth)));
+    will-change: transform;
 }
 
 .home::before {
     background:
         radial-gradient(ellipse at 32% 38%, #000 0%, rgb(0 0 0 / 88%) 48%, transparent 76%),
         radial-gradient(ellipse at 68% 66%, #000 0%, rgb(0 0 0 / 76%) 42%, transparent 72%);
-    animation: home-fluid-flow 19s ease-in-out infinite alternate;
+    animation: home-fluid-cycle 19s ease-in-out infinite;
 }
 
 .home::after {
@@ -707,7 +723,7 @@ footer a:hover {
     background:
         radial-gradient(ellipse at 68% 35%, #000 0%, rgb(0 0 0 / 82%) 46%, transparent 74%),
         radial-gradient(ellipse at 32% 76%, #000 0%, rgb(0 0 0 / 78%) 44%, transparent 72%);
-    animation: home-fluid-drift 29s ease-in-out -9s infinite alternate-reverse;
+    animation: home-fluid-cycle 29s ease-in-out -9s infinite reverse;
 }
 
 .home .content-wrapper {
@@ -757,56 +773,10 @@ footer a:hover {
     padding: var(--space-5);
 }
 
-@keyframes home-fluid-flow {
-    0% {
-        border-radius: 62% 38% 55% 45% / 46% 58% 42% 54%;
-        background-position: 0% 20%, 100% 80%;
-        transform: translate3d(-60%, -44%, 0) rotate(-18deg) scale(0.9);
-    }
+/* Home background motion */
 
-    36% {
-        border-radius: 43% 57% 51% 49% / 62% 39% 61% 38%;
-        background-position: 75% 0%, 20% 100%;
-        transform: translate3d(-42%, -60%, 0) rotate(10deg) scale(1.08);
-    }
-
-    72% {
-        border-radius: 66% 34% 39% 61% / 41% 65% 35% 59%;
-        background-position: 100% 70%, 0% 25%;
-        transform: translate3d(-56%, -38%, 0) rotate(-12deg) scale(0.96);
-    }
-
-    100% {
-        border-radius: 42% 58% 38% 62% / 58% 40% 60% 42%;
-        background-position: 15% 100%, 88% 0%;
-        transform: translate3d(-40%, -56%, 0) rotate(22deg) scale(1.14);
-    }
-}
-
-@keyframes home-fluid-drift {
-    0% {
-        border-radius: 54% 46% 42% 58% / 40% 60% 44% 56%;
-        background-position: 100% 0%, 0% 100%;
-        transform: translate3d(-40%, -60%, 0) rotate(20deg) scale(1.12);
-    }
-
-    32% {
-        border-radius: 61% 39% 49% 51% / 36% 59% 41% 64%;
-        background-position: 10% 85%, 90% 15%;
-        transform: translate3d(-55%, -42%, 0) rotate(-10deg) scale(0.96);
-    }
-
-    68% {
-        border-radius: 40% 60% 63% 37% / 57% 43% 60% 40%;
-        background-position: 0% 20%, 100% 80%;
-        transform: translate3d(-43%, -57%, 0) rotate(16deg) scale(1.1);
-    }
-
-    100% {
-        border-radius: 38% 62% 58% 42% / 62% 42% 58% 38%;
-        background-position: 90% 100%, 12% 0%;
-        transform: translate3d(-58%, -40%, 0) rotate(-18deg) scale(0.9);
-    }
+@keyframes home-fluid-cycle {
+    to { --home-phase: 360deg; }
 }
 
 /* RESUME
