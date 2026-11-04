@@ -62,6 +62,7 @@
 /* Magnetic field layout */
 
 .magnetic-field {
+    --field-amplitude: 2.4cqi;
     display: grid;
     grid-template-rows: repeat(16, minmax(0, 1fr));
     inset-block: 15%;
@@ -79,11 +80,44 @@
 
 .field-dot {
     --column: 0;
+    --row-strength: calc(0.6 + sin(var(--row) * 12deg) * 0.35);
+    animation: field-wave 7.2s ease-in-out infinite;
+    animation-delay: calc(var(--column) * -0.24s + var(--row) * -0.17s);
     background: #fff;
     block-size: clamp(0.0625rem, 0.65cqi, 0.125rem);
     border-radius: 50%;
     inline-size: clamp(0.0625rem, 0.65cqi, 0.125rem);
     opacity: 0.65;
+}
+
+/* Magnetic wave phases */
+
+.field-dot:nth-child(2) { --column: 1; }
+.field-dot:nth-child(3) { --column: 2; }
+.field-dot:nth-child(4) { --column: 3; }
+.field-dot:nth-child(5) { --column: 4; }
+.field-dot:nth-child(6) { --column: 5; }
+.field-dot:nth-child(7) { --column: 6; }
+.field-dot:nth-child(8) { --column: 7; }
+.field-dot:nth-child(9) { --column: 8; }
+.field-dot:nth-child(10) { --column: 9; }
+.field-dot:nth-child(11) { --column: 10; }
+.field-dot:nth-child(12) { --column: 11; }
+.field-dot:nth-child(13) { --column: 12; }
+.field-dot:nth-child(14) { --column: 13; }
+.field-dot:nth-child(15) { --column: 14; }
+.field-dot:nth-child(16) { --column: 15; }
+
+@keyframes field-wave {
+    0%, 100% {
+        opacity: 0.35;
+        transform: translateY(calc(var(--field-amplitude) * var(--row-strength) * -1)) scale(0.65);
+    }
+
+    50% {
+        opacity: 0.95;
+        transform: translateY(calc(var(--field-amplitude) * var(--row-strength))) scale(1);
+    }
 }
 
 /* Desktop collection layout */
