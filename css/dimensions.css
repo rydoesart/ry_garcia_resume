@@ -156,6 +156,8 @@
 /* Perspective frames */
 
 .depth-frame {
+    animation: depth-travel 16s linear infinite;
+    animation-delay: calc(var(--frame) * -1.333333333s);
     block-size: 62cqi;
     border: var(--motion-stroke) solid rgb(255 255 255 / 75%);
     inline-size: 62cqi;
@@ -166,6 +168,23 @@
     opacity: calc(1 - var(--frame) * 0.06);
     position: absolute;
     transform: translateZ(calc(var(--frame) * -8cqi)) rotateZ(calc(var(--frame) * 4deg));
+}
+
+/* Perspective travel */
+
+@keyframes depth-travel {
+    0% {
+        opacity: 0;
+        transform: translateZ(-140cqi) rotateZ(-12deg) scale(0.35);
+    }
+
+    16% { opacity: 0.5; }
+    70% { opacity: 0.85; }
+    94%, 100% { opacity: 0; }
+
+    100% {
+        transform: translateZ(60cqi) rotateZ(36deg) scale(1);
+    }
 }
 
 /* Desktop collection layout */
