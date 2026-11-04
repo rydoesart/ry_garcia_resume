@@ -40,6 +40,25 @@
     font-size: 0.9375rem;
 }
 
+/* Animation viewports */
+
+.dimensions-stage {
+    aspect-ratio: 4 / 5;
+    background: #000;
+    border: var(--motion-stroke) solid #000;
+    clip-path: inset(0);
+    container-type: inline-size;
+    inline-size: 100%;
+    isolation: isolate;
+    overflow: hidden;
+    position: relative;
+}
+
+.dimensions-stage:focus-visible {
+    outline: var(--motion-stroke) solid #fff;
+    outline-offset: calc(-1 * var(--space-2));
+}
+
 /* Desktop collection layout */
 
 @media (min-width: 860px) {
