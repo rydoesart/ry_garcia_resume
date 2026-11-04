@@ -798,7 +798,7 @@ footer a:hover {
 }
 
 .resume header::after {
-    animation: resume-dot-shimmer var(--banner-cycle) var(--banner-easing) infinite;
+    animation: resume-dot-wave var(--banner-cycle) var(--banner-easing) infinite;
     background-color: #000;
     background-image: radial-gradient(circle, #fff var(--banner-dot-size), transparent var(--banner-dot-edge));
     background-position: var(--banner-grid-offset) var(--banner-grid-offset);
@@ -809,11 +809,10 @@ footer a:hover {
     inline-size: 100%;
     inset-block-start: 0;
     inset-inline-start: 0;
-    mask-image: linear-gradient(110deg,
-        transparent calc(var(--banner-sweep, -28%) - 11%),
-        #000 calc(var(--banner-sweep, -28%) - 4%),
-        #000 calc(var(--banner-sweep, -28%) + 4%),
-        transparent calc(var(--banner-sweep, -28%) + 11%));
+    mask-image: url("../images/banner-wave.svg");
+    mask-position: 0% 50%;
+    mask-repeat: repeat-x;
+    mask-size: 200% 100%;
     pointer-events: none;
     position: absolute;
     z-index: 1;
@@ -824,23 +823,11 @@ footer a:hover {
     z-index: 2;
 }
 
-/* Banner sweep */
+/* Banner wave */
 
-@property --banner-sweep {
-    syntax: "<percentage>";
-    inherits: false;
-    initial-value: -28%;
-}
-
-@keyframes resume-dot-shimmer {
-    0%,
-    8% {
-        --banner-sweep: -28%;
-    }
-
-    92%,
-    100% {
-        --banner-sweep: 128%;
+@keyframes resume-dot-wave {
+    to {
+        mask-position: 100% 50%;
     }
 }
 
