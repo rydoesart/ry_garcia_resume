@@ -774,6 +774,10 @@ footer a:hover {
 ------------------------------------*/
 
 .resume header {
+    --banner-dot-size: 0.0625rem;
+    --banner-dot-edge: 0.0875rem;
+    --banner-grid-size: clamp(1.25rem, 2.2vw, 1.75rem);
+    --banner-grid-offset: calc(var(--banner-grid-size) / 2);
     isolation: isolate;
     overflow: hidden;
     position: relative;
@@ -781,9 +785,9 @@ footer a:hover {
 
 .resume header::before {
     background-color: #fff;
-    background-image: radial-gradient(circle, #000 1px, transparent 1.4px);
-    background-position: 12px 12px;
-    background-size: 24px 24px;
+    background-image: radial-gradient(circle, #000 var(--banner-dot-size), transparent var(--banner-dot-edge));
+    background-position: var(--banner-grid-offset) var(--banner-grid-offset);
+    background-size: var(--banner-grid-size) var(--banner-grid-size);
     content: "";
     display: block;
     block-size: var(--hero-block-size-small);
@@ -794,9 +798,9 @@ footer a:hover {
 .resume header::after {
     animation: resume-dot-shimmer 11s linear infinite;
     background-color: #000;
-    background-image: radial-gradient(circle, rgb(255 255 255 / 92%) 2px, transparent 2.4px);
-    background-position: 12px 12px;
-    background-size: 24px 24px;
+    background-image: radial-gradient(circle, #fff var(--banner-dot-size), transparent var(--banner-dot-edge));
+    background-position: var(--banner-grid-offset) var(--banner-grid-offset);
+    background-size: var(--banner-grid-size) var(--banner-grid-size);
     background-repeat: repeat;
     block-size: var(--hero-block-size-small);
     content: "";
