@@ -775,11 +775,8 @@ footer a:hover {
 
 .resume header {
     --banner-dot-size: 0.0625rem;
-    --banner-dot-edge: 0.0875rem;
-    --banner-grid-size: clamp(1.25rem, 2.2vw, 1.75rem);
-    --banner-grid-offset: calc(var(--banner-grid-size) / 2);
-    --banner-cycle: 14s;
-    --banner-easing: cubic-bezier(0.45, 0, 0.55, 1);
+    --banner-cycle: 10s;
+    --banner-amplitude: clamp(0.15rem, 0.35vw, 0.35rem);
     isolation: isolate;
     overflow: hidden;
     position: relative;
@@ -787,9 +784,6 @@ footer a:hover {
 
 .resume header::before {
     background-color: #fff;
-    background-image: radial-gradient(circle, #000 var(--banner-dot-size), transparent var(--banner-dot-edge));
-    background-position: var(--banner-grid-offset) var(--banner-grid-offset);
-    background-size: var(--banner-grid-size) var(--banner-grid-size);
     content: "";
     display: block;
     block-size: var(--hero-block-size-small);
@@ -797,50 +791,63 @@ footer a:hover {
     z-index: -1;
 }
 
-.resume header::after {
-    animation: resume-dot-shimmer var(--banner-cycle) var(--banner-easing) infinite;
-    background-color: #000;
-    background-image: radial-gradient(circle, #fff var(--banner-dot-size), transparent var(--banner-dot-edge));
-    background-position: var(--banner-grid-offset) var(--banner-grid-offset);
-    background-size: var(--banner-grid-size) var(--banner-grid-size);
-    background-repeat: repeat;
-    block-size: var(--hero-block-size-small);
-    content: "";
-    inline-size: 100%;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    mask-image: linear-gradient(110deg,
-        transparent calc(var(--banner-sweep, -28%) - 11%),
-        #000 calc(var(--banner-sweep, -28%) - 4%),
-        #000 calc(var(--banner-sweep, -28%) + 4%),
-        transparent calc(var(--banner-sweep, -28%) + 11%));
-    pointer-events: none;
-    position: absolute;
-    z-index: 1;
-}
-
 .resume header > .content-wrapper {
     position: relative;
     z-index: 2;
 }
 
-/* Banner sweep */
+/* Banner dot surface */
 
-@property --banner-sweep {
-    syntax: "<percentage>";
-    inherits: false;
-    initial-value: -28%;
+.banner-field {
+    --banner-columns: 48;
+    --banner-rows: 12;
+    --banner-mid-row: 5.5;
+    --banner-origin-column: calc((var(--banner-columns) - 1) * 0.22);
+    block-size: var(--hero-block-size-small);
+    display: grid;
+    grid-template-rows: repeat(var(--banner-rows), minmax(0, 1fr));
+    inline-size: 100%;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    padding-block: var(--space-2-5);
+    padding-inline: clamp(var(--space-2-5), 1.5vw, var(--space-6));
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
 }
 
-@keyframes resume-dot-shimmer {
-    0%,
-    8% {
-        --banner-sweep: -28%;
+.banner-row {
+    display: grid;
+    grid-template-columns: repeat(var(--banner-columns), minmax(0, 1fr));
+    place-items: center;
+}
+
+.banner-dot {
+    --column: 0;
+    background: #000;
+    block-size: calc(var(--banner-dot-size) * 2);
+    border-radius: 50%;
+    inline-size: calc(var(--banner-dot-size) * 2);
+    opacity: 0.65;
+}
+
+/* Compact banner dot surface */
+
+@media (max-width: 1100px) {
+    .banner-field { --banner-columns: 36; }
+    .banner-dot:nth-child(n + 37) { display: none; }
+}
+
+@media (max-width: 649px) {
+    .banner-field {
+        --banner-columns: 24;
+        --banner-rows: 8;
+        --banner-mid-row: 3.5;
     }
 
-    92%,
-    100% {
-        --banner-sweep: 128%;
+    .banner-row:nth-child(n + 9),
+    .banner-dot:nth-child(n + 25) {
+        display: none;
     }
 }
 
@@ -1081,7 +1088,7 @@ footer p,
         block-size: var(--hero-block-size-large);
     }
 
-    .resume header::after {
+    .banner-field {
         block-size: var(--hero-block-size-large);
     }
 }
@@ -1105,11 +1112,6 @@ footer p,
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .resume header::after {
-        animation: none;
-        display: none;
-    }
-
     .home::before {
         animation: home-fluid-reduced-one 48s ease-in-out infinite alternate;
         background-position: 0% 20%, 100% 80%;
