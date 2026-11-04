@@ -200,6 +200,18 @@
     }
 }
 
+/* Tesseract rotation phase */
+
+@property --form-turn {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0deg;
+}
+
+@keyframes form-turn {
+    to { --form-turn: 360deg; }
+}
+
 /* Tesseract camera */
 
 .form-camera {
@@ -210,15 +222,16 @@
 }
 
 .form-model {
-    --form-angle: 0deg;
+    --form-angle: var(--form-turn);
     --form-distance: 3.6;
     --form-unit: 11.5cqi;
     --form-cos: cos(var(--form-angle));
     --form-sin: sin(var(--form-angle));
+    animation: form-turn 36s linear infinite;
     inset-block: 0;
     inset-inline: 0;
     position: absolute;
-    transform: rotateX(-20deg) rotateY(30deg) rotateZ(-3deg);
+    transform: rotateX(-20deg) rotateY(30deg) rotateZ(calc(-3deg + sin(var(--form-angle)) * 8deg));
     transform-style: preserve-3d;
 }
 
