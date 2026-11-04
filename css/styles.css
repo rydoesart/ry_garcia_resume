@@ -1107,6 +1107,7 @@ footer p,
 @media (prefers-reduced-motion: reduce) {
     .resume header::after {
         animation: none;
+        display: none;
     }
 
     .home::before {
