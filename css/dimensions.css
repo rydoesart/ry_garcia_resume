@@ -9,6 +9,8 @@
 .dimensions .dimensions-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: var(--space-5);
+    margin-inline: auto;
+    max-inline-size: 30rem;
 }
 
 .dimensions-card {
@@ -313,6 +315,19 @@
 @media (min-width: 860px) {
     .dimensions .dimensions-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-inline-size: none;
+    }
+}
+
+/* Compact particle field */
+
+@media (max-width: 450px) {
+    .magnetic-field {
+        grid-template-rows: repeat(12, minmax(0, 1fr));
+    }
+
+    .field-row:nth-child(n + 13) {
+        display: none;
     }
 }
 
