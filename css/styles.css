@@ -501,7 +501,23 @@ footer a:hover {
 }
 
 #contactPopover::backdrop {
-    background: oklch(from var(--gray-9) l c h / 50%);
+    background-color: transparent;
+    transition:
+        background-color var(--duration-menu) var(--ease-standard),
+        display var(--duration-menu) allow-discrete,
+        overlay var(--duration-menu) allow-discrete;
+}
+
+/* Contact backdrop motion */
+
+#contactPopover:popover-open::backdrop {
+    background-color: oklch(from var(--gray-9) l c h / 50%);
+}
+
+@starting-style {
+    #contactPopover:popover-open::backdrop {
+        background-color: transparent;
+    }
 }
 
 #contactPopover .card {
