@@ -200,6 +200,76 @@
     }
 }
 
+/* Tesseract camera */
+
+.form-camera {
+    inset-block: 0;
+    inset-inline: 0;
+    perspective: 100cqi;
+    position: absolute;
+}
+
+.form-model {
+    --form-angle: 0deg;
+    --form-distance: 3.6;
+    --form-unit: 11.5cqi;
+    --form-cos: cos(var(--form-angle));
+    --form-sin: sin(var(--form-angle));
+    inset-block: 0;
+    inset-inline: 0;
+    position: absolute;
+    transform: rotateX(-20deg) rotateY(30deg) rotateZ(-3deg);
+    transform-style: preserve-3d;
+}
+
+/* Tesseract vertex projection */
+
+.form-edge,
+.form-vertex {
+    --a-w: calc(var(--ax) * var(--form-sin) + var(--aw) * var(--form-cos));
+    --a-factor: calc(var(--form-distance) / (var(--form-distance) - var(--a-w)));
+    --a-x: calc((var(--ax) * var(--form-cos) - var(--aw) * var(--form-sin)) * var(--a-factor));
+    --a-y: calc(var(--ay) * var(--a-factor));
+    --a-z: calc(var(--az) * var(--a-factor));
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    position: absolute;
+}
+
+.form-vertex {
+    background: #fff;
+    block-size: 0.15rem;
+    border-radius: 50%;
+    inline-size: 0.15rem;
+    transform: translate3d(calc(var(--a-x) * var(--form-unit)), calc(var(--a-y) * var(--form-unit)), calc(var(--a-z) * var(--form-unit)));
+    translate: -50% -50%;
+}
+
+/* Tesseract edge projection */
+
+.form-edge {
+    --b-w: calc(var(--bx) * var(--form-sin) + var(--bw) * var(--form-cos));
+    --b-factor: calc(var(--form-distance) / (var(--form-distance) - var(--b-w)));
+    --b-x: calc((var(--bx) * var(--form-cos) - var(--bw) * var(--form-sin)) * var(--b-factor));
+    --b-y: calc(var(--by) * var(--b-factor));
+    --b-z: calc(var(--bz) * var(--b-factor));
+    --edge-x: calc(var(--b-x) - var(--a-x));
+    --edge-y: calc(var(--b-y) - var(--a-y));
+    --edge-z: calc(var(--b-z) - var(--a-z));
+    background: #fff;
+    block-size: var(--motion-stroke);
+    inline-size: calc(hypot(var(--edge-x), var(--edge-y), var(--edge-z)) * var(--form-unit));
+    margin-block-start: calc(var(--motion-stroke) * -0.5);
+    transform:
+        translate3d(calc(var(--a-x) * var(--form-unit)), calc(var(--a-y) * var(--form-unit)), calc(var(--a-z) * var(--form-unit)))
+        rotateZ(atan2(var(--edge-y), var(--edge-x)))
+        rotateY(calc(-1 * atan2(var(--edge-z), hypot(var(--edge-x), var(--edge-y)))));
+    transform-origin: 0 50%;
+}
+
+.form-edge--rear { background: rgb(255 255 255 / 62%); }
+.form-edge--connector { background: rgb(255 255 255 / 45%); }
+
 /* Desktop collection layout */
 
 @media (min-width: 860px) {
