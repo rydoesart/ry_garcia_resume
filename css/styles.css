@@ -467,6 +467,29 @@ footer a:hover {
     border-end-end-radius: 0;
     box-shadow: 0 var(--space-2) var(--space-6) oklch(from var(--gray-9) l c h / 35%);
     padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(calc(var(--space-1) * -1)) scale(0.985);
+    transition:
+        opacity var(--duration-menu) var(--ease-standard),
+        transform var(--duration-menu) cubic-bezier(0.2, 0.65, 0.3, 1),
+        display var(--duration-menu) allow-discrete,
+        overlay var(--duration-menu) allow-discrete;
+}
+
+/* Contact popover motion */
+
+#contactPopover:popover-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+@starting-style {
+    #contactPopover:popover-open {
+        opacity: 0;
+        transform: translateY(calc(var(--space-1) * -1)) scale(0.985);
+    }
 }
 
 @position-try --contact-bottom-span-all {
