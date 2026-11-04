@@ -144,13 +144,26 @@
     perspective: 80cqi;
     perspective-origin: 50% 50%;
     position: absolute;
+    transition: perspective var(--motion-transition) var(--motion-easing);
 }
 
 .depth-flight {
     inset-block: 0;
     inset-inline: 0;
     position: absolute;
+    transform: rotateX(0deg) rotateY(0deg) translateZ(0);
     transform-style: preserve-3d;
+    transition: transform var(--motion-transition) var(--motion-easing);
+}
+
+/* Perspective interaction */
+
+.dimensions-stage--depth:is(:hover, :focus-visible) .depth-camera {
+    perspective: 68cqi;
+}
+
+.dimensions-stage--depth:is(:hover, :focus-visible) .depth-flight {
+    transform: rotateX(7deg) rotateY(-9deg) translateZ(3cqi);
 }
 
 /* Perspective frames */
