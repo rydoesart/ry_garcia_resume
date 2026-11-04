@@ -671,6 +671,7 @@ footer a:hover {
 
 .home {
     background: #fff;
+    color: #000;
     display: flex;
     flex-direction: column;
     isolation: isolate;
@@ -687,19 +688,16 @@ footer a:hover {
     inline-size: min(90vw, 76rem);
     block-size: min(88vh, 60rem);
     border-radius: 62% 38% 55% 45% / 46% 58% 42% 54%;
-    filter: blur(54px);
-    opacity: 0.82;
+    filter: blur(42px);
+    opacity: 1;
     pointer-events: none;
     will-change: transform, border-radius;
 }
 
 .home::before {
     background:
-        radial-gradient(ellipse at 32% 38%, rgb(0 0 0 / 72%) 0%, rgb(32 32 32 / 52%) 36%, transparent 62%),
-        radial-gradient(ellipse at 68% 64%, rgb(255 255 255 / 82%) 0%, transparent 66%);
-    background-size: 150% 150%, 160% 160%;
-    background-position: 0% 20%, 100% 80%;
-    background-repeat: no-repeat;
+        radial-gradient(ellipse at 32% 38%, #000 0%, rgb(0 0 0 / 88%) 48%, transparent 76%),
+        radial-gradient(ellipse at 68% 66%, #000 0%, rgb(0 0 0 / 76%) 42%, transparent 72%);
     animation: home-fluid-flow 19s ease-in-out infinite alternate;
 }
 
@@ -707,11 +705,8 @@ footer a:hover {
     inline-size: min(78vw, 64rem);
     block-size: min(78vh, 54rem);
     background:
-        radial-gradient(ellipse at 68% 32%, rgb(0 0 0 / 58%) 0%, rgb(32 32 32 / 40%) 38%, transparent 64%),
-        radial-gradient(ellipse at 36% 72%, rgb(255 255 255 / 76%) 0%, transparent 68%);
-    background-size: 165% 165%, 150% 150%;
-    background-position: 100% 0%, 0% 100%;
-    background-repeat: no-repeat;
+        radial-gradient(ellipse at 68% 35%, #000 0%, rgb(0 0 0 / 82%) 46%, transparent 74%),
+        radial-gradient(ellipse at 32% 76%, #000 0%, rgb(0 0 0 / 78%) 44%, transparent 72%);
     animation: home-fluid-drift 29s ease-in-out -9s infinite alternate-reverse;
 }
 
@@ -725,8 +720,9 @@ footer a:hover {
 }
 
 .home .content-bg {
-    background: oklch(from var(--gray-1) l c h / 70%);
-    border: var(--border-thin) solid oklch(from var(--gray-9) l c h / 18%);
+    background: rgb(255 255 255 / 82%);
+    border: var(--border-thin) solid rgb(0 0 0 / 36%);
+    color: #000;
     border-radius: var(--radius-pill);
     display: flex;
     flex-direction: column;
@@ -737,6 +733,10 @@ footer a:hover {
     padding-block: var(--space-6);
     position: relative;
     z-index: 1;
+}
+
+.home .content-bg a {
+    color: #000;
 }
 
 .home .content-bg header {
@@ -1273,38 +1273,4 @@ footer p,
         background-position: 88% 14%, 12% 86%;
         transform: translate3d(-48%, -52%, 0) scale(0.99);
     }
-}
-
-/* HOME COLORS */
-.home {
-    background: #fff;
-    color: #000;
-}
-
-.home::before {
-    background:
-        radial-gradient(ellipse at 32% 38%, #000 0%, rgb(0 0 0 / 88%) 48%, transparent 76%),
-        radial-gradient(ellipse at 68% 66%, #000 0%, rgb(0 0 0 / 76%) 42%, transparent 72%);
-}
-
-.home::after {
-    background:
-        radial-gradient(ellipse at 68% 35%, #000 0%, rgb(0 0 0 / 82%) 46%, transparent 74%),
-        radial-gradient(ellipse at 32% 76%, #000 0%, rgb(0 0 0 / 78%) 44%, transparent 72%);
-}
-
-.home::before,
-.home::after {
-    opacity: 1;
-    filter: blur(42px);
-}
-
-.home .content-bg {
-    background: rgb(255 255 255 / 82%);
-    border-color: rgb(0 0 0 / 36%);
-    color: #000;
-}
-
-.home .content-bg a {
-    color: #000;
 }
