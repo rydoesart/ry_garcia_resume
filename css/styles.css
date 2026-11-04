@@ -714,16 +714,21 @@ footer a:hover {
     background:
         radial-gradient(ellipse at 32% 38%, #000 0%, rgb(0 0 0 / 88%) 48%, transparent 76%),
         radial-gradient(ellipse at 68% 66%, #000 0%, rgb(0 0 0 / 76%) 42%, transparent 72%);
-    animation: home-fluid-cycle 19s ease-in-out infinite;
+    animation: home-fluid-cycle 36s linear -12s infinite;
 }
 
 .home::after {
+    --home-drift-inline: 8%;
+    --home-drift-block: 7%;
+    --home-tilt: -10deg;
+    --home-growth: 0.045;
     inline-size: min(78vw, 64rem);
     block-size: min(78vh, 54rem);
+    border-radius: 44% 56% 62% 38% / 58% 40% 60% 42%;
     background:
         radial-gradient(ellipse at 68% 35%, #000 0%, rgb(0 0 0 / 82%) 46%, transparent 74%),
         radial-gradient(ellipse at 32% 76%, #000 0%, rgb(0 0 0 / 78%) 44%, transparent 72%);
-    animation: home-fluid-cycle 29s ease-in-out -9s infinite reverse;
+    animation: home-fluid-cycle 52s linear -11s infinite reverse;
 }
 
 .home .content-wrapper {
