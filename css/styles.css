@@ -675,6 +675,7 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     isolation: isolate;
+    overflow-x: clip;
     position: relative;
 }
 
@@ -697,10 +698,10 @@ footer a:hover {
     z-index: 0;
     inset-block-start: 50%;
     inset-inline-start: 50%;
-    inline-size: min(90vw, 76rem);
-    block-size: min(88vh, 60rem);
+    inline-size: min(90vi, 76rem);
+    block-size: min(88svb, 60rem);
     border-radius: 62% 38% 55% 45% / 46% 58% 42% 54%;
-    filter: blur(42px);
+    filter: blur(clamp(1.25rem, 3vi, 2.625rem));
     opacity: 1;
     pointer-events: none;
     transform:
@@ -722,8 +723,8 @@ footer a:hover {
     --home-drift-block: 7%;
     --home-tilt: -10deg;
     --home-growth: 0.045;
-    inline-size: min(78vw, 64rem);
-    block-size: min(78vh, 54rem);
+    inline-size: min(78vi, 64rem);
+    block-size: min(78svb, 54rem);
     border-radius: 44% 56% 62% 38% / 58% 40% 60% 42%;
     background:
         radial-gradient(ellipse at 68% 35%, #000 0%, rgb(0 0 0 / 82%) 46%, transparent 74%),
