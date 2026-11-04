@@ -1214,39 +1214,12 @@ footer p,
         transform: none;
     }
 
-    .home::before {
-        animation: home-fluid-reduced-one 48s ease-in-out infinite alternate;
-        background-position: 0% 20%, 100% 80%;
-        will-change: auto;
-    }
-
+    .home::before,
     .home::after {
-        animation: home-fluid-reduced-two 56s ease-in-out infinite alternate;
-        background-position: 100% 0%, 0% 100%;
+        animation: none;
         will-change: auto;
     }
-}
 
-@keyframes home-fluid-reduced-one {
-    from {
-        background-position: 0% 20%, 100% 80%;
-        transform: translate3d(-50%, -50%, 0) scale(1);
-    }
-
-    to {
-        background-position: 12% 32%, 88% 68%;
-        transform: translate3d(-52%, -48%, 0) scale(1.02);
-    }
-}
-
-@keyframes home-fluid-reduced-two {
-    from {
-        background-position: 100% 0%, 0% 100%;
-        transform: translate3d(-50%, -50%, 0) scale(1.01);
-    }
-
-    to {
-        background-position: 88% 14%, 12% 86%;
-        transform: translate3d(-48%, -52%, 0) scale(0.99);
-    }
+    .home::before { --home-phase: 28deg; }
+    .home::after { --home-phase: 210deg; }
 }
