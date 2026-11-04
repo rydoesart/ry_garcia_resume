@@ -829,12 +829,32 @@ footer a:hover {
     --ripple-distance: hypot(var(--ripple-x), var(--ripple-y));
     --ripple-offset-x: calc(var(--ripple-x) / max(1, var(--ripple-distance)) * var(--banner-amplitude));
     --ripple-offset-y: calc(var(--ripple-y) / max(1, var(--ripple-distance)) * var(--banner-amplitude));
+    animation: banner-ripple var(--banner-cycle) var(--ease-standard) infinite;
     animation-delay: calc(var(--ripple-distance) * 0.12s - 4.5s);
     background: #000;
     block-size: calc(var(--banner-dot-size) * 2);
     border-radius: 50%;
     inline-size: calc(var(--banner-dot-size) * 2);
     opacity: 0.65;
+}
+
+/* Banner ripple motion */
+
+@keyframes banner-ripple {
+    0%, 12%, 52%, 100% {
+        opacity: 0.65;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    24% {
+        opacity: 1;
+        transform: translate3d(var(--ripple-offset-x), var(--ripple-offset-y), 0) scale(1.85);
+    }
+
+    38% {
+        opacity: 0.55;
+        transform: translate3d(calc(var(--ripple-offset-x) * -0.25), calc(var(--ripple-offset-y) * -0.25), 0) scale(0.9);
+    }
 }
 
 /* Banner ripple phases */
