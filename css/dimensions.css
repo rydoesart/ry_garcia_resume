@@ -59,6 +59,33 @@
     outline-offset: calc(-1 * var(--space-2));
 }
 
+/* Magnetic field layout */
+
+.magnetic-field {
+    display: grid;
+    grid-template-rows: repeat(16, minmax(0, 1fr));
+    inset-block: 15%;
+    inset-inline: 9%;
+    mix-blend-mode: screen;
+    position: absolute;
+    transform: rotate(-9deg);
+}
+
+.field-row {
+    display: grid;
+    grid-template-columns: repeat(16, minmax(0, 1fr));
+    place-items: center;
+}
+
+.field-dot {
+    --column: 0;
+    background: #fff;
+    block-size: clamp(0.0625rem, 0.65cqi, 0.125rem);
+    border-radius: 50%;
+    inline-size: clamp(0.0625rem, 0.65cqi, 0.125rem);
+    opacity: 0.65;
+}
+
 /* Desktop collection layout */
 
 @media (min-width: 860px) {
