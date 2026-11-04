@@ -136,6 +136,38 @@
     }
 }
 
+/* Perspective camera */
+
+.depth-camera {
+    inset-block: 0;
+    inset-inline: 0;
+    perspective: 80cqi;
+    perspective-origin: 50% 50%;
+    position: absolute;
+}
+
+.depth-flight {
+    inset-block: 0;
+    inset-inline: 0;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+/* Perspective frames */
+
+.depth-frame {
+    block-size: 62cqi;
+    border: var(--motion-stroke) solid rgb(255 255 255 / 75%);
+    inline-size: 62cqi;
+    inset-block: 0;
+    inset-inline: 0;
+    margin-block: auto;
+    margin-inline: auto;
+    opacity: calc(1 - var(--frame) * 0.06);
+    position: absolute;
+    transform: translateZ(calc(var(--frame) * -8cqi)) rotateZ(calc(var(--frame) * 4deg));
+}
+
 /* Desktop collection layout */
 
 @media (min-width: 860px) {
