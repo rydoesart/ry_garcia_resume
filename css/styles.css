@@ -1188,6 +1188,12 @@ footer p,
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .banner-dot {
+        animation: none;
+        opacity: 0.65;
+        transform: none;
+    }
+
     .home::before {
         animation: home-fluid-reduced-one 48s ease-in-out infinite alternate;
         background-position: 0% 20%, 100% 80%;
