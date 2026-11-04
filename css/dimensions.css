@@ -212,6 +212,29 @@
     to { --form-turn: 360deg; }
 }
 
+/* Tesseract interaction */
+
+@property --form-brake {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0deg;
+}
+
+@property --form-distance {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 3.6;
+}
+
+@keyframes form-brake {
+    to { --form-brake: 360deg; }
+}
+
+.dimensions-stage--form:is(:hover, :focus-visible) .form-model {
+    --form-distance: 3;
+    animation-play-state: running, running;
+}
+
 /* Tesseract camera */
 
 .form-camera {
@@ -222,17 +245,19 @@
 }
 
 .form-model {
-    --form-angle: var(--form-turn);
+    --form-angle: calc(var(--form-turn) - var(--form-brake));
     --form-distance: 3.6;
     --form-unit: 11.5cqi;
     --form-cos: cos(var(--form-angle));
     --form-sin: sin(var(--form-angle));
-    animation: form-turn 36s linear infinite;
+    animation: form-turn 36s linear infinite, form-brake 72s linear infinite;
+    animation-play-state: running, paused;
     inset-block: 0;
     inset-inline: 0;
     position: absolute;
     transform: rotateX(-20deg) rotateY(30deg) rotateZ(calc(-3deg + sin(var(--form-angle)) * 8deg));
     transform-style: preserve-3d;
+    transition: --form-distance var(--motion-transition) var(--motion-easing);
 }
 
 /* Tesseract vertex projection */
