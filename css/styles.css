@@ -984,6 +984,13 @@ footer a:hover {
     object-fit: cover;
 }
 
+/* DIMENSIONS project cover */
+
+.project-item .dimensions-cover {
+    background: #000;
+    object-position: 50% 60%;
+}
+
 .project-placeholder-art {
     aspect-ratio: 16 / 10;
     background: var(--gray-2);
