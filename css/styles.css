@@ -168,82 +168,73 @@ footer a:hover {
 
 @media (prefers-reduced-motion: no-preference) {
     .navLogo .logo {
-        transform-origin: center;
-        animation: logo-impact 2.4s linear 1 both;
+        /* Half the original diagonal seam, resolved along both SVG axes.
+           The facing edges touch here; moving any closer would overlap. */
+        --logo-contact: 11.313px;
+        overflow: visible;
     }
 
     .navLogo .logo-r,
     .navLogo .logo-g {
-        transform-box: fill-box;
-        transform-origin: center;
+        transform-box: view-box;
+        animation-duration: 1.8s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
     }
 
     .navLogo .logo-g {
-        animation: logo-g-assemble 2.4s linear 1 both;
+        animation-name: logo-g-assemble;
     }
 
     .navLogo .logo-r {
-        animation: logo-r-assemble 2.4s linear 1 both;
+        animation-name: logo-r-assemble;
     }
 }
 
+/* Both pieces travel perpendicular to their diagonal seam, at full size.
+   36% / 72%: contact, with an immediate reversal of velocity.
+   54% / 83%: recoil peaks, with less distance and time on the second bounce.
+   96%: restore the original seam and hold the exact untransformed monogram.
+   All easing stays within its endpoints so neither piece crosses contact. */
 @keyframes logo-g-assemble {
-    0% { opacity: 1; transform: translate(600px, 0) scale(0.8); }
-    9% { transform: translate(469px, 72px) scale(0.83); }
-    18% { transform: translate(402px, 118px) scale(0.87); }
-    27% { transform: translate(295px, 135px) scale(0.91); }
-    36% { transform: translate(190px, 124px) scale(0.95); }
-    40% { transform: translate(95px, 104px) scale(0.98); }
-    44% { transform: translate(34px, 40px) scale(0.99); }
-    48% {
-        transform: none;
-        animation-timing-function: cubic-bezier(0.12, 0.7, 0.25, 1);
+    0% {
+        transform: translate(64px, 64px);
+        animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
+    }
+    36%, 72% {
+        transform: translate(calc(-1 * var(--logo-contact)), calc(-1 * var(--logo-contact)));
+        animation-timing-function: cubic-bezier(0, 0.6, 0.4, 1);
     }
     54% {
-        transform: translate(110px, 0) scale(1.12);
-        animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+        transform: translate(24px, 24px);
+        animation-timing-function: cubic-bezier(0.6, 0, 1, 0.4);
     }
-    68% {
-        transform: translate(-28px, 0) scale(0.96);
-        animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    83% {
+        transform: translate(2px, 2px);
+        animation-timing-function: ease-in-out;
     }
-    80% { transform: translate(10px, 0) scale(1.025); }
-    90% { transform: translate(-3px, 0) scale(0.995); }
-    100% { transform: none; }
+    96%, 100% { transform: translate(0, 0); }
 }
 
 @keyframes logo-r-assemble {
-    0% { opacity: 1; transform: translate(-600px, 0) scale(0.8); }
-    9% { transform: translate(-469px, -72px) scale(0.83); }
-    18% { transform: translate(-402px, -118px) scale(0.87); }
-    27% { transform: translate(-295px, -135px) scale(0.91); }
-    36% { transform: translate(-190px, -124px) scale(0.95); }
-    40% { transform: translate(-95px, -104px) scale(0.98); }
-    44% { transform: translate(-34px, -40px) scale(0.99); }
-    48% {
-        transform: none;
-        animation-timing-function: cubic-bezier(0.12, 0.7, 0.25, 1);
+    0% {
+        transform: translate(-64px, -64px);
+        animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
+    }
+    36%, 72% {
+        transform: translate(var(--logo-contact), var(--logo-contact));
+        animation-timing-function: cubic-bezier(0, 0.6, 0.4, 1);
     }
     54% {
-        transform: translate(-110px, 0) scale(1.12);
-        animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+        transform: translate(-24px, -24px);
+        animation-timing-function: cubic-bezier(0.6, 0, 1, 0.4);
     }
-    68% {
-        transform: translate(28px, 0) scale(0.96);
-        animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    83% {
+        transform: translate(-2px, -2px);
+        animation-timing-function: ease-in-out;
     }
-    80% { transform: translate(-10px, 0) scale(1.025); }
-    90% { transform: translate(3px, 0) scale(0.995); }
-    100% { transform: none; }
-}
-
-@keyframes logo-impact {
-    0%, 46% { transform: scale(0.96); }
-    54% { transform: scale(1.12); }
-    68% { transform: scale(0.96); }
-    80% { transform: scale(1.025); }
-    90% { transform: scale(0.995); }
-    100% { transform: scale(1); }
+    96%, 100% { transform: translate(0, 0); }
 }
 
 .navWrap {
