@@ -808,7 +808,7 @@ footer a:hover {
     --banner-columns: 48;
     --banner-rows: 12;
     --banner-mid-row: 5.5;
-    --banner-origin-column: calc((var(--banner-columns) - 1) * 0.22);
+    --banner-origin-column: 0;
     block-size: var(--hero-block-size-small);
     display: grid;
     grid-template-rows: repeat(var(--banner-rows), minmax(0, 1fr));
@@ -836,7 +836,7 @@ footer a:hover {
     --ripple-offset-x: calc(var(--ripple-x) / max(1, var(--ripple-distance)) * var(--banner-amplitude));
     --ripple-offset-y: calc(var(--ripple-y) / max(1, var(--ripple-distance)) * var(--banner-amplitude));
     animation: banner-ripple var(--banner-cycle) var(--ease-standard) infinite;
-    animation-delay: calc(var(--ripple-distance) * 0.12s - 4.5s);
+    animation-delay: calc(var(--ripple-distance) * 0.12s);
     background: #000;
     block-size: calc(var(--banner-dot-size) * 2);
     border-radius: 50%;
