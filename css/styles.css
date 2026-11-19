@@ -708,16 +708,9 @@ footer a:hover {
     position: relative;
 }
 
-/* Home motion phase */
-
-@property --home-phase {
-    syntax: "<angle>";
-    inherits: false;
-    initial-value: 0deg;
-}
-
 .home::before,
 .home::after {
+    --home-phase: 0deg;
     --home-drift-inline: 6%;
     --home-drift-block: 5%;
     --home-tilt: 8deg;
@@ -802,7 +795,78 @@ footer a:hover {
 /* Home background motion */
 
 @keyframes home-fluid-cycle {
-    to { --home-phase: 360deg; }
+    0%, 100% {
+        transform:
+            translate3d(calc(-50% + var(--home-drift-inline)), -50%, 0)
+            rotate(calc(sin(20deg) * var(--home-tilt)))
+            scale(calc(1 + var(--home-growth)));
+    }
+    8.333333% {
+        transform:
+            translate3d(calc(-50% + cos(30deg) * var(--home-drift-inline)), calc(-50% + sin(30deg) * var(--home-drift-block)), 0)
+            rotate(calc(sin(50deg) * var(--home-tilt)))
+            scale(calc(1 + cos(60deg) * var(--home-growth)));
+    }
+    16.666667% {
+        transform:
+            translate3d(calc(-50% + cos(60deg) * var(--home-drift-inline)), calc(-50% + sin(60deg) * var(--home-drift-block)), 0)
+            rotate(calc(sin(80deg) * var(--home-tilt)))
+            scale(calc(1 + cos(120deg) * var(--home-growth)));
+    }
+    25% {
+        transform:
+            translate3d(-50%, calc(-50% + var(--home-drift-block)), 0)
+            rotate(calc(sin(110deg) * var(--home-tilt)))
+            scale(calc(1 - var(--home-growth)));
+    }
+    33.333333% {
+        transform:
+            translate3d(calc(-50% + cos(120deg) * var(--home-drift-inline)), calc(-50% + sin(120deg) * var(--home-drift-block)), 0)
+            rotate(calc(sin(140deg) * var(--home-tilt)))
+            scale(calc(1 + cos(240deg) * var(--home-growth)));
+    }
+    41.666667% {
+        transform:
+            translate3d(calc(-50% + cos(150deg) * var(--home-drift-inline)), calc(-50% + sin(150deg) * var(--home-drift-block)), 0)
+            rotate(calc(sin(170deg) * var(--home-tilt)))
+            scale(calc(1 + cos(300deg) * var(--home-growth)));
+    }
+    50% {
+        transform:
+            translate3d(calc(-50% - var(--home-drift-inline)), -50%, 0)
+            rotate(calc(sin(200deg) * var(--home-tilt)))
+            scale(calc(1 + var(--home-growth)));
+    }
+    58.333333% {
+        transform:
+            translate3d(calc(-50% + cos(210deg) * var(--home-drift-inline)), calc(-50% + sin(210deg) * var(--home-drift-block)), 0)
+            rotate(calc(sin(230deg) * var(--home-tilt)))
+            scale(calc(1 + cos(420deg) * var(--home-growth)));
+    }
+    66.666667% {
+        transform:
+            translate3d(calc(-50% + cos(240deg) * var(--home-drift-inline)), calc(-50% + sin(240deg) * var(--home-drift-block)), 0)
+            rotate(calc(sin(260deg) * var(--home-tilt)))
+            scale(calc(1 + cos(480deg) * var(--home-growth)));
+    }
+    75% {
+        transform:
+            translate3d(-50%, calc(-50% - var(--home-drift-block)), 0)
+            rotate(calc(sin(290deg) * var(--home-tilt)))
+            scale(calc(1 - var(--home-growth)));
+    }
+    83.333333% {
+        transform:
+            translate3d(calc(-50% + cos(300deg) * var(--home-drift-inline)), calc(-50% + sin(300deg) * var(--home-drift-block)), 0)
+            rotate(calc(sin(320deg) * var(--home-tilt)))
+            scale(calc(1 + cos(600deg) * var(--home-growth)));
+    }
+    91.666667% {
+        transform:
+            translate3d(calc(-50% + cos(330deg) * var(--home-drift-inline)), calc(-50% + sin(330deg) * var(--home-drift-block)), 0)
+            rotate(calc(sin(350deg) * var(--home-tilt)))
+            scale(calc(1 + cos(660deg) * var(--home-growth)));
+    }
 }
 
 /* Resume sections */
