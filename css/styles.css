@@ -216,8 +216,10 @@ h3 {
     --ripple-x: calc(var(--column) - var(--banner-origin-column));
     --ripple-y: calc((var(--row) - var(--banner-mid-row)) * 1.3);
     --ripple-distance: hypot(var(--ripple-x), var(--ripple-y));
-    --ripple-offset-x: calc(var(--ripple-x) / max(1, var(--ripple-distance)) * var(--banner-amplitude));
-    --ripple-offset-y: calc(var(--ripple-y) / max(1, var(--ripple-distance)) * var(--banner-amplitude));
+    --ripple-angle: atan2(var(--ripple-y), var(--ripple-x));
+    --ripple-strength: min(1, var(--ripple-distance));
+    --ripple-offset-x: calc(cos(var(--ripple-angle)) * var(--ripple-strength) * var(--banner-amplitude));
+    --ripple-offset-y: calc(sin(var(--ripple-angle)) * var(--ripple-strength) * var(--banner-amplitude));
     animation: banner-ripple var(--banner-cycle) var(--ease-standard) infinite;
     animation-delay: calc(var(--ripple-distance) * 0.12s);
     background: var(--black);
