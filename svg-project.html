@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Animation | Ry Garcia</title>
+    <meta name="description" content="An original RG monogram animation by Ry Garcia, featuring synchronized collision, recoil and a diminishing bounce.">
+    <link rel="icon" href="logo%20animation/monogram.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/svg-project.css">
+  </head>
+
+  <body class="svg-page resume">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="navWrap">
+      <a href="index.html" class="navLogo" aria-label="Home">
+        <svg class="logo" viewBox="0 0 500 500" role="img" aria-label="Ry Garcia monogram">
+          <path class="logo-g" d="M280.364,178.832c.059,8.185.182,16.949.182,23.941,0,30.855-29.593,56.183-61.036,56.183-6.953,0-11.017-1.473-14.735-4.535l-49.396,49.396c11.145,12.104,33.011,21.149,50.374,21.149,29.133,0,41.964-6.332,60.46-25.448h.923v35.435c0,32.635-21.731,49.42-47.626,49.42-24.506,0-37.915-12.589-40.227-31.703h-91.092c5.085,57.347,54.099,97.908,131.319,97.908,79.532,0,134.557-44.757,134.557-120.287V105.129l-73.703,73.703Z"></path>
+          <path class="logo-r" d="M131.656,282.285l83.306-83.305.556-36.054c0-27.744,23.435-49.475,54.083-49.475,11.64,0,18.456,2.064,25.304,5.587l57.84-57.84c-9.138-9.321-16.112-13.548-22.907-17.027-9.123-4.065-14.662-5.293-19.506-6.321-8.775-1.862-15.678-2.05-17.744-2.081-16.878-.254-30.786,5.124-37.82,8.492-14.78,7.078-28.645,18.927-39.7,36.821h-1.351v-40.69h-82.93l.846,235.604.025,6.288Z"></path>
+        </svg>
+      </a>
+      <input type="checkbox" id="navToggle" class="navToggle" aria-label="Toggle navigation" aria-controls="primaryNavigation">
+      <label for="navToggle" class="navToggleLabel"><span></span></label>
+      <nav id="primaryNavigation" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><button type="button" class="btn" popovertarget="contactPopover">Contact</button></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="contactPopover" popover role="dialog" aria-labelledby="contactHeading">
+      <div class="card">
+        <img src="images/ry-garcia.webp" alt="Ry Garcia" width="384" height="512" decoding="async">
+        <div class="contact-details">
+          <h2 id="contactHeading">Ry Garcia</h2>
+          <p class="contact-bio">
+            I’m a graphic design and web development student who enjoys learning
+            new skills, exploring creative ideas, and building websites that are
+            both creative and functional.
+          </p>
+          <p><a href="mailto:ry.garcia@example.com">ry.garcia@example.com</a></p>
+          <p><a href="tel:+13035550142">(303) 555-0142</a></p>
+        </div>
+        <button type="button" popovertarget="contactPopover" popovertargetaction="hide" aria-label="Close contact" autofocus>&#215;</button>
+      </div>
+    </div>
+
+    <header>
+      <div class="banner-field" aria-hidden="true">
+        <div class="banner-row" style="--row: 0">
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+        </div>
+        <div class="banner-row" style="--row: 1">
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+        </div>
+        <div class="banner-row" style="--row: 2">
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+        </div>
+        <div class="banner-row" style="--row: 3">
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+        </div>
+        <div class="banner-row" style="--row: 4">
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+        </div>
+        <div class="banner-row" style="--row: 5">
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+        </div>
+        <div class="banner-row" style="--row: 6">
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+        </div>
+        <div class="banner-row" style="--row: 7">
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+        </div>
+        <div class="banner-row" style="--row: 8">
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+        </div>
+        <div class="banner-row" style="--row: 9">
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+        </div>
+        <div class="banner-row" style="--row: 10">
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+        </div>
+        <div class="banner-row" style="--row: 11">
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+          <span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span><span class="banner-dot"></span>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <h1>Ry Garcia</h1>
+        <p class="site-subtitle">Graphic Designer &amp; Web Developer</p>
+      </div>
+    </header>
+
+    <main id="main-content" class="content-wrapper" tabindex="-1">
+      <section class="resume-section svg-project" aria-labelledby="svg-project-heading">
+        <h2 id="svg-project-heading">SVG Animation</h2>
+        <p class="svg-intro">An original RG monogram, brought together through momentum, impact and a diminishing rebound.</p>
+        <figure class="svg-study">
+          <div class="svg-stage">
+            <svg class="monogram" viewBox="0 0 500 500" role="img" aria-labelledby="monogram-title monogram-description">
+              <title id="monogram-title">RG monogram collision</title>
+              <desc id="monogram-description">The original R and G approach along their diagonal seam, touch, rebound twice and settle into the original logo. Four brief rays mark each impact.</desc>
+              <g id="monogram-pieces" class="monogram-pieces">
+                <path id="monogram-g" class="logo-g" d="M280.364,178.832c.059,8.185.182,16.949.182,23.941,0,30.855-29.593,56.183-61.036,56.183-6.953,0-11.017-1.473-14.735-4.535l-49.396,49.396c11.145,12.104,33.011,21.149,50.374,21.149,29.133,0,41.964-6.332,60.46-25.448h.923v35.435c0,32.635-21.731,49.42-47.626,49.42-24.506,0-37.915-12.589-40.227-31.703h-91.092c5.085,57.347,54.099,97.908,131.319,97.908,79.532,0,134.557-44.757,134.557-120.287V105.129l-73.703,73.703Z"></path>
+                <path id="monogram-r" class="logo-r" d="M131.656,282.285l83.306-83.305.556-36.054c0-27.744,23.435-49.475,54.083-49.475,11.64,0,18.456,2.064,25.304,5.587l57.84-57.84c-9.138-9.321-16.112-13.548-22.907-17.027-9.123-4.065-14.662-5.293-19.506-6.321-8.775-1.862-15.678-2.05-17.744-2.081-16.878-.254-30.786,5.124-37.82,8.492-14.78,7.078-28.645,18.927-39.7,36.821h-1.351v-40.69h-82.93l.846,235.604.025,6.288Z"></path>
+              </g>
+              <g id="impact-rays" class="impact-rays" aria-hidden="true">
+                <g id="lower-impact">
+                  <line id="impact-left" class="impact-ray" x1="135" y1="293" x2="117" y2="293" style="--ray-x: -18px; --ray-y: 0px"></line>
+                  <line id="impact-down" class="impact-ray" x1="143" y1="301" x2="143" y2="319" style="--ray-x: 0px; --ray-y: 18px"></line>
+                </g>
+                <g id="upper-impact">
+                  <line id="impact-right" class="impact-ray" x1="352" y1="91" x2="370" y2="91" style="--ray-x: 18px; --ray-y: 0px"></line>
+                  <line id="impact-up" class="impact-ray" x1="365" y1="83" x2="365" y2="65" style="--ray-x: 0px; --ray-y: -18px"></line>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <figcaption>Two letterforms meet, recoil and settle into one signature.</figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        © 2026 by Ry Garcia |
+        <a href="mailto:gdanryllxd@gmail.com">gdanryllxd@gmail.com</a>
+      </p>
+
+      <ul class="socials">
+        <li>
+          <a href="https://github.com/rydoesart/ry_garcia_resume" target="_blank" rel="noopener" aria-label="GitHub repository">
+            <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.334-5.467-5.931 0-1.31.469-2.381 1.235-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.295-1.23 3.295-1.23.655 1.652.243 2.873.12 3.176.77.84 1.232 1.911 1.232 3.221 0 4.609-2.807 5.628-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.903-.015 3.297 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12Z"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
