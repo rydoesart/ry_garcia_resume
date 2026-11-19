@@ -1,6 +1,9 @@
 /* Collection layout */
 
 .dimensions {
+    /* Match the stage content width using the shared card layout tokens. */
+    --stage-width: calc(min(100vw - var(--space-5) * 2, 30rem) - var(--space-5) * 2 - var(--border-thin) * 4);
+    --stage-unit: calc(var(--stage-width) / 100);
     --motion-stroke: var(--border-thin);
     --motion-transition: 650ms;
     --motion-easing: cubic-bezier(0.2, 0.65, 0.3, 1);
@@ -70,14 +73,14 @@
 }
 
 .dimensions-stage--field:is(:hover, :focus-visible) .magnetic-field {
-    --field-amplitude: 4cqi;
+    --field-amplitude: calc(var(--stage-unit) * 4);
     transform: rotate(-5deg) scale(1.04);
 }
 
 /* Magnetic field layout */
 
 .magnetic-field {
-    --field-amplitude: 2.4cqi;
+    --field-amplitude: calc(var(--stage-unit) * 2.4);
     display: grid;
     grid-template-rows: repeat(16, minmax(0, 1fr));
     filter: contrast(1.1);
@@ -102,9 +105,9 @@
     animation: field-wave 7.2s ease-in-out infinite;
     animation-delay: calc(var(--column) * -0.24s + var(--row) * -0.17s);
     background: var(--white);
-    block-size: clamp(0.0625rem, 0.65cqi, 0.125rem);
+    block-size: clamp(0.0625rem, calc(var(--stage-unit) * 0.65), 0.125rem);
     border-radius: 50%;
-    inline-size: clamp(0.0625rem, 0.65cqi, 0.125rem);
+    inline-size: clamp(0.0625rem, calc(var(--stage-unit) * 0.65), 0.125rem);
     opacity: 0.65;
 }
 
@@ -312,7 +315,17 @@
 
 /* Desktop collection layout */
 
+@media (min-width: 650px) {
+    .dimensions {
+        --stage-width: calc(min(100vw - var(--space-7) * 2, 30rem) - var(--space-5) * 2 - var(--border-thin) * 4);
+    }
+}
+
 @media (min-width: 860px) {
+    .dimensions {
+        --stage-width: calc((min(100vw, var(--content-max-inline-size)) - var(--space-7) * 2 - var(--space-5) * 2) / 3 - var(--space-5) * 2 - var(--border-thin) * 4);
+    }
+
     .dimensions .dimensions-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         max-inline-size: none;
@@ -341,7 +354,7 @@
 
     .field-dot {
         opacity: 0.65;
-        transform: translateY(calc(sin(var(--column) * 22deg + var(--row) * 10deg) * 1.2cqi));
+        transform: translateY(calc(sin(var(--column) * 22deg + var(--row) * 10deg) * var(--stage-unit) * 1.2));
     }
 
     .form-model {
