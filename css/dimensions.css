@@ -245,14 +245,14 @@
 .form-camera {
     inset-block: 0;
     inset-inline: 0;
-    perspective: 100cqi;
+    perspective: var(--stage-width);
     position: absolute;
 }
 
 .form-model {
     --form-angle: calc(var(--form-turn) - var(--form-brake));
     --form-distance: 3.6;
-    --form-unit: 11.5cqi;
+    --form-unit: calc(var(--stage-unit) * 11.5);
     --form-cos: cos(var(--form-angle));
     --form-sin: sin(var(--form-angle));
     animation: form-turn 36s linear infinite, form-brake 72s linear infinite;
