@@ -52,7 +52,6 @@
     background: var(--black);
     border: var(--motion-stroke) solid var(--black);
     clip-path: inset(0);
-    container-type: inline-size;
     inline-size: 100%;
     isolation: isolate;
     overflow: hidden;
