@@ -949,23 +949,6 @@ footer a:hover {
     color: var(--white);
 }
 
-.project-placeholder-art {
-    aspect-ratio: 16 / 10;
-    background: var(--gray-2);
-}
-
-.project-label {
-    align-self: start;
-    background: var(--transparent);
-    border: var(--border-thin) solid var(--gray-9);
-    color: var(--gray-9);
-    margin: 0;
-    padding: var(--space-button) var(--space-2-5);
-    text-transform: uppercase;
-    border-radius: var(--radius-card);
-
-}
-
 .corruption-poster img {
     object-position: top;
 }
