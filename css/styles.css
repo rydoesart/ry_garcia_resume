@@ -443,7 +443,6 @@ h3 {
 }
 
 .navWrap nav .btn {
-    anchor-name: --contact-button;
     background: var(--transparent);
     border: var(--border-thin) solid var(--black);
     border-radius: var(--radius-card);
@@ -530,18 +529,18 @@ footer a:hover {
 /* Contact popover */
 
 #contactPopover {
+    --contact-top: calc(var(--space-12) + var(--space-4) + var(--space-2));
     position: fixed;
     inset: auto;
-    position-anchor: --contact-button;
-    position-area: block-end span-inline-start;
-    position-try-fallbacks: flip-block, --contact-bottom-span-all, --contact-top-span-all;
+    inset-block-start: var(--contact-top);
+    inset-inline-start: var(--space-2);
     margin: 0;
     inline-size: min(calc(100vi - var(--space-4)), max(33.333vi, var(--contact-min-inline-size)));
     min-inline-size: 0;
     max-inline-size: calc(100vi - var(--space-4));
     block-size: var(--contact-block-size);
-    min-block-size: min(var(--contact-min-block-size), calc(100vb - var(--space-16)));
-    max-block-size: calc(100vb - var(--space-16));
+    min-block-size: min(var(--contact-min-block-size), calc(100vb - var(--contact-top) - var(--space-2)));
+    max-block-size: calc(100vb - var(--contact-top) - var(--space-2));
     container: contact / size;
     resize: both;
     overflow: auto;
@@ -577,14 +576,6 @@ footer a:hover {
         opacity: 0;
         transform: translateY(calc(var(--space-1) * -1)) scale(0.985);
     }
-}
-
-@position-try --contact-bottom-span-all {
-    position-area: block-end span-all;
-}
-
-@position-try --contact-top-span-all {
-    position-area: block-start span-all;
 }
 
 #contactPopover::backdrop {
@@ -1077,6 +1068,11 @@ footer p,
 /* Wider screens */
 
 @media screen and (min-width: 650px) {
+
+    #contactPopover {
+        --contact-top: calc(var(--space-16) + var(--space-4) + var(--space-2));
+        inset-inline-start: var(--bar-inline-inset);
+    }
 
     #navToggle {
         display: none;
