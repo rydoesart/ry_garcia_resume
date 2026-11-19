@@ -21,7 +21,7 @@
 }
 
 .dimensions-card h3 {
-    font-size: clamp(1rem, 1.8vw, var(--text-md));
+    font-size: clamp(1rem, 1.8vi, var(--text-md));
     line-height: 1.4;
 }
 
@@ -33,7 +33,7 @@
 
 .dimensions-label {
     color: var(--gray-7);
-    font-size: 0.6875rem;
+    font-size: 0.875rem;
     letter-spacing: 0.16em;
 }
 
@@ -46,8 +46,8 @@
 
 .dimensions-stage {
     aspect-ratio: 4 / 5;
-    background: #000;
-    border: var(--motion-stroke) solid #000;
+    background: var(--black);
+    border: var(--motion-stroke) solid var(--black);
     clip-path: inset(0);
     container-type: inline-size;
     inline-size: 100%;
@@ -57,7 +57,7 @@
 }
 
 .dimensions-stage:focus-visible {
-    outline: var(--motion-stroke) solid #fff;
+    outline: var(--motion-stroke) solid var(--white);
     outline-offset: calc(-1 * var(--space-2));
 }
 
@@ -101,7 +101,7 @@
     --row-strength: calc(0.6 + sin(var(--row) * 12deg) * 0.35);
     animation: field-wave 7.2s ease-in-out infinite;
     animation-delay: calc(var(--column) * -0.24s + var(--row) * -0.17s);
-    background: #fff;
+    background: var(--white);
     block-size: clamp(0.0625rem, 0.65cqi, 0.125rem);
     border-radius: 50%;
     inline-size: clamp(0.0625rem, 0.65cqi, 0.125rem);
@@ -174,7 +174,7 @@
     animation: depth-travel 16s linear infinite;
     animation-delay: calc(var(--frame) * -1.333333333s);
     block-size: 62cqi;
-    border: var(--motion-stroke) solid rgb(255 255 255 / 75%);
+    border: var(--motion-stroke) solid oklch(from var(--white) l c h / 75%);
     inline-size: 62cqi;
     inset-block: 0;
     inset-inline: 0;
@@ -277,7 +277,7 @@
 }
 
 .form-vertex {
-    background: #fff;
+    background: var(--white);
     block-size: 0.15rem;
     border-radius: 50%;
     inline-size: 0.15rem;
@@ -296,7 +296,7 @@
     --edge-x: calc(var(--b-x) - var(--a-x));
     --edge-y: calc(var(--b-y) - var(--a-y));
     --edge-z: calc(var(--b-z) - var(--a-z));
-    background: #fff;
+    background: var(--white);
     block-size: var(--motion-stroke);
     inline-size: calc(hypot(var(--edge-x), var(--edge-y), var(--edge-z)) * var(--form-unit));
     margin-block-start: calc(var(--motion-stroke) * -0.5);
@@ -307,8 +307,8 @@
     transform-origin: 0 50%;
 }
 
-.form-edge--rear { background: rgb(255 255 255 / 62%); }
-.form-edge--connector { background: rgb(255 255 255 / 45%); }
+.form-edge--rear { background: oklch(from var(--white) l c h / 62%); }
+.form-edge--connector { background: oklch(from var(--white) l c h / 45%); }
 
 /* Desktop collection layout */
 
