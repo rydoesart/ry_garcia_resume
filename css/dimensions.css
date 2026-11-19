@@ -146,7 +146,7 @@
 .depth-camera {
     inset-block: 0;
     inset-inline: 0;
-    perspective: 80cqi;
+    perspective: calc(var(--stage-unit) * 80);
     perspective-origin: 50% 50%;
     position: absolute;
     transition: perspective var(--motion-transition) var(--motion-easing);
@@ -164,11 +164,11 @@
 /* Perspective interaction */
 
 .dimensions-stage--depth:is(:hover, :focus-visible) .depth-camera {
-    perspective: 68cqi;
+    perspective: calc(var(--stage-unit) * 68);
 }
 
 .dimensions-stage--depth:is(:hover, :focus-visible) .depth-flight {
-    transform: rotateX(7deg) rotateY(-9deg) translateZ(3cqi);
+    transform: rotateX(7deg) rotateY(-9deg) translateZ(calc(var(--stage-unit) * 3));
 }
 
 /* Perspective frames */
@@ -176,16 +176,16 @@
 .depth-frame {
     animation: depth-travel 16s linear infinite;
     animation-delay: calc(var(--frame) * -1.333333333s);
-    block-size: 62cqi;
+    block-size: calc(var(--stage-unit) * 62);
     border: var(--motion-stroke) solid oklch(from var(--white) l c h / 75%);
-    inline-size: 62cqi;
+    inline-size: 62%;
     inset-block: 0;
     inset-inline: 0;
     margin-block: auto;
     margin-inline: auto;
     opacity: calc(1 - var(--frame) * 0.06);
     position: absolute;
-    transform: translateZ(calc(var(--frame) * -8cqi)) rotateZ(calc(var(--frame) * 4deg));
+    transform: translateZ(calc(var(--frame) * var(--stage-unit) * -8)) rotateZ(calc(var(--frame) * 4deg));
 }
 
 /* Perspective travel */
@@ -193,7 +193,7 @@
 @keyframes depth-travel {
     0% {
         opacity: 0;
-        transform: translateZ(-140cqi) rotateZ(-12deg) scale(0.35);
+        transform: translateZ(calc(var(--stage-unit) * -140)) rotateZ(-12deg) scale(0.35);
     }
 
     16% { opacity: 0.5; }
@@ -201,7 +201,7 @@
     94%, 100% { opacity: 0; }
 
     100% {
-        transform: translateZ(60cqi) rotateZ(36deg) scale(1);
+        transform: translateZ(calc(var(--stage-unit) * 60)) rotateZ(36deg) scale(1);
     }
 }
 
@@ -367,7 +367,7 @@
     }
 
     .dimensions-stage--depth:is(:hover, :focus-visible) .depth-camera {
-        perspective: 80cqi;
+        perspective: calc(var(--stage-unit) * 80);
     }
 
     .dimensions-stage--depth:is(:hover, :focus-visible) .depth-flight {
