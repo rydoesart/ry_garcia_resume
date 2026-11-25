@@ -1,0 +1,15 @@
+/* Keep transforms centered on each independent shape. */
+.geometric-art .shape {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation-duration: 800ms;
+    animation-fill-mode: both;
+}
+
+/* Slide the circle into position. */
+#circle { animation-name: circle-enter; }
+
+@keyframes circle-enter {
+    from { opacity: 0; transform: translateX(-5rem); }
+    to { opacity: 1; transform: translateX(0); }
+}
