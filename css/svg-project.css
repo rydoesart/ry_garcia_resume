@@ -38,3 +38,14 @@
     75% { opacity: 1; transform: rotate(8deg) translateY(0); }
     to { opacity: 1; transform: rotate(0deg) translateY(0); }
 }
+
+/* Expand the rectangle from its left edge. */
+#rectangle {
+    transform-origin: left center;
+    animation-name: rectangle-enter;
+}
+
+@keyframes rectangle-enter {
+    from { opacity: 0; transform: scaleX(0); }
+    to { opacity: 1; transform: scaleX(1); }
+}
