@@ -505,6 +505,7 @@ a:hover {
 footer a {
     color: var(--gray-1);
     text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-standard);
 }
 
 footer a:hover {
@@ -1227,6 +1228,7 @@ footer p,
         animation: none;
     }
 
+    footer a,
     .navWrap nav,
     .navToggleLabel > span,
     .navToggleLabel > span::before,
