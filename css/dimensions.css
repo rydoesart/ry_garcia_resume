@@ -1,4 +1,4 @@
-/* Collection layout */
+/* Fit the retained studies within the shared card layout. */
 
 .dimensions {
     /* Match the stage content width using the shared card layout tokens. */
@@ -28,7 +28,7 @@
     line-height: 1.4;
 }
 
-/* Collection captions */
+/* Keep study captions visually consistent. */
 
 .dimensions-intro {
     max-inline-size: 36rem;
@@ -45,7 +45,7 @@
     font-size: 0.9375rem;
 }
 
-/* Animation viewports */
+/* Contain each study within its own viewport. */
 
 .dimensions-stage {
     aspect-ratio: 4 / 5;
@@ -62,14 +62,14 @@
     outline-offset: calc(-1 * var(--space-2));
 }
 
-/* Magnetic field interaction */
+/* Expand the field on hover or keyboard focus. */
 
 .dimensions-stage--field:is(:hover, :focus-visible) .magnetic-field {
     --field-amplitude: calc(var(--stage-unit) * 4);
     transform: rotate(-5deg) scale(1.04);
 }
 
-/* Magnetic field layout */
+/* Arrange the particles into rows and columns. */
 
 .magnetic-field {
     --field-amplitude: calc(var(--stage-unit) * 2.4);
@@ -102,7 +102,7 @@
     opacity: 0.65;
 }
 
-/* Magnetic wave phases */
+/* Offset particle motion across the field. */
 
 .field-dot:nth-child(2) { --column: 1; }
 .field-dot:nth-child(3) { --column: 2; }
