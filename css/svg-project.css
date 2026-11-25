@@ -82,3 +82,20 @@
         animation: none;
     }
 }
+
+/* Reuse the site's spacing, borders, and neutral palette. */
+.svg-study {
+    margin-block: var(--space-6);
+    margin-inline: 0;
+}
+
+.svg-stage {
+    background: var(--white);
+    border: var(--border-thin) solid var(--gray-3);
+    border-radius: var(--radius-card);
+}
+
+.svg-study figcaption {
+    margin-block-start: var(--space-4);
+    color: var(--gray-8);
+}
