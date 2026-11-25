@@ -11,7 +11,8 @@
     --step: 0;
     transform-box: fill-box;
     transform-origin: center;
-    animation-duration: var(--shape-duration);
+    animation-duration: calc(var(--shape-duration) * 20);
+    animation-iteration-count: infinite;
     animation-delay: calc(var(--assembly-delay) + var(--step) * var(--shape-stagger));
     animation-fill-mode: both;
     animation-timing-function: var(--assembly-easing);
@@ -21,33 +22,33 @@
 #circle { animation-name: circle-enter; }
 
 @keyframes circle-enter {
-    from { opacity: 0; transform: translateX(-5rem); }
-    to { opacity: 1; transform: translateX(0); }
+    0%, 97%, 100% { opacity: 0; transform: translateX(-5rem); }
+    5%, 14% { opacity: 1; transform: translateX(0); }
 }
 
 /* Rotate the square into position. */
 #square { animation-name: square-enter; }
 
 @keyframes square-enter {
-    from { opacity: 0; transform: rotate(-90deg); }
-    to { opacity: 1; transform: rotate(0deg); }
+    0%, 97%, 100% { opacity: 0; transform: rotate(-90deg); }
+    5%, 14% { opacity: 1; transform: rotate(0deg); }
 }
 
 /* Raise the triangle into position. */
 #triangle { animation-name: triangle-enter; }
 
 @keyframes triangle-enter {
-    from { opacity: 0; transform: translateY(5rem); }
-    to { opacity: 1; transform: translateY(0); }
+    0%, 97%, 100% { opacity: 0; transform: translateY(5rem); }
+    5%, 14% { opacity: 1; transform: translateY(0); }
 }
 
 /* Rotate the semicircle and let it settle. */
 #semicircle { animation-name: semicircle-enter; }
 
 @keyframes semicircle-enter {
-    from { opacity: 0; transform: rotate(-110deg) translateY(2rem); }
-    75% { opacity: 1; transform: rotate(8deg) translateY(0); }
-    to { opacity: 1; transform: rotate(0deg) translateY(0); }
+    0%, 97%, 100% { opacity: 0; transform: rotate(-110deg) translateY(2rem); }
+    3.75% { opacity: 1; transform: rotate(8deg) translateY(0); }
+    5%, 14% { opacity: 1; transform: rotate(0deg) translateY(0); }
 }
 
 /* Expand the rectangle from its left edge. */
@@ -57,16 +58,16 @@
 }
 
 @keyframes rectangle-enter {
-    from { opacity: 0; transform: scaleX(0); }
-    to { opacity: 1; transform: scaleX(1); }
+    0%, 97%, 100% { opacity: 0; transform: scaleX(0); }
+    5%, 14% { opacity: 1; transform: scaleX(1); }
 }
 
 /* Scale the rings together into the final arrangement. */
 #rings { animation-name: rings-enter; }
 
 @keyframes rings-enter {
-    from { opacity: 0; transform: scale(0.25); }
-    to { opacity: 1; transform: scale(1); }
+    0%, 97%, 100% { opacity: 0; transform: scale(0.25); }
+    5%, 14% { opacity: 1; transform: scale(1); }
 }
 
 /* Build across the top row, then complete the lower row. */
