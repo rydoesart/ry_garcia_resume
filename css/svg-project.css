@@ -75,3 +75,10 @@
 #semicircle { --step: 3; }
 #rectangle { --step: 4; }
 #rings { --step: 5; }
+
+/* Show the completed illustration immediately when motion is reduced. */
+@media (prefers-reduced-motion: reduce) {
+    #circle, #square, #triangle, #semicircle, #rectangle, #rings {
+        animation: none;
+    }
+}
