@@ -21,3 +21,11 @@
     from { opacity: 0; transform: rotate(-90deg); }
     to { opacity: 1; transform: rotate(0deg); }
 }
+
+/* Raise the triangle into position. */
+#triangle { animation-name: triangle-enter; }
+
+@keyframes triangle-enter {
+    from { opacity: 0; transform: translateY(5rem); }
+    to { opacity: 1; transform: translateY(0); }
+}
