@@ -508,7 +508,7 @@ footer a {
 }
 
 footer a:hover {
-    color: var(--green);
+    color: var(--footer-hover-color);
     text-decoration: none;
 }
 
@@ -1057,6 +1057,7 @@ footer a:hover {
 /* Align footer text with the social links. */
 
 footer {
+    --footer-hover-color: var(--gray-4);
     background: var(--black);
     color: var(--gray-1);
     display: flex;
@@ -1098,7 +1099,7 @@ footer p,
 }
 
 .socials a:hover .github-icon {
-    color: var(--green);
+    color: inherit;
 }
 
 /* Expand navigation and content on wider screens. */
