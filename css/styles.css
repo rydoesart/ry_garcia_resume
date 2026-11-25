@@ -298,7 +298,7 @@ h3 {
 .banner-dot:nth-child(47) { --column: 46; }
 .banner-dot:nth-child(48) { --column: 47; }
 
-/* Navigation */
+/* Support desktop links and the mobile navigation toggle. */
 
 .navLogo {
     display: grid;
@@ -484,7 +484,7 @@ h3 {
     transform: rotate(-45deg);
 }
 
-/* Links */
+/* Share link colors across the site. */
 
 a {
     color: var(--gray-9);
@@ -505,7 +505,7 @@ footer a:hover {
     text-decoration: none;
 }
 
-/* Button */
+/* Keep shared buttons consistent. */
 
 .btn {
     background: var(--gray-9);
@@ -526,7 +526,7 @@ footer a:hover {
     color: var(--gray-1);
 }
 
-/* Contact popover */
+/* Lay out the contact details and portrait. */
 
 #contactPopover {
     --contact-top: calc(var(--space-12) + var(--space-4) + var(--space-2));
@@ -562,7 +562,7 @@ footer a:hover {
         overlay var(--duration-menu) allow-discrete;
 }
 
-/* Contact popover motion */
+/* Ease the contact panel into view. */
 
 #contactPopover:popover-open {
     animation: contact-open var(--duration-menu) var(--ease-standard);
@@ -586,7 +586,7 @@ footer a:hover {
         overlay var(--duration-menu) allow-discrete;
 }
 
-/* Contact backdrop motion */
+/* Fade the backdrop behind the contact panel. */
 
 #contactPopover:popover-open::backdrop {
     animation: contact-backdrop-open var(--duration-menu) var(--ease-standard);
