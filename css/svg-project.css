@@ -22,37 +22,37 @@
 #circle { animation-name: circle-enter; }
 
 @keyframes circle-enter {
-    0%, 97%, 100% { opacity: 0; transform: translateX(-5rem); }
+    0%, 90.5%, 100% { opacity: 0; transform: translateX(-5rem); }
     8%, 20% { opacity: 1; transform: translateX(0); }
-    60%, 75% { opacity: 1; transform: translate(120px, 9px) scale(0.34, 0.13); }
+    48%, 87% { opacity: 1; transform: translate(120px, 9px) scale(0.34, 0.13); }
 }
 
 /* Rotate the square into position. */
 #square { animation-name: square-enter; }
 
 @keyframes square-enter {
-    0%, 97%, 100% { opacity: 0; transform: rotate(-90deg); }
+    0%, 90.5%, 100% { opacity: 0; transform: rotate(-90deg); }
     8%, 20% { opacity: 1; transform: rotate(0deg); }
-    60%, 75% { opacity: 1; transform: translateY(110px) scale(2.2, 1.2); }
+    48%, 87% { opacity: 1; transform: translateY(110px) scale(2.2, 1.2); }
 }
 
 /* Raise the triangle into position. */
 #triangle { animation-name: triangle-enter; }
 
 @keyframes triangle-enter {
-    0%, 97%, 100% { opacity: 0; transform: translateY(5rem); }
+    0%, 90.5%, 100% { opacity: 0; transform: translateY(5rem); }
     8%, 20% { opacity: 1; transform: translateY(0); }
-    60%, 75% { opacity: 1; transform: translate(-235px, 5px) scale(0.8, 0.3); }
+    48%, 87% { opacity: 1; transform: translate(-235px, 5px) scale(0.8, 0.3); }
 }
 
 /* Rotate the semicircle and let it settle. */
 #semicircle { animation-name: semicircle-enter; }
 
 @keyframes semicircle-enter {
-    0%, 97%, 100% { opacity: 0; transform: rotate(-110deg) translateY(2rem); }
+    0%, 90.5%, 100% { opacity: 0; transform: rotate(-110deg) translateY(2rem); }
     6% { opacity: 1; transform: rotate(8deg) translateY(0); }
     8%, 20% { opacity: 1; transform: rotate(0deg) translateY(0); }
-    60%, 75% { opacity: 1; transform: translate(375px, -90px) rotate(-90deg) scale(1.03, 0.86); }
+    48%, 87% { opacity: 1; transform: translate(375px, -90px) rotate(-90deg) scale(1.03, 0.86); }
 }
 
 /* Expand the rectangle from its left edge. */
@@ -62,18 +62,18 @@
 }
 
 @keyframes rectangle-enter {
-    0%, 97%, 100% { opacity: 0; transform: scaleX(0); }
+    0%, 90.5%, 100% { opacity: 0; transform: scaleX(0); }
     8%, 20% { opacity: 1; transform: scaleX(1); }
-    60%, 75% { opacity: 1; transform: translate(-60px, -141px) scale(0.3, 0.24); }
+    48%, 87% { opacity: 1; transform: translate(-60px, -141px) scale(0.3, 0.24); }
 }
 
 /* Scale the rings together into the final arrangement. */
 #rings { animation-name: rings-enter; }
 
 @keyframes rings-enter {
-    0%, 97%, 100% { opacity: 0; transform: scale(0.25); }
+    0%, 90.5%, 100% { opacity: 0; transform: scale(0.25); }
     8%, 20% { opacity: 1; transform: scale(1); }
-    60%, 75% { opacity: 1; transform: translate(-230px, -90px) scale(0.92); }
+    48%, 87% { opacity: 1; transform: translate(-230px, -90px) scale(0.92); }
 }
 
 /* Build across the top row, then complete the lower row. */
