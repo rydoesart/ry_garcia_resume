@@ -513,6 +513,14 @@ footer a:hover {
     text-decoration: none;
 }
 
+/* Make keyboard focus clear against the black footer. */
+footer a:focus-visible {
+    color: var(--footer-hover-color);
+    outline: var(--border-strong) solid var(--white);
+    outline-offset: var(--space-1);
+    text-decoration: underline;
+}
+
 /* Keep shared buttons consistent. */
 
 .btn {
