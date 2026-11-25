@@ -95,6 +95,21 @@
 #rectangle { --step: 4; }
 #rings { --step: 5; }
 
+/* The contour follows the same clock as its moving group. */
+@media (prefers-reduced-motion: no-preference) {
+    .shape > .contour {
+        animation: inherit;
+        animation-name: var(--contour-motion);
+    }
+}
+
+#square { --contour-motion: camera-body; }
+
+@keyframes camera-body {
+    0%, 33%, 97%, 100% { rx: 0; }
+    42%, 80% { rx: 12px; }
+}
+
 /* Show the completed illustration immediately when motion is reduced. */
 @media (prefers-reduced-motion: reduce) {
     #circle, #square, #triangle, #semicircle, #rectangle, #rings {
