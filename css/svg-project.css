@@ -99,3 +99,11 @@
     margin-block-start: var(--space-4);
     color: var(--gray-8);
 }
+
+/* Scale the viewBox within the same wrapper at every screen size. */
+.geometric-art {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: 8 / 5;
+}
