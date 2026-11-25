@@ -1,8 +1,15 @@
+/* Pause briefly before assembling the illustration. */
+.svg-project {
+    --assembly-delay: 450ms;
+    --shape-duration: 800ms;
+}
+
 /* Keep transforms centered on each independent shape. */
 .geometric-art .shape {
     transform-box: fill-box;
     transform-origin: center;
-    animation-duration: 800ms;
+    animation-duration: var(--shape-duration);
+    animation-delay: var(--assembly-delay);
     animation-fill-mode: both;
 }
 
