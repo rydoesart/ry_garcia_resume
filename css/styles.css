@@ -433,6 +433,11 @@ h3 {
     font-weight: var(--font-weight-semibold);
 }
 
+/* Keep the active underline aligned with the hover underline. */
+.navWrap nav .current-page::after {
+    opacity: 1;
+}
+
 .navWrap nav ul li a:hover,
 .navWrap nav ul li a:focus-visible {
     background-color: var(--transparent);
