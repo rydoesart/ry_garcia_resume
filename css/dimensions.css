@@ -132,7 +132,7 @@
     }
 }
 
-/* Perspective camera */
+/* Set the viewing depth for the nested frames. */
 
 .depth-camera {
     inset-block: 0;
@@ -152,7 +152,7 @@
     transition: transform var(--motion-transition) var(--motion-easing);
 }
 
-/* Perspective interaction */
+/* Shift the camera on hover or keyboard focus. */
 
 .dimensions-stage--depth:is(:hover, :focus-visible) .depth-camera {
     perspective: calc(var(--stage-unit) * 68);
@@ -162,7 +162,7 @@
     transform: rotateX(7deg) rotateY(-9deg) translateZ(calc(var(--stage-unit) * 3));
 }
 
-/* Perspective frames */
+/* Space the nested frames along the depth axis. */
 
 .depth-frame {
     animation: depth-travel 16s linear infinite;
@@ -179,7 +179,7 @@
     transform: translateZ(calc(var(--frame) * var(--stage-unit) * -8)) rotateZ(calc(var(--frame) * 4deg));
 }
 
-/* Perspective travel */
+/* Move each frame through the viewing depth. */
 
 @keyframes depth-travel {
     0% {
@@ -196,7 +196,7 @@
     }
 }
 
-/* Desktop collection layout */
+/* Place the two retained studies beside each other. */
 
 @media (min-width: 650px) {
     .dimensions {
@@ -215,7 +215,7 @@
     }
 }
 
-/* Compact particle field */
+/* Reduce the number of particle rows on small screens. */
 
 @media (max-width: 450px) {
     .magnetic-field {
@@ -227,7 +227,7 @@
     }
 }
 
-/* Reduced motion */
+/* Keep the studies static when reduced motion is requested. */
 
 @media (prefers-reduced-motion: reduce) {
     .dimensions-stage * {
