@@ -24,7 +24,6 @@
 @keyframes circle-enter {
     0%, 97%, 100% { opacity: 0; transform: translateX(-5rem); }
     5%, 14% { opacity: 1; transform: translateX(0); }
-    23%, 33% { opacity: 1; transform: translate(-55px, 100px) scale(0.625); }
     42%, 51% { opacity: 1; transform: translate(100px, -65px) scale(0.34, 0.13); }
     60%, 75% { opacity: 1; transform: translate(120px, 9px) scale(0.34, 0.13); }
 }
@@ -35,7 +34,6 @@
 @keyframes square-enter {
     0%, 97%, 100% { opacity: 0; transform: rotate(-90deg); }
     5%, 14% { opacity: 1; transform: rotate(0deg); }
-    23%, 33% { opacity: 1; transform: translate(-59px, 100px) rotate(45deg) scale(0.5); }
     42%, 51% { opacity: 1; transform: translateY(120px) scale(1.7, 1.05); }
     60%, 75% { opacity: 1; transform: translateY(110px) scale(2.2, 1.2); }
 }
@@ -46,7 +44,6 @@
 @keyframes triangle-enter {
     0%, 97%, 100% { opacity: 0; transform: translateY(5rem); }
     5%, 14% { opacity: 1; transform: translateY(0); }
-    23%, 33% { opacity: 1; transform: translate(-63px, 100px) scale(0.625); }
     42%, 51% { opacity: 1; transform: translate(-235px, -70px) scale(0.8, 0.3); }
     60%, 75% { opacity: 1; transform: translate(-235px, 5px) scale(0.8, 0.3); }
 }
@@ -58,7 +55,6 @@
     0%, 97%, 100% { opacity: 0; transform: rotate(-110deg) translateY(2rem); }
     3.75% { opacity: 1; transform: rotate(8deg) translateY(0); }
     5%, 14% { opacity: 1; transform: rotate(0deg) translateY(0); }
-    23%, 33% { opacity: 1; transform: translate(63px, -100px) rotate(90deg) scale(0.625); }
     42%, 51% { opacity: 1; transform: translate(485px, -80px) rotate(-90deg) scale(0.6); }
     60%, 75% { opacity: 1; transform: translate(373px, -90px) rotate(-90deg) scale(0.6); }
 }
@@ -72,7 +68,6 @@
 @keyframes rectangle-enter {
     0%, 97%, 100% { opacity: 0; transform: scaleX(0); }
     5%, 14% { opacity: 1; transform: scaleX(1); }
-    23%, 33% { opacity: 1; transform: translate(87.5px, -100px) scale(0.625); }
     42%, 51% { opacity: 1; transform: translate(-155px, -108px) scale(0.30, 0.24); }
     60%, 75% { opacity: 1; transform: translate(-60px, -141px) scale(0.3, 0.24); }
 }
@@ -83,7 +78,6 @@
 @keyframes rings-enter {
     0%, 97%, 100% { opacity: 0; transform: scale(0.25); }
     5%, 14% { opacity: 1; transform: scale(1); }
-    23%, 33% { opacity: 1; transform: translate(55px, -100px) scale(0.625); }
     42%, 51% { opacity: 1; transform: translate(-230px, 66px) scale(0.68); }
     60%, 75% { opacity: 1; transform: translate(-230px, -90px) scale(0.92); }
 }
