@@ -65,6 +65,14 @@
     60%, 75% { d: path("M344.2 170.1 L366.6 117.9 L443.4 117.9 L465.8 170.1 Z"); }
 }
 
+/* Widen the square’s lower band after the chassis starts moving. */
+#square .camera-finish { --contour-motion: body-panel; }
+
+@keyframes body-panel {
+    0%, 25%, 100% { d: path("M232.8 326 H567.2 V336.8 Q567.2 351.2 540.8 351.2 H259.2 Q232.8 351.2 232.8 336.8 Z"); }
+    60%, 75% { d: path("M232.8 231.2 H567.2 V336.8 Q567.2 351.2 540.8 351.2 H259.2 Q232.8 351.2 232.8 336.8 Z"); }
+}
+
 /* Show the completed illustration immediately when motion is reduced. */
 @media (prefers-reduced-motion: reduce) {
     #circle, #square, #triangle, #semicircle, #rectangle, #rings {
