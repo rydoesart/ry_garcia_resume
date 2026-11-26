@@ -32,6 +32,92 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    nav {
+        position: absolute;
+        inset-block-start: 100%;
+        inset-inline-start: 0;
+        z-index: var(--z-menu);
+        inline-size: 100%;
+        background: var(--white);
+        transform: translateX(-110%);
+        visibility: hidden;
+        transition: transform var(--duration-menu) var(--ease-standard), visibility var(--duration-menu);
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li a {
+                position: relative;
+                display: block;
+                text-decoration: none;
+                inline-size: 100%;
+                padding: var(--nav-padding-block) var(--space-4);
+                color: var(--black);
+                font-family: var(--body-font);
+                border-block-end: var(--border-thin) solid var(--gray-3);
+                transition: color var(--duration-fast) var(--ease-standard);
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    inset-inline: var(--space-4);
+                    inset-block-end: var(--nav-underline-offset);
+                    block-size: var(--border-strong);
+                    background: var(--black);
+                    opacity: 0;
+                    transition: opacity var(--duration-fast) var(--ease-standard);
+                }
+
+                &:hover,
+                &:focus-visible {
+                    background-color: var(--transparent);
+                    color: var(--black);
+
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .current-page {
+            color: var(--black);
+            font-weight: var(--font-weight-semibold);
+
+            /* Keep the active underline aligned with the hover underline. */
+            &::after {
+                opacity: 1;
+            }
+        }
+
+        .btn {
+            background: var(--transparent);
+            border: var(--border-thin) solid var(--black);
+            border-radius: var(--radius-card);
+            box-shadow: none;
+            color: var(--black);
+            inline-size: fit-content;
+            font: inherit;
+            padding-block: var(--space-button);
+            padding-inline: var(--space-2-5);
+            letter-spacing: inherit;
+            text-shadow: none;
+            display: flex;
+            justify-content: center;
+            margin-block: var(--space-3);
+            margin-inline: auto;
+
+            &:hover,
+            &:focus-visible {
+                background: var(--black);
+                border-color: var(--black);
+                color: var(--white);
+            }
+        }
+    }
 }
 
 #navToggle {
@@ -41,6 +127,30 @@
     overflow: hidden;
     clip-path: inset(50%);
     white-space: nowrap;
+
+    &:focus-visible + .navToggleLabel {
+        outline: var(--border-strong) solid var(--black);
+        outline-offset: var(--border-strong);
+    }
+
+    &:checked {
+        & ~ nav {
+            transform: translateX(0);
+            visibility: visible;
+        }
+
+        & + .navToggleLabel > span {
+            background: var(--transparent);
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+    }
 }
 
 .navToggleLabel {
@@ -50,145 +160,36 @@
     inline-size: var(--space-10);
     block-size: var(--space-10);
     cursor: pointer;
-}
 
-.navToggleLabel > span {
-    position: relative;
-    display: block;
-    inline-size: var(--menu-icon-size);
-    block-size: var(--border-strong);
-    background: var(--black);
-    transition: background-color var(--duration-fast) var(--ease-standard);
-}
+    > span {
+        position: relative;
+        display: block;
+        inline-size: var(--menu-icon-size);
+        block-size: var(--border-strong);
+        background: var(--black);
+        transition: background-color var(--duration-fast) var(--ease-standard);
 
-.navToggleLabel > span::before,
-.navToggleLabel > span::after {
-    content: "";
-    display: block;
-    position: absolute;
-    inset-inline-start: 0;
-    inset-block-start: 0;
-    inline-size: 100%;
-    block-size: 100%;
-    background: var(--black);
-    transition: transform var(--duration-fast) var(--ease-standard);
-}
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            inset-inline-start: 0;
+            inset-block-start: 0;
+            inline-size: 100%;
+            block-size: 100%;
+            background: var(--black);
+            transition: transform var(--duration-fast) var(--ease-standard);
+        }
 
-.navToggleLabel > span::before {
-    transform: translateY(calc(-1 * var(--space-2)));
-}
+        &::before {
+            transform: translateY(calc(-1 * var(--space-2)));
+        }
 
-.navToggleLabel > span::after {
-    transform: translateY(var(--space-2));
-}
-
-#navToggle:focus-visible + .navToggleLabel {
-    outline: var(--border-strong) solid var(--black);
-    outline-offset: var(--border-strong);
-}
-
-.navWrap nav {
-    position: absolute;
-    inset-block-start: 100%;
-    inset-inline-start: 0;
-    z-index: var(--z-menu);
-    inline-size: 100%;
-    background: var(--white);
-    transform: translateX(-110%);
-    visibility: hidden;
-    transition: transform var(--duration-menu) var(--ease-standard), visibility var(--duration-menu);
-}
-
-.navWrap nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navWrap nav ul li a {
-    position: relative;
-    display: block;
-    text-decoration: none;
-    inline-size: 100%;
-    padding: var(--nav-padding-block) var(--space-4);
-    color: var(--black);
-    font-family: var(--body-font);
-    border-block-end: var(--border-thin) solid var(--gray-3);
-    transition: color var(--duration-fast) var(--ease-standard);
-}
-
-.navWrap nav ul li a::after {
-    content: "";
-    position: absolute;
-    inset-inline: var(--space-4);
-    inset-block-end: var(--nav-underline-offset);
-    block-size: var(--border-strong);
-    background: var(--black);
-    opacity: 0;
-    transition: opacity var(--duration-fast) var(--ease-standard);
-}
-
-.navWrap nav .current-page {
-    color: var(--black);
-    font-weight: var(--font-weight-semibold);
-}
-
-/* Keep the active underline aligned with the hover underline. */
-.navWrap nav .current-page::after {
-    opacity: 1;
-}
-
-.navWrap nav ul li a:hover,
-.navWrap nav ul li a:focus-visible {
-    background-color: var(--transparent);
-    color: var(--black);
-}
-
-.navWrap nav ul li a:hover::after,
-.navWrap nav ul li a:focus-visible::after {
-    opacity: 1;
-}
-
-.navWrap nav .btn {
-    background: var(--transparent);
-    border: var(--border-thin) solid var(--black);
-    border-radius: var(--radius-card);
-    box-shadow: none;
-    color: var(--black);
-    inline-size: fit-content;
-    font: inherit;
-    padding-block: var(--space-button);
-    padding-inline: var(--space-2-5);
-    letter-spacing: inherit;
-    text-shadow: none;
-    display: flex;
-    justify-content: center;
-    margin-block: var(--space-3);
-    margin-inline: auto;
-}
-
-.navWrap nav .btn:hover,
-.navWrap nav .btn:focus-visible {
-    background: var(--black);
-    border-color: var(--black);
-    color: var(--white);
-}
-
-#navToggle:checked ~ nav {
-    transform: translateX(0);
-    visibility: visible;
-}
-
-#navToggle:checked + .navToggleLabel > span {
-    background: var(--transparent);
-}
-
-#navToggle:checked + .navToggleLabel > span::before {
-    transform: rotate(45deg);
-}
-
-#navToggle:checked + .navToggleLabel > span::after {
-    transform: rotate(-45deg);
+        &::after {
+            transform: translateY(var(--space-2));
+        }
+    }
 }
 
 /* Assemble the existing logo when motion is allowed. */
@@ -217,7 +218,7 @@
     }
 }
 
-/* Contact at 36% / 72%; decreasing recoil at 54% / 83%; original position at 96%. */
+/* The logo pieces touch twice, with less recoil after the second contact. */
 @keyframes logo-g-assemble {
     0% {
         transform: translate(64px, 64px);
@@ -263,43 +264,43 @@
         display: none;
     }
 
-    .navWrap {
-        --nav-padding-block: var(--space-1);
-        min-block-size: calc(var(--space-16) + var(--space-2));
-    }
-
     .navToggleLabel {
         display: none;
     }
 
-    .navWrap nav {
-        position: static;
-        inline-size: auto;
-        background: var(--transparent);
-        transform: none;
-        visibility: visible;
-        transition: none;
-    }
+    .navWrap {
+        --nav-padding-block: var(--space-1);
+        min-block-size: calc(var(--space-16) + var(--space-2));
 
-    .navWrap nav ul {
-        display: flex;
-        align-items: center;
-        gap: var(--space-1);
-    }
+        nav {
+            position: static;
+            inline-size: auto;
+            background: var(--transparent);
+            transform: none;
+            visibility: visible;
+            transition: none;
 
-    .navWrap nav ul li a {
-        inline-size: auto;
-        padding: var(--nav-padding-block) var(--space-2-5);
-        border: 0;
-    }
+            ul {
+                display: flex;
+                align-items: center;
+                gap: var(--space-1);
 
-    .navWrap nav ul li a::after {
-        inset-inline: var(--space-2-5);
-        inset-block-end: var(--nav-underline-offset);
-    }
+                li a {
+                    inline-size: auto;
+                    padding: var(--nav-padding-block) var(--space-2-5);
+                    border: 0;
 
-    .navWrap nav .btn {
-        margin: 0;
+                    &::after {
+                        inset-inline: var(--space-2-5);
+                        inset-block-end: var(--nav-underline-offset);
+                    }
+                }
+            }
+
+            .btn {
+                margin: 0;
+            }
+        }
     }
 }
 
