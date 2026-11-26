@@ -14,44 +14,44 @@
 
 #circle {
     --motion: seat-shutter;
-    --shape-pose: translate(40px, -35px) scale(0.71);
+    --shape-pose: translate(-5px, -55px) scale(0.71);
     --camera-pose: translate(120px, 9px) scale(0.34, 0.13);
 }
 
 #semicircle {
     --motion: seat-grip;
-    --shape-pose: translate(440px, -235px) rotate(0deg) scale(0.79);
+    --shape-pose: translate(485px, -100px) rotate(0deg) scale(0.79);
     --camera-pose: translate(375px, -90px) rotate(-90deg) scale(1.03, 0.86);
 }
 
 #rectangle {
     --motion: seat-finder;
-    --shape-pose: translate(-181px, 35px) scale(0.75);
+    --shape-pose: translate(-226px, -100px) scale(0.75);
     transform-origin: left center;
     --camera-pose: translate(-60px, -141px) scale(0.3, 0.24);
 }
 
 #rings {
     --motion: seat-glass;
-    --shape-pose: translate(-40px, 35px) scale(0.80);
+    --shape-pose: translate(5px, -255px) scale(0.80);
 }
 
-/* The left-hand ring crosses the middle row to frame the lens glass. */
+/* Keep the outer cells clear of the assembled camera silhouette. */
 .lens-mount {
     --motion: seat-mount;
-    --shape-pose: translate(-440px, -100px) scale(0.73);
+    --shape-pose: translate(-485px, 55px) scale(0.73);
 }
 
 #rings, .lens-mount, .lens-core {
     --camera-pose: translate(-230px, -90px) scale(0.92);
 }
 
-/* Center the middle column between the controls and the optics. */
+/* Turn the lower-right diamond into the frame behind the seated optics. */
 #square {
-    --shape-pose: translateY(125px) rotate(-45deg) scale(0.323, 0.592);
+    --shape-pose: translate(245px, 145px) rotate(-45deg) scale(0.27, 0.495);
     --motion: seat-frame;
 }
-#triangle { --shape-pose: translate(-5px, -29px); --motion: seat-prism; }
+#triangle { --shape-pose: translate(-5px, -49px); --motion: seat-prism; }
 
 /* Keep each contour on its parent’s clock as the silhouette changes. */
 @media (prefers-reduced-motion: no-preference) {
@@ -88,7 +88,7 @@
 
 /* The free-standing bar meets the expanding frame to build the two-tone body. */
 .body-panel {
-    --shape-pose: translateY(-41.2px) scale(0.50, 0.18);
+    --shape-pose: translateY(113.8px) scale(0.50, 0.18);
     --motion: seat-panel;
 }
 
@@ -102,10 +102,10 @@
     23%, 96% { transform: none; }
 }
 
-/* The small disk in the right column closes the optical assembly. */
+/* The center disk establishes the optical axis before the larger pieces dock. */
 .lens-core {
     --motion: seat-aperture;
-    --shape-pose: translate(-40px, -100px) scale(1.05);
+    --shape-pose: translate(-240px, -100px) scale(1.05);
 }
 
 @keyframes seat-grip {
