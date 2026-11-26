@@ -1,4 +1,4 @@
-/* Fit the retained studies within the shared card layout. */
+/* Fit the three motion studies within the shared card layout. */
 
 .dimensions {
     /* Match the stage content width using the shared card layout tokens. */
@@ -282,7 +282,7 @@
 .form-edge--rear { background: oklch(from var(--white) l c h / 62%); }
 .form-edge--connector { background: oklch(from var(--white) l c h / 45%); }
 
-/* Place the retained studies beside each other. */
+/* Place all three studies beside each other on large screens. */
 
 @media (min-width: 40.625rem) {
     .dimensions {
@@ -292,11 +292,11 @@
 
 @media (min-width: 53.75rem) {
     .dimensions {
-        --stage-width: calc((min(100vi, var(--content-max-inline-size)) - var(--space-7) * 2 - var(--space-5)) / 2 - var(--space-5) * 2 - var(--border-thin) * 4);
+        --stage-width: calc((min(100vi, var(--content-max-inline-size)) - var(--space-7) * 2 - var(--space-5) * 2) / 3 - var(--space-5) * 2 - var(--border-thin) * 4);
     }
 
     .dimensions .dimensions-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         max-inline-size: none;
     }
 }
