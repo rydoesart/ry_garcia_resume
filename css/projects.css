@@ -1,0 +1,81 @@
+/* Reuse one card layout for all projects. */
+
+.project-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-5);
+    margin-block-start: var(--space-7);
+}
+
+.project-item {
+    background: var(--gray-1);
+    border: var(--border-thin) solid var(--gray-3);
+    border-radius: var(--radius-card);
+    box-shadow: 0 var(--space-3) var(--space-7) oklch(from var(--gray-9) l c h / 24%);
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    row-gap: var(--space-3);
+    margin: 0;
+    min-inline-size: 0;
+    padding: var(--space-5);
+}
+
+.project-item img {
+    block-size: auto;
+    aspect-ratio: 16 / 10;
+    display: block;
+    inline-size: 100%;
+    object-fit: cover;
+}
+
+/* Frame the Dimensions thumbnail against black. */
+
+.project-item .dimensions-cover {
+    background: var(--black);
+    object-position: 50% 56%;
+}
+
+.project-item h3 {
+    margin: 0;
+}
+
+.project-item p {
+    margin: 0;
+}
+
+.project-item .btn {
+    align-self: start;
+    background: var(--transparent);
+    border: var(--border-thin) solid var(--gray-9);
+    border-radius: var(--radius-card);
+    color: var(--gray-9);
+    font-family: var(--body-font);
+    line-height: inherit;
+    margin: 0;
+    padding: var(--space-button) var(--space-2-5);
+    text-align: center;
+}
+
+.project-item .btn:hover,
+.project-item .btn:focus-visible {
+    background: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+}
+
+.corruption-poster img {
+    object-position: top;
+}
+
+@media screen and (min-width: 40.625rem) {
+    .project-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 53.75rem) {
+    .project-wrapper {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
