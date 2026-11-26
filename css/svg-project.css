@@ -39,7 +39,7 @@
 
 @keyframes camera-assembly {
     0%, 10%, 100% { transform: var(--shape-pose); }
-    60%, 75% { transform: var(--camera-pose, none); }
+    65%, 80% { transform: var(--camera-pose, none); }
 }
 
 /* Keep each contour on its parent’s clock as the silhouette changes. */
@@ -54,7 +54,7 @@
 
 @keyframes shutter-profile {
     0%, 10%, 100% { rx: 76px; }
-    60%, 75% { rx: 18px; }
+    65%, 80% { rx: 18px; }
 }
 
 /* Split the triangle’s apex into the two top corners of the prism housing. */
@@ -62,7 +62,7 @@
 
 @keyframes prism-profile {
     0%, 10%, 100% { d: path("M344.2 195 L405 93 L405 93 L465.8 195 Z"); }
-    60%, 75% { d: path("M344.2 170.1 L366.6 117.9 L443.4 117.9 L465.8 170.1 Z"); }
+    65%, 80% { d: path("M344.2 170.1 L366.6 117.9 L443.4 117.9 L465.8 170.1 Z"); }
 }
 
 /* Widen the square’s lower band after the chassis starts moving. */
@@ -70,7 +70,7 @@
 
 @keyframes body-panel {
     0%, 25%, 100% { d: path("M232.8 326 H567.2 V336.8 Q567.2 351.2 540.8 351.2 H259.2 Q232.8 351.2 232.8 336.8 Z"); }
-    60%, 75% { d: path("M232.8 231.2 H567.2 V336.8 Q567.2 351.2 540.8 351.2 H259.2 Q232.8 351.2 232.8 336.8 Z"); }
+    65%, 80% { d: path("M232.8 231.2 H567.2 V336.8 Q567.2 351.2 540.8 351.2 H259.2 Q232.8 351.2 232.8 336.8 Z"); }
 }
 
 /* Close the bright center of the rings as the lens seats in the body. */
@@ -78,7 +78,7 @@
 
 @keyframes lens-aperture {
     0%, 35%, 100% { r: 36px; fill: var(--white); }
-    60%, 75% { r: 24px; fill: var(--black); }
+    65%, 80% { r: 24px; fill: var(--black); }
 }
 
 /* Show the completed illustration immediately when motion is reduced. */
