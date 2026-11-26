@@ -21,16 +21,10 @@
     transform: translate(375px, -90px) rotate(-90deg) scale(1.03, 0.86);
 }
 
-/* Expand the rectangle from its left edge. */
 #rectangle {
+    --flight: -89px -45px;
     transform-origin: left center;
-    animation-name: rectangle-enter, camera-burst;
-}
-
-@keyframes rectangle-enter {
-    0%, 90.5%, 100% { opacity: 0; transform: scaleX(0); }
-    8%, 20% { opacity: 1; transform: scaleX(1); }
-    48%, 87% { opacity: 1; transform: translate(-60px, -141px) scale(0.3, 0.24); }
+    transform: translate(-60px, -141px) scale(0.3, 0.24);
 }
 
 /* Scale the rings together into the final arrangement. */
@@ -45,7 +39,6 @@
 /* Lift the top controls and pull the lens and grip clear of the body. */
 #square { --flight: 7px 79px; }
 #triangle { --flight: 0px -57px; }
-#rectangle { --flight: -89px -45px; }
 #rings { --flight: -276px 12px; }
 
 @keyframes camera-burst {
