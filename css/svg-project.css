@@ -16,15 +16,6 @@
     transform: translate(120px, 9px) scale(0.34, 0.13);
 }
 
-/* Rotate the square into position. */
-#square { animation-name: square-enter, camera-burst; }
-
-@keyframes square-enter {
-    0%, 90.5%, 100% { opacity: 0; transform: rotate(-90deg); }
-    8%, 20% { opacity: 1; transform: rotate(0deg); }
-    48%, 87% { opacity: 1; transform: translateY(110px) scale(2.2, 1.2); }
-}
-
 /* Raise the triangle into position. */
 #triangle { animation-name: triangle-enter, camera-burst; }
 
@@ -83,13 +74,6 @@
         animation: inherit;
         animation-name: var(--contour-motion);
     }
-}
-
-#square { --contour-motion: camera-body; }
-
-@keyframes camera-body {
-    0%, 33%, 97%, 100% { rx: 0; }
-    42%, 80% { rx: 12px; }
 }
 
 #triangle { --contour-motion: prism-housing; }
