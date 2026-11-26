@@ -1,21 +1,14 @@
-/* Pause briefly before assembling the illustration. */
+/* Give the assembled camera a short pause on page load. */
 .svg-project {
     --assembly-delay: 450ms;
-    --shape-duration: 800ms;
-    --shape-stagger: 180ms;
-    --assembly-easing: cubic-bezier(0.22, 0.68, 0.3, 1);
+    --shape-duration: 8s;
 }
 
 /* Keep transforms centered on each independent shape. */
 .geometric-art .shape {
-    --step: 0;
     transform-box: fill-box;
     transform-origin: center;
-    animation-duration: calc(var(--shape-duration) * 12.5);
-    animation-iteration-count: infinite;
-    animation-delay: calc(var(--assembly-delay) + var(--step) * var(--shape-stagger)), var(--assembly-delay);
-    animation-fill-mode: both;
-    animation-timing-function: var(--assembly-easing);
+    animation: camera-burst var(--shape-duration) var(--ease-standard) var(--assembly-delay) infinite both;
 }
 
 /* Slide the circle into position. */
@@ -85,16 +78,9 @@
 #rings { --flight: -276px 12px; }
 
 @keyframes camera-burst {
-    0%, 69%, 100% { translate: 0 0; }
-    79%, 93% { translate: var(--flight); }
+    0%, 15%, 85%, 100% { translate: 0 0; }
+    40%, 60% { translate: var(--flight); }
 }
-
-/* Build across the top row, then complete the lower row. */
-#square { --step: 1; }
-#triangle { --step: 2; }
-#semicircle { --step: 3; }
-#rectangle { --step: 4; }
-#rings { --step: 5; }
 
 /* The contour follows the same clock as its moving group. */
 @media (prefers-reduced-motion: no-preference) {
