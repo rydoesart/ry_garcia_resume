@@ -8,29 +8,30 @@
 .geometric-art .shape {
     transform-box: fill-box;
     transform-origin: center;
+    transform: var(--camera-pose, none);
     animation: camera-burst var(--shape-duration) var(--ease-standard) var(--assembly-delay) infinite both;
 }
 
 #circle {
     --flight: -18px -53px;
-    transform: translate(120px, 9px) scale(0.34, 0.13);
+    --camera-pose: translate(120px, 9px) scale(0.34, 0.13);
 }
 
 #semicircle {
     --flight: 146px 0px;
-    transform: translate(375px, -90px) rotate(-90deg) scale(1.03, 0.86);
+    --camera-pose: translate(375px, -90px) rotate(-90deg) scale(1.03, 0.86);
 }
 
 #rectangle {
     /* Lift the finder clear of the lens rim as their paths cross. */
     --flight: -89px -84px;
     transform-origin: left center;
-    transform: translate(-60px, -141px) scale(0.3, 0.24);
+    --camera-pose: translate(-60px, -141px) scale(0.3, 0.24);
 }
 
 #rings {
     --flight: -276px 12px;
-    transform: translate(-230px, -90px) scale(0.92);
+    --camera-pose: translate(-230px, -90px) scale(0.92);
 }
 
 /* Lift the top controls and pull the lens and grip clear of the body. */
