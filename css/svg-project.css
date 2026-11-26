@@ -133,6 +133,25 @@
     65%, 80% { transform: var(--camera-pose); }
 }
 
+/* Normalize each stroke so its dash travels the full length of the engraving. */
+.engraving { fill: none; stroke: var(--white); stroke-width: 4px; stroke-dasharray: 1; }
+#grip-first { --contour-motion: draw-first-rib; }
+#grip-middle { --contour-motion: draw-middle-rib; }
+#grip-last { --contour-motion: draw-last-rib; }
+
+@keyframes draw-first-rib {
+    0%, 41%, 90%, 100% { stroke-dashoffset: 1; }
+    43%, 89% { stroke-dashoffset: 0; }
+}
+@keyframes draw-middle-rib {
+    0%, 43%, 89%, 100% { stroke-dashoffset: 1; }
+    45%, 88% { stroke-dashoffset: 0; }
+}
+@keyframes draw-last-rib {
+    0%, 45%, 88%, 100% { stroke-dashoffset: 1; }
+    48%, 87% { stroke-dashoffset: 0; }
+}
+
 /* Show the completed illustration immediately when motion is reduced. */
 @media (prefers-reduced-motion: reduce) {
     .geometric-art .shape {
