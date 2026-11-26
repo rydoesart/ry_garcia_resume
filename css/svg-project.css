@@ -76,13 +76,13 @@
     48%, 87% { opacity: 1; transform: translate(-230px, -90px) scale(0.92); }
 }
 
-/* Each flight points away from the camera center at (404, 254). */
-#circle { --flight: -155px -119px; }
-#square { --flight: -100px 150px; }
-#triangle { --flight: 2px -124px; }
-#semicircle { --flight: 174px 8px; }
-#rectangle { --flight: -180px -69px; }
-#rings { --flight: 145px 145px; }
+/* Lift the top controls and pull the lens and grip clear of the body. */
+#circle { --flight: -18px -53px; }
+#square { --flight: 7px 79px; }
+#triangle { --flight: 0px -57px; }
+#semicircle { --flight: 146px 0px; }
+#rectangle { --flight: -89px -45px; }
+#rings { --flight: -276px 12px; }
 
 @keyframes camera-burst {
     0%, 69%, 100% { translate: 0 0; }
