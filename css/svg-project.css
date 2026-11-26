@@ -9,7 +9,7 @@
     transform-box: fill-box;
     transform-origin: center;
     transform: var(--camera-pose, none);
-    animation: var(--motion, camera-assembly) var(--shape-duration) var(--ease-standard) var(--assembly-delay) infinite both;
+    animation: var(--motion) var(--shape-duration) var(--ease-standard) var(--assembly-delay) infinite both;
 }
 
 #circle {
@@ -32,11 +32,13 @@
 }
 
 #rings {
+    --motion: seat-glass;
     --shape-pose: translate(-35px, 2px) scale(0.71);
 }
 
 /* The ring around the opening disk leaves the shutter and seats around the glass. */
 .lens-mount {
+    --motion: seat-mount;
     --shape-pose: translate(-445px, -202px) scale(0.88);
 }
 
@@ -50,11 +52,6 @@
     --motion: seat-frame;
 }
 #triangle { --shape-pose: translate(-5px, 4px); --motion: seat-prism; }
-
-@keyframes camera-assembly {
-    0%, 10%, 100% { transform: var(--shape-pose); }
-    65%, 80% { transform: var(--camera-pose, none); }
-}
 
 /* Keep each contour on its parent’s clock as the silhouette changes. */
 @media (prefers-reduced-motion: no-preference) {
@@ -107,6 +104,7 @@
 
 /* The dot framed by the opening square becomes the center of the lens. */
 .lens-core {
+    --motion: seat-aperture;
     --shape-pose: translate(-240px, 2px) scale(1.05);
 }
 
@@ -118,6 +116,21 @@
 @keyframes seat-finder {
     0%, 35%, 92%, 100% { transform: var(--shape-pose); }
     40%, 90% { transform: var(--camera-pose); }
+}
+
+@keyframes seat-glass {
+    0%, 54%, 84%, 100% { transform: var(--shape-pose); }
+    60%, 82% { transform: var(--camera-pose); }
+}
+
+@keyframes seat-mount {
+    0%, 48%, 87%, 100% { transform: var(--shape-pose); }
+    54%, 84% { transform: var(--camera-pose); }
+}
+
+@keyframes seat-aperture {
+    0%, 60%, 82%, 100% { transform: var(--shape-pose); }
+    65%, 80% { transform: var(--camera-pose); }
 }
 
 /* Show the completed illustration immediately when motion is reduced. */
