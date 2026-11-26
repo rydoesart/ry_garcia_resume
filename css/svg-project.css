@@ -5,6 +5,7 @@
 }
 
 /* Keep transforms centered on each independent shape. */
+/* SVG coordinates use pixels to stay aligned with the viewBox at every display size. */
 .geometric-art .shape {
     transform-box: fill-box;
     transform-origin: center;
