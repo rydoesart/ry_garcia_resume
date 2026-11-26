@@ -662,10 +662,6 @@ footer a:focus-visible {
     margin: 0;
 }
 
-#contactPopover .contact-bio {
-    display: block;
-}
-
 #contactPopover a {
     font-weight: var(--font-weight-semibold);
     overflow-wrap: anywhere;
@@ -1099,10 +1095,6 @@ footer p,
     block-size: var(--space-8);
 }
 
-.socials a:hover .github-icon {
-    color: inherit;
-}
-
 /* Expand navigation and content on wider screens. */
 
 @media screen and (min-width: 40.625rem) {
@@ -1168,9 +1160,7 @@ footer p,
     }
 
     .project-wrapper {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-5);
     }
 
     .resume header::before {
@@ -1195,9 +1185,6 @@ footer p,
         gap: var(--space-5);
     }
 
-    footer {
-        padding-inline: var(--bar-inline-inset);
-    }
 }
 
 /* Reduce the banner grid on compact screens. */
