@@ -152,6 +152,18 @@
     48%, 87% { stroke-dashoffset: 0; }
 }
 
+.mount-rim { --contour-motion: draw-mount; stroke-dasharray: 1; }
+.aperture { --contour-motion: draw-aperture; stroke-dasharray: 1; }
+
+@keyframes draw-mount {
+    0%, 49%, 87%, 100% { stroke-dashoffset: 1; }
+    54%, 84% { stroke-dashoffset: 0; }
+}
+@keyframes draw-aperture {
+    0%, 60%, 82%, 100% { stroke-dashoffset: 1; }
+    65%, 80% { stroke-dashoffset: 0; }
+}
+
 /* Show the completed illustration immediately when motion is reduced. */
 @media (prefers-reduced-motion: reduce) {
     .geometric-art .shape {

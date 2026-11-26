@@ -148,7 +148,10 @@
                 <g id="rectangle" class="shape" fill="var(--black)">
                   <rect x="324" y="312" width="152" height="76" />
                 </g>
-                <circle class="shape lens-mount" cx="640" cy="350" r="76" fill="var(--white)" stroke="var(--black)" stroke-width="8" />
+                <g class="shape lens-mount" stroke="var(--black)">
+                  <circle cx="640" cy="350" r="76" fill="var(--white)" stroke-width="8" />
+                  <circle class="contour mount-rim" cx="640" cy="350" r="63" fill="none" stroke-width="3" pathLength="1" />
+                </g>
                 <g id="circle" class="shape" fill="var(--black)">
                   <rect class="contour" x="84" y="74" width="152" height="152" rx="18" />
                 </g>
@@ -156,7 +159,7 @@
                   <circle class="contour" cx="640" cy="350" r="50" fill="black" />
                 </g>
                 <g class="shape lens-core">
-                  <circle class="contour aperture" cx="640" cy="350" r="24" fill="var(--black)" stroke="var(--white)" stroke-width="8" />
+                  <circle class="contour aperture" cx="640" cy="350" r="24" fill="var(--gray-8)" stroke="var(--white)" stroke-width="8" pathLength="1" />
                 </g>
               </svg>
             </div>
