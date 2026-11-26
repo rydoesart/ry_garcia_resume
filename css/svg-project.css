@@ -153,7 +153,8 @@
 }
 
 .mount-rim { --contour-motion: draw-mount; stroke-dasharray: 1; }
-.aperture { --contour-motion: draw-aperture; stroke-dasharray: 1; }
+/* Extend the gap past the closed circle to prevent a residual stroke at the seam. */
+.aperture { --contour-motion: draw-aperture; stroke-dasharray: 1.01; }
 .finder-frame { --contour-motion: draw-finder; stroke-width: 7px; }
 
 @keyframes draw-finder {
@@ -166,7 +167,7 @@
     54%, 84% { stroke-dashoffset: 0; }
 }
 @keyframes draw-aperture {
-    0%, 60%, 82%, 100% { stroke-dashoffset: 1; }
+    0%, 60%, 82%, 100% { stroke-dashoffset: 1.01; }
     65%, 80% { stroke-dashoffset: 0; }
 }
 
