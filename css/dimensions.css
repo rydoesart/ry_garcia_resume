@@ -230,6 +230,12 @@
     transition: transform var(--motion-transition) var(--motion-easing);
 }
 
+/* Pause and expand the structure on pointer hover or keyboard focus. */
+.dimensions-stage--form:is(:hover, :focus-visible) .form-model {
+    animation-play-state: paused;
+    transform: rotateX(-20deg) rotateY(30deg) rotateZ(-3deg) scale(1.12);
+}
+
 /* Rotate each endpoint in the XW plane before applying the perspective divide. */
 .form-edge,
 .form-vertex {
@@ -322,6 +328,10 @@
 
     .form-model {
         --form-turn: 24deg;
+    }
+
+    .dimensions-stage--form:is(:hover, :focus-visible) .form-model {
+        transform: rotateX(-20deg) rotateY(30deg) rotateZ(-3deg);
     }
 
     .dimensions-stage--field:is(:hover, :focus-visible) .magnetic-field {
