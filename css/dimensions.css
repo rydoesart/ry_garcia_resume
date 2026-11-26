@@ -240,6 +240,27 @@
     translate: -50% -50%;
 }
 
+/* Join projected endpoint pairs with correctly oriented three-dimensional edges. */
+.form-edge {
+    --b-w: calc(var(--bx) * var(--form-sin) + var(--bw) * var(--form-cos));
+    --b-factor: calc(var(--form-distance) / (var(--form-distance) - var(--b-w)));
+    --b-x: calc((var(--bx) * var(--form-cos) - var(--bw) * var(--form-sin)) * var(--b-factor));
+    --b-y: calc(var(--by) * var(--b-factor));
+    --b-z: calc(var(--bz) * var(--b-factor));
+    --edge-x: calc(var(--b-x) - var(--a-x));
+    --edge-y: calc(var(--b-y) - var(--a-y));
+    --edge-z: calc(var(--b-z) - var(--a-z));
+    background: var(--white);
+    block-size: var(--motion-stroke);
+    inline-size: calc(hypot(var(--edge-x), var(--edge-y), var(--edge-z)) * var(--form-unit));
+    margin-block-start: calc(var(--motion-stroke) * -0.5);
+    transform:
+        translate3d(calc(var(--a-x) * var(--form-unit)), calc(var(--a-y) * var(--form-unit)), calc(var(--a-z) * var(--form-unit)))
+        rotateZ(atan2(var(--edge-y), var(--edge-x)))
+        rotateY(calc(-1 * atan2(var(--edge-z), hypot(var(--edge-x), var(--edge-y)))));
+    transform-origin: 0 50%;
+}
+
 /* Place the retained studies beside each other. */
 
 @media (min-width: 40.625rem) {
