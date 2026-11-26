@@ -30,6 +30,14 @@
 
 #rings {
     --shape-pose: translate(-35px, 2px) scale(0.71);
+}
+
+/* The ring around the opening disk leaves the shutter and seats around the glass. */
+.lens-mount {
+    --shape-pose: translate(-445px, -202px) scale(0.88);
+}
+
+#rings, .lens-mount {
     --camera-pose: translate(-230px, -90px) scale(0.92);
 }
 
