@@ -37,7 +37,7 @@
     --shape-pose: translate(-445px, -202px) scale(0.88);
 }
 
-#rings, .lens-mount {
+#rings, .lens-mount, .lens-core {
     --camera-pose: translate(-230px, -90px) scale(0.92);
 }
 
@@ -78,12 +78,9 @@
     --shape-pose: translate(0px, -43px) scale(0.50, 0.18);
 }
 
-/* Close the bright center of the rings as the lens seats in the body. */
-#rings .aperture { --contour-motion: lens-aperture; }
-
-@keyframes lens-aperture {
-    0%, 35%, 100% { r: 36px; fill: var(--white); }
-    65%, 80% { r: 24px; fill: var(--black); }
+/* The dot framed by the opening square becomes the center of the lens. */
+.lens-core {
+    --shape-pose: translate(-240px, 2px) scale(1.05);
 }
 
 /* Show the completed illustration immediately when motion is reduced. */
