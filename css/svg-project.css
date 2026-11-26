@@ -1,4 +1,4 @@
-/* Give the assembled camera a short pause on page load. */
+/* Let the opening shape study settle before assembly begins. */
 .svg-project {
     --assembly-delay: 450ms;
     --shape-duration: 8s;
@@ -9,38 +9,37 @@
     transform-box: fill-box;
     transform-origin: center;
     transform: var(--camera-pose, none);
-    animation: camera-burst var(--shape-duration) var(--ease-standard) var(--assembly-delay) infinite both;
+    animation: camera-assembly var(--shape-duration) var(--ease-standard) var(--assembly-delay) infinite both;
 }
 
 #circle {
-    --flight: -18px -53px;
+    --shape-pose: translate(35px, -2px) scale(0.71);
     --camera-pose: translate(120px, 9px) scale(0.34, 0.13);
 }
 
 #semicircle {
-    --flight: 146px 0px;
+    --shape-pose: translate(445px, -202px) rotate(0deg) scale(0.79);
     --camera-pose: translate(375px, -90px) rotate(-90deg) scale(1.03, 0.86);
 }
 
 #rectangle {
-    /* Lift the finder clear of the lens rim as their paths cross. */
-    --flight: -89px -84px;
+    --shape-pose: translate(-186px, 2px) scale(0.75);
     transform-origin: left center;
     --camera-pose: translate(-60px, -141px) scale(0.3, 0.24);
 }
 
 #rings {
-    --flight: -276px 12px;
+    --shape-pose: translate(-35px, 2px) scale(0.71);
     --camera-pose: translate(-230px, -90px) scale(0.92);
 }
 
-/* Lift the top controls and pull the lens and grip clear of the body. */
-#square { --flight: 7px 79px; }
-#triangle { --flight: 0px -57px; }
+/* Center the middle column between the controls and the optics. */
+#square { --shape-pose: translateY(92px) scale(0.323, 0.592); }
+#triangle { --shape-pose: translate(-5px, 4px); }
 
-@keyframes camera-burst {
-    0%, 15%, 85%, 100% { translate: 0 0; }
-    40%, 60% { translate: var(--flight); }
+@keyframes camera-assembly {
+    0%, 10%, 100% { transform: var(--shape-pose); }
+    60%, 75% { transform: var(--camera-pose, none); }
 }
 
 /* Show the completed illustration immediately when motion is reduced. */
