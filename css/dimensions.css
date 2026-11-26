@@ -261,6 +261,9 @@
     transform-origin: 0 50%;
 }
 
+.form-edge--rear { background: oklch(from var(--white) l c h / 62%); }
+.form-edge--connector { background: oklch(from var(--white) l c h / 45%); }
+
 /* Place the retained studies beside each other. */
 
 @media (min-width: 40.625rem) {
