@@ -3,6 +3,7 @@
 @import "./navigation.css";
 @import "./contact.css";
 @import "./footer.css";
+@import "./home.css";
 
 /* Layer the header text above the animated banner. */
 
@@ -141,179 +142,6 @@
 .banner-dot:nth-child(46) { --column: 45; }
 .banner-dot:nth-child(47) { --column: 46; }
 .banner-dot:nth-child(48) { --column: 47; }
-
-/* Layer the home content over the animated background. */
-
-.home {
-    background: var(--white);
-    color: var(--black);
-    display: flex;
-    flex-direction: column;
-    isolation: isolate;
-    overflow-inline: clip;
-    position: relative;
-}
-
-.home::before,
-.home::after {
-    --home-phase: 0deg;
-    --home-drift-inline: 6%;
-    --home-drift-block: 5%;
-    --home-tilt: 8deg;
-    --home-growth: 0.035;
-    content: "";
-    position: fixed;
-    z-index: 0;
-    inset-block-start: 50%;
-    inset-inline-start: 50%;
-    inline-size: min(90vi, 76rem);
-    block-size: min(88svb, 60rem);
-    border-radius: 62% 38% 55% 45% / 46% 58% 42% 54%;
-    filter: blur(clamp(1.25rem, 3vi, 2.625rem));
-    opacity: 1;
-    pointer-events: none;
-    transform:
-        translate3d(calc(-50% + cos(var(--home-phase)) * var(--home-drift-inline)), calc(-50% + sin(var(--home-phase)) * var(--home-drift-block)), 0)
-        rotate(calc(sin(var(--home-phase) + 20deg) * var(--home-tilt)))
-        scale(calc(1 + cos(var(--home-phase) * 2) * var(--home-growth)));
-    will-change: transform;
-}
-
-.home::before {
-    background:
-        radial-gradient(ellipse at 32% 38%, var(--black) 0%, oklch(from var(--black) l c h / 88%) 48%, var(--transparent) 76%),
-        radial-gradient(ellipse at 68% 66%, var(--black) 0%, oklch(from var(--black) l c h / 76%) 42%, var(--transparent) 72%);
-    animation: home-fluid-cycle 36s linear -12s infinite;
-}
-
-.home::after {
-    --home-drift-inline: 8%;
-    --home-drift-block: 7%;
-    --home-tilt: -10deg;
-    --home-growth: 0.045;
-    inline-size: min(78vi, 64rem);
-    block-size: min(78svb, 54rem);
-    border-radius: 44% 56% 62% 38% / 58% 40% 60% 42%;
-    background:
-        radial-gradient(ellipse at 68% 35%, var(--black) 0%, oklch(from var(--black) l c h / 82%) 46%, var(--transparent) 74%),
-        radial-gradient(ellipse at 32% 76%, var(--black) 0%, oklch(from var(--black) l c h / 78%) 44%, var(--transparent) 72%);
-    animation: home-fluid-cycle 52s linear -11s infinite reverse;
-}
-
-.home .content-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-.home .content-bg {
-    background: oklch(from var(--white) l c h / 88%);
-    border: var(--border-thin) solid oklch(from var(--black) l c h / 36%);
-    color: var(--black);
-    border-radius: var(--radius-pill);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    inline-size: 100%;
-    max-inline-size: 34rem;
-    margin-inline: auto;
-    padding-block: var(--space-6);
-    position: relative;
-    z-index: 1;
-}
-
-.home .content-bg a {
-    color: var(--black);
-}
-
-.home .content-bg header {
-    margin-block-end: 0;
-}
-
-.home .content-bg main > p:first-child {
-    margin-block-start: calc(var(--space-12) + var(--space-3));
-}
-
-
-/* Let the background drift through a repeating cycle. */
-
-@keyframes home-fluid-cycle {
-    0%, 100% {
-        transform:
-            translate3d(calc(-50% + var(--home-drift-inline)), -50%, 0)
-            rotate(calc(sin(20deg) * var(--home-tilt)))
-            scale(calc(1 + var(--home-growth)));
-    }
-    8.333333% {
-        transform:
-            translate3d(calc(-50% + cos(30deg) * var(--home-drift-inline)), calc(-50% + sin(30deg) * var(--home-drift-block)), 0)
-            rotate(calc(sin(50deg) * var(--home-tilt)))
-            scale(calc(1 + cos(60deg) * var(--home-growth)));
-    }
-    16.666667% {
-        transform:
-            translate3d(calc(-50% + cos(60deg) * var(--home-drift-inline)), calc(-50% + sin(60deg) * var(--home-drift-block)), 0)
-            rotate(calc(sin(80deg) * var(--home-tilt)))
-            scale(calc(1 + cos(120deg) * var(--home-growth)));
-    }
-    25% {
-        transform:
-            translate3d(-50%, calc(-50% + var(--home-drift-block)), 0)
-            rotate(calc(sin(110deg) * var(--home-tilt)))
-            scale(calc(1 - var(--home-growth)));
-    }
-    33.333333% {
-        transform:
-            translate3d(calc(-50% + cos(120deg) * var(--home-drift-inline)), calc(-50% + sin(120deg) * var(--home-drift-block)), 0)
-            rotate(calc(sin(140deg) * var(--home-tilt)))
-            scale(calc(1 + cos(240deg) * var(--home-growth)));
-    }
-    41.666667% {
-        transform:
-            translate3d(calc(-50% + cos(150deg) * var(--home-drift-inline)), calc(-50% + sin(150deg) * var(--home-drift-block)), 0)
-            rotate(calc(sin(170deg) * var(--home-tilt)))
-            scale(calc(1 + cos(300deg) * var(--home-growth)));
-    }
-    50% {
-        transform:
-            translate3d(calc(-50% - var(--home-drift-inline)), -50%, 0)
-            rotate(calc(sin(200deg) * var(--home-tilt)))
-            scale(calc(1 + var(--home-growth)));
-    }
-    58.333333% {
-        transform:
-            translate3d(calc(-50% + cos(210deg) * var(--home-drift-inline)), calc(-50% + sin(210deg) * var(--home-drift-block)), 0)
-            rotate(calc(sin(230deg) * var(--home-tilt)))
-            scale(calc(1 + cos(420deg) * var(--home-growth)));
-    }
-    66.666667% {
-        transform:
-            translate3d(calc(-50% + cos(240deg) * var(--home-drift-inline)), calc(-50% + sin(240deg) * var(--home-drift-block)), 0)
-            rotate(calc(sin(260deg) * var(--home-tilt)))
-            scale(calc(1 + cos(480deg) * var(--home-growth)));
-    }
-    75% {
-        transform:
-            translate3d(-50%, calc(-50% - var(--home-drift-block)), 0)
-            rotate(calc(sin(290deg) * var(--home-tilt)))
-            scale(calc(1 - var(--home-growth)));
-    }
-    83.333333% {
-        transform:
-            translate3d(calc(-50% + cos(300deg) * var(--home-drift-inline)), calc(-50% + sin(300deg) * var(--home-drift-block)), 0)
-            rotate(calc(sin(320deg) * var(--home-tilt)))
-            scale(calc(1 + cos(600deg) * var(--home-growth)));
-    }
-    91.666667% {
-        transform:
-            translate3d(calc(-50% + cos(330deg) * var(--home-drift-inline)), calc(-50% + sin(330deg) * var(--home-drift-block)), 0)
-            rotate(calc(sin(350deg) * var(--home-tilt)))
-            scale(calc(1 + cos(660deg) * var(--home-growth)));
-    }
-}
 
 /* Separate resume sections with shared spacing. */
 
@@ -467,21 +295,10 @@
     }
 }
 
-/* Disable nonessential motion when requested. */
-
 @media (prefers-reduced-motion: reduce) {
     .banner-dot {
         animation: none;
         opacity: 0.65;
         transform: none;
     }
-
-    .home::before,
-    .home::after {
-        animation: none;
-        will-change: auto;
-    }
-
-    .home::before { --home-phase: 28deg; }
-    .home::after { --home-phase: 210deg; }
 }
