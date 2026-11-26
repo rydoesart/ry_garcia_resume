@@ -2,7 +2,7 @@
 
 .dimensions {
     /* Match the stage content width using the shared card layout tokens. */
-    --stage-width: calc(min(100vw - var(--space-5) * 2, 30rem) - var(--space-5) * 2 - var(--border-thin) * 4);
+    --stage-width: calc(min(100vi - var(--space-5) * 2, 30rem) - var(--space-5) * 2 - var(--border-thin) * 4);
     --stage-unit: calc(var(--stage-width) / 100);
     --motion-stroke: var(--border-thin);
     --motion-transition: 650ms;
@@ -198,15 +198,15 @@
 
 /* Place the two retained studies beside each other. */
 
-@media (min-width: 650px) {
+@media (min-width: 40.625rem) {
     .dimensions {
-        --stage-width: calc(min(100vw - var(--space-7) * 2, 30rem) - var(--space-5) * 2 - var(--border-thin) * 4);
+        --stage-width: calc(min(100vi - var(--space-7) * 2, 30rem) - var(--space-5) * 2 - var(--border-thin) * 4);
     }
 }
 
-@media (min-width: 860px) {
+@media (min-width: 53.75rem) {
     .dimensions {
-        --stage-width: calc((min(100vw, var(--content-max-inline-size)) - var(--space-7) * 2 - var(--space-5)) / 2 - var(--space-5) * 2 - var(--border-thin) * 4);
+        --stage-width: calc((min(100vi, var(--content-max-inline-size)) - var(--space-7) * 2 - var(--space-5)) / 2 - var(--space-5) * 2 - var(--border-thin) * 4);
     }
 
     .dimensions .dimensions-grid {
@@ -217,7 +217,7 @@
 
 /* Reduce the number of particle rows on small screens. */
 
-@media (max-width: 450px) {
+@media (max-width: 28.125rem) {
     .magnetic-field {
         grid-template-rows: repeat(12, minmax(0, 1fr));
     }

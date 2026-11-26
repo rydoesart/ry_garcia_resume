@@ -1105,7 +1105,7 @@ footer p,
 
 /* Expand navigation and content on wider screens. */
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 40.625rem) {
 
     #contactPopover {
         --contact-top: calc(var(--space-16) + var(--space-4) + var(--space-2));
@@ -1183,7 +1183,7 @@ footer p,
 }
 
 
-@media screen and (min-width: 860px) {
+@media screen and (min-width: 53.75rem) {
 
     .project-wrapper {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1202,12 +1202,12 @@ footer p,
 
 /* Reduce the banner grid on compact screens. */
 
-@media (max-width: 1100px) {
+@media (max-width: 68.75rem) {
     .banner-field { --banner-columns: 36; }
     .banner-dot:nth-child(n + 37) { display: none; }
 }
 
-@media (max-width: 649px) {
+@media (max-width: 40.5625rem) {
     .banner-field {
         --banner-columns: 24;
         --banner-rows: 8;
