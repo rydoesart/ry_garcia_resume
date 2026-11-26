@@ -13,6 +13,7 @@
 }
 
 #circle {
+    --motion: seat-shutter;
     --shape-pose: translate(35px, -2px) scale(0.71);
     --camera-pose: translate(120px, 9px) scale(0.34, 0.13);
 }
@@ -46,7 +47,7 @@
     --shape-pose: translateY(92px) rotate(-45deg) scale(0.323, 0.592);
     --motion: seat-frame;
 }
-#triangle { --shape-pose: translate(-5px, 4px); }
+#triangle { --shape-pose: translate(-5px, 4px); --motion: seat-prism; }
 
 @keyframes camera-assembly {
     0%, 10%, 100% { transform: var(--shape-pose); }
@@ -64,16 +65,26 @@
 #circle .contour { --contour-motion: shutter-profile; }
 
 @keyframes shutter-profile {
-    0%, 10%, 100% { rx: 76px; }
-    65%, 80% { rx: 18px; }
+    0%, 29%, 94%, 100% { rx: 76px; }
+    35%, 92% { rx: 18px; }
+}
+
+@keyframes seat-shutter {
+    0%, 29%, 94%, 100% { transform: var(--shape-pose); }
+    35%, 92% { transform: var(--camera-pose); }
 }
 
 /* Split the triangle’s apex into the two top corners of the prism housing. */
 #triangle .contour { --contour-motion: prism-profile; }
 
 @keyframes prism-profile {
-    0%, 10%, 100% { d: path("M344.2 195 L405 93 L405 93 L465.8 195 Z"); }
-    65%, 80% { d: path("M344.2 170.1 L366.6 117.9 L443.4 117.9 L465.8 170.1 Z"); }
+    0%, 23%, 96%, 100% { d: path("M344.2 195 L405 93 L405 93 L465.8 195 Z"); }
+    29%, 94% { d: path("M344.2 170.1 L366.6 117.9 L443.4 117.9 L465.8 170.1 Z"); }
+}
+
+@keyframes seat-prism {
+    0%, 23%, 96%, 100% { transform: var(--shape-pose); }
+    29%, 94% { transform: none; }
 }
 
 /* The free-standing bar meets the expanding frame to build the two-tone body. */
