@@ -73,6 +73,14 @@
     60%, 75% { d: path("M232.8 231.2 H567.2 V336.8 Q567.2 351.2 540.8 351.2 H259.2 Q232.8 351.2 232.8 336.8 Z"); }
 }
 
+/* Close the bright center of the rings as the lens seats in the body. */
+#rings .aperture { --contour-motion: lens-aperture; }
+
+@keyframes lens-aperture {
+    0%, 35%, 100% { r: 36px; fill: var(--white); }
+    60%, 75% { r: 24px; fill: var(--black); }
+}
+
 /* Show the completed illustration immediately when motion is reduced. */
 @media (prefers-reduced-motion: reduce) {
     #circle, #square, #triangle, #semicircle, #rectangle, #rings {
