@@ -1,0 +1,315 @@
+/* Support desktop links and the mobile navigation toggle. */
+
+.navLogo {
+    display: grid;
+    place-items: center;
+    inline-size: var(--logo-size);
+    block-size: var(--logo-size);
+    flex: none;
+}
+
+.logo {
+    fill: var(--black);
+    display: block;
+    inline-size: var(--logo-size);
+    block-size: var(--logo-size);
+}
+
+.navWrap {
+    --nav-padding-block: var(--space-2-5);
+    --nav-underline-offset: var(--space-1);
+    position: sticky;
+    inset-block-start: 0;
+    z-index: var(--z-navigation);
+    min-block-size: calc(var(--space-12) + var(--space-2));
+    inline-size: 100%;
+    background-color: var(--white);
+    -webkit-backdrop-filter: blur(var(--space-3));
+    backdrop-filter: blur(var(--space-3));
+    border-block-end: var(--border-thin) solid var(--gray-3);
+    box-shadow: 0 var(--border-thin) var(--space-2) oklch(from var(--gray-9) l c h / 15%);
+    padding-inline: var(--bar-inline-inset);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navToggle {
+    position: absolute;
+    inline-size: var(--visually-hidden-size);
+    block-size: var(--visually-hidden-size);
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.navToggleLabel {
+    position: relative;
+    display: grid;
+    place-items: center;
+    inline-size: var(--space-10);
+    block-size: var(--space-10);
+    cursor: pointer;
+}
+
+.navToggleLabel > span {
+    position: relative;
+    display: block;
+    inline-size: var(--menu-icon-size);
+    block-size: var(--border-strong);
+    background: var(--black);
+    transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.navToggleLabel > span::before,
+.navToggleLabel > span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    background: var(--black);
+    transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.navToggleLabel > span::before {
+    transform: translateY(calc(-1 * var(--space-2)));
+}
+
+.navToggleLabel > span::after {
+    transform: translateY(var(--space-2));
+}
+
+#navToggle:focus-visible + .navToggleLabel {
+    outline: var(--border-strong) solid var(--black);
+    outline-offset: var(--border-strong);
+}
+
+.navWrap nav {
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline-start: 0;
+    z-index: var(--z-menu);
+    inline-size: 100%;
+    background: var(--white);
+    transform: translateX(-110%);
+    visibility: hidden;
+    transition: transform var(--duration-menu) var(--ease-standard), visibility var(--duration-menu);
+}
+
+.navWrap nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navWrap nav ul li a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    inline-size: 100%;
+    padding: var(--nav-padding-block) var(--space-4);
+    color: var(--black);
+    font-family: var(--body-font);
+    border-block-end: var(--border-thin) solid var(--gray-3);
+    transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.navWrap nav ul li a::after {
+    content: "";
+    position: absolute;
+    inset-inline: var(--space-4);
+    inset-block-end: var(--nav-underline-offset);
+    block-size: var(--border-strong);
+    background: var(--black);
+    opacity: 0;
+    transition: opacity var(--duration-fast) var(--ease-standard);
+}
+
+.navWrap nav .current-page {
+    color: var(--black);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Keep the active underline aligned with the hover underline. */
+.navWrap nav .current-page::after {
+    opacity: 1;
+}
+
+.navWrap nav ul li a:hover,
+.navWrap nav ul li a:focus-visible {
+    background-color: var(--transparent);
+    color: var(--black);
+}
+
+.navWrap nav ul li a:hover::after,
+.navWrap nav ul li a:focus-visible::after {
+    opacity: 1;
+}
+
+.navWrap nav .btn {
+    background: var(--transparent);
+    border: var(--border-thin) solid var(--black);
+    border-radius: var(--radius-card);
+    box-shadow: none;
+    color: var(--black);
+    inline-size: fit-content;
+    font: inherit;
+    padding-block: var(--space-button);
+    padding-inline: var(--space-2-5);
+    letter-spacing: inherit;
+    text-shadow: none;
+    display: flex;
+    justify-content: center;
+    margin-block: var(--space-3);
+    margin-inline: auto;
+}
+
+.navWrap nav .btn:hover,
+.navWrap nav .btn:focus-visible {
+    background: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+}
+
+#navToggle:checked ~ nav {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+#navToggle:checked + .navToggleLabel > span {
+    background: var(--transparent);
+}
+
+#navToggle:checked + .navToggleLabel > span::before {
+    transform: rotate(45deg);
+}
+
+#navToggle:checked + .navToggleLabel > span::after {
+    transform: rotate(-45deg);
+}
+
+/* Assemble the existing logo when motion is allowed. */
+
+@media (prefers-reduced-motion: no-preference) {
+    .navLogo .logo {
+        overflow: visible;
+    }
+
+    .navLogo .logo-r,
+    .navLogo .logo-g {
+        transform-box: view-box;
+        animation-duration: var(--logo-assembly-duration);
+        animation-delay: var(--logo-assembly-delay);
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+        animation-fill-mode: backwards;
+    }
+
+    .navLogo .logo-g {
+        animation-name: logo-g-assemble;
+    }
+
+    .navLogo .logo-r {
+        animation-name: logo-r-assemble;
+    }
+}
+
+/* Contact at 36% / 72%; decreasing recoil at 54% / 83%; original position at 96%. */
+@keyframes logo-g-assemble {
+    0% {
+        transform: translate(64px, 64px);
+        animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
+    }
+    36%, 72% {
+        transform: translate(calc(-1 * var(--logo-contact)), calc(-1 * var(--logo-contact)));
+        animation-timing-function: cubic-bezier(0, 0.6, 0.4, 1);
+    }
+    54% {
+        transform: translate(24px, 24px);
+        animation-timing-function: cubic-bezier(0.6, 0, 1, 0.4);
+    }
+    83% {
+        transform: translate(2px, 2px);
+        animation-timing-function: ease-in-out;
+    }
+    96%, 100% { transform: none; }
+}
+
+@keyframes logo-r-assemble {
+    0% {
+        transform: translate(-64px, -64px);
+        animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
+    }
+    36%, 72% {
+        transform: translate(var(--logo-contact), var(--logo-contact));
+        animation-timing-function: cubic-bezier(0, 0.6, 0.4, 1);
+    }
+    54% {
+        transform: translate(-24px, -24px);
+        animation-timing-function: cubic-bezier(0.6, 0, 1, 0.4);
+    }
+    83% {
+        transform: translate(-2px, -2px);
+        animation-timing-function: ease-in-out;
+    }
+    96%, 100% { transform: none; }
+}
+
+@media screen and (min-width: 40.625rem) {
+    #navToggle {
+        display: none;
+    }
+
+    .navWrap {
+        --nav-padding-block: var(--space-1);
+        min-block-size: calc(var(--space-16) + var(--space-2));
+    }
+
+    .navToggleLabel {
+        display: none;
+    }
+
+    .navWrap nav {
+        position: static;
+        inline-size: auto;
+        background: var(--transparent);
+        transform: none;
+        visibility: visible;
+        transition: none;
+    }
+
+    .navWrap nav ul {
+        display: flex;
+        align-items: center;
+        gap: var(--space-1);
+    }
+
+    .navWrap nav ul li a {
+        inline-size: auto;
+        padding: var(--nav-padding-block) var(--space-2-5);
+        border: 0;
+    }
+
+    .navWrap nav ul li a::after {
+        inset-inline: var(--space-2-5);
+        inset-block-end: var(--nav-underline-offset);
+    }
+
+    .navWrap nav .btn {
+        margin: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .navWrap nav,
+    .navToggleLabel > span,
+    .navToggleLabel > span::before,
+    .navToggleLabel > span::after,
+    .navWrap nav ul li a,
+    .navWrap nav ul li a::after {
+        transition: none;
+    }
+}
