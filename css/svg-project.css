@@ -57,6 +57,14 @@
     60%, 75% { rx: 18px; }
 }
 
+/* Split the triangle’s apex into the two top corners of the prism housing. */
+#triangle .contour { --contour-motion: prism-profile; }
+
+@keyframes prism-profile {
+    0%, 10%, 100% { d: path("M344.2 195 L405 93 L405 93 L465.8 195 Z"); }
+    60%, 75% { d: path("M344.2 170.1 L366.6 117.9 L443.4 117.9 L465.8 170.1 Z"); }
+}
+
 /* Show the completed illustration immediately when motion is reduced. */
 @media (prefers-reduced-motion: reduce) {
     #circle, #square, #triangle, #semicircle, #rectangle, #rings {
