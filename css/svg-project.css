@@ -19,11 +19,13 @@
 }
 
 #semicircle {
+    --motion: seat-grip;
     --shape-pose: translate(445px, -202px) rotate(0deg) scale(0.79);
     --camera-pose: translate(375px, -90px) rotate(-90deg) scale(1.03, 0.86);
 }
 
 #rectangle {
+    --motion: seat-finder;
     --shape-pose: translate(-186px, 2px) scale(0.75);
     transform-origin: left center;
     --camera-pose: translate(-60px, -141px) scale(0.3, 0.24);
@@ -106,6 +108,16 @@
 /* The dot framed by the opening square becomes the center of the lens. */
 .lens-core {
     --shape-pose: translate(-240px, 2px) scale(1.05);
+}
+
+@keyframes seat-grip {
+    0%, 40%, 90%, 100% { transform: var(--shape-pose); }
+    48%, 87% { transform: var(--camera-pose); }
+}
+
+@keyframes seat-finder {
+    0%, 35%, 92%, 100% { transform: var(--shape-pose); }
+    40%, 90% { transform: var(--camera-pose); }
 }
 
 /* Show the completed illustration immediately when motion is reduced. */
