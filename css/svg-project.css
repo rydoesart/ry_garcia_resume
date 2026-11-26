@@ -42,6 +42,21 @@
     60%, 75% { transform: var(--camera-pose, none); }
 }
 
+/* Keep each contour on its parent’s clock as the silhouette changes. */
+@media (prefers-reduced-motion: no-preference) {
+    .geometric-art .shape > .contour {
+        animation: inherit;
+        animation-name: var(--contour-motion, none);
+    }
+}
+
+#circle .contour { --contour-motion: shutter-profile; }
+
+@keyframes shutter-profile {
+    0%, 10%, 100% { rx: 76px; }
+    60%, 75% { rx: 18px; }
+}
+
 /* Show the completed illustration immediately when motion is reduced. */
 @media (prefers-reduced-motion: reduce) {
     #circle, #square, #triangle, #semicircle, #rectangle, #rings {
