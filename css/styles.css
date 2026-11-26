@@ -4,10 +4,8 @@
     --neutral: oklch(45% 0 0);
 
     --gray-1: oklch(from var(--neutral) 97% c h);
-    --gray-2: oklch(from var(--neutral) 92% c h);
     --gray-3: oklch(from var(--neutral) 87% c h);
     --gray-4: oklch(from var(--neutral) 78% c h);
-    --gray-5: oklch(from var(--neutral) 68% c h);
     --gray-6: oklch(from var(--neutral) 58% c h);
     --gray-7: oklch(from var(--neutral) 48% c h);
     --gray-8: oklch(from var(--neutral) 38% c h);
@@ -63,7 +61,6 @@
     --tracking-wide: 0.1em;
     --font-weight-regular: 400;
     --font-weight-semibold: 600;
-    --opacity-muted: 0.5;
 
     --logo-assembly-duration: 1.8s;
     --logo-assembly-delay: 0.35s;
@@ -994,15 +991,12 @@ footer a:focus-visible {
 /* Assemble the existing logo when motion is allowed. */
 
 @media (prefers-reduced-motion: no-preference) {
-    .navLogo .logo,
-    .monogram {
+    .navLogo .logo {
         overflow: visible;
     }
 
     .navLogo .logo-r,
-    .navLogo .logo-g,
-    .monogram .logo-r,
-    .monogram .logo-g {
+    .navLogo .logo-g {
         transform-box: view-box;
         animation-duration: var(--logo-assembly-duration);
         animation-delay: var(--logo-assembly-delay);
@@ -1011,13 +1005,11 @@ footer a:focus-visible {
         animation-fill-mode: backwards;
     }
 
-    .navLogo .logo-g,
-    .monogram .logo-g {
+    .navLogo .logo-g {
         animation-name: logo-g-assemble;
     }
 
-    .navLogo .logo-r,
-    .monogram .logo-r {
+    .navLogo .logo-r {
         animation-name: logo-r-assemble;
     }
 }
