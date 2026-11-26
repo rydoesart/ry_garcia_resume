@@ -16,6 +16,19 @@
     border-radius: var(--radius-card);
 }
 
+.svg-study figcaption {
+    margin-block-start: var(--space-4);
+    color: var(--gray-8);
+}
+
+/* Scale the viewBox within the same wrapper at every screen size. */
+.geometric-art {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: 8 / 5;
+}
+
 /* Keep transforms centered on each independent shape. */
 /* SVG coordinates use pixels to stay aligned with the viewBox at every display size. */
 .geometric-art .shape {
@@ -189,17 +202,4 @@
     .geometric-art .shape {
         animation: none;
     }
-}
-
-.svg-study figcaption {
-    margin-block-start: var(--space-4);
-    color: var(--gray-8);
-}
-
-/* Scale the viewBox within the same wrapper at every screen size. */
-.geometric-art {
-    display: block;
-    inline-size: 100%;
-    block-size: auto;
-    aspect-ratio: 8 / 5;
 }
