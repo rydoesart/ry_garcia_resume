@@ -1,88 +1,5 @@
 @import "./variables.css";
-
-html {
-    box-sizing: border-box;
-}
-
-*, *::before, *::after {
-    box-sizing: inherit;
-}
-
-html,
-body {
-    block-size: 100%;
-}
-
-body {
-    background: var(--gray-1);
-    color: var(--gray-9);
-    font-family: var(--body-font);
-    font-size: var(--text-base);
-    line-height: 1.5;
-    margin: 0;
-}
-
-h1,
-h2,
-h3 {
-    font-family: var(--heading-font);
-    font-style: normal;
-    font-weight: var(--font-weight-regular);
-    margin: 0;
-}
-
-h1 {
-    font-size: var(--text-xl);
-    line-height: 1.5;
-}
-
-h2 {
-    font-size: var(--text-lg);
-}
-
-h3 {
-    font-size: var(--text-md);
-}
-
-/* Align page content within one shared wrapper. */
-
-.content-wrapper {
-    margin-block: 0;
-    margin-inline: auto;
-    max-inline-size: var(--content-max-inline-size);
-    padding: var(--space-5);
-}
-
-.content-bg {
-    background: oklch(from var(--gray-1) l c h / 90%);
-    padding: var(--space-5);
-}
-
-.site-subtitle {
-    font-family: var(--heading-font);
-    font-size: var(--text-lg);
-    margin: 0;
-}
-
-.skip-link {
-    position: fixed;
-    inset-block-start: var(--space-2);
-    inset-inline-start: var(--space-2);
-    z-index: calc(var(--z-navigation) + 1);
-    background: var(--white);
-    color: var(--black);
-    padding: var(--space-3) var(--space-4);
-    transform: translateY(-200%);
-}
-
-.skip-link:focus {
-    transform: translateY(0);
-}
-
-:where(a, button):focus-visible {
-    outline: var(--border-strong) solid var(--green);
-    outline-offset: var(--border-strong);
-}
+@import "./global.css";
 
 /* Layer the header text above the animated banner. */
 
@@ -415,17 +332,6 @@ h3 {
     transform: rotate(-45deg);
 }
 
-/* Share link colors across the site. */
-
-a {
-    color: var(--gray-9);
-}
-
-a:hover {
-    color: var(--green);
-    text-decoration: none;
-}
-
 footer a {
     color: var(--gray-1);
     text-decoration: none;
@@ -443,27 +349,6 @@ footer a:focus-visible {
     outline: var(--border-strong) solid var(--white);
     outline-offset: var(--space-1);
     text-decoration: underline;
-}
-
-/* Keep shared buttons consistent. */
-
-.btn {
-    background: var(--gray-9);
-    color: var(--gray-1);
-    display: inline-block;
-    font-size: var(--text-button);
-    letter-spacing: var(--tracking-wide);
-    padding: var(--space-button);
-    text-decoration: none;
-    text-transform: uppercase;
-    border-radius: var(--radius-pill);
-    transition: background-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard);
-}
-
-.btn:hover,
-.btn:focus-visible {
-    background: var(--green);
-    color: var(--gray-1);
 }
 
 /* Lay out the contact details and portrait. */
@@ -1025,7 +910,6 @@ footer p,
 /* Expand navigation and content on wider screens. */
 
 @media screen and (min-width: 40.625rem) {
-
     #contactPopover {
         --contact-top: calc(var(--space-16) + var(--space-4) + var(--space-2));
         inset-inline-start: var(--bar-inline-inset);
@@ -1078,14 +962,6 @@ footer p,
         margin: 0;
     }
 
-    .content-wrapper {
-        padding: var(--space-7);
-    }
-
-    .content-bg {
-        padding: var(--space-7);
-    }
-
     .project-wrapper {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1099,9 +975,7 @@ footer p,
     }
 }
 
-
 @media screen and (min-width: 53.75rem) {
-
     .project-wrapper {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -1111,7 +985,6 @@ footer p,
         grid-template-columns: var(--work-column-inline-size) 1fr;
         gap: var(--space-5);
     }
-
 }
 
 /* Reduce the banner grid on compact screens. */
@@ -1149,7 +1022,6 @@ footer p,
     .navToggleLabel > span::after,
     .navWrap nav ul li a,
     .navWrap nav ul li a::after,
-    .btn,
     #contactPopover,
     #contactPopover::backdrop {
         transition: none;
