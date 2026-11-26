@@ -47,9 +47,9 @@
     --camera-pose: translate(-240px, -100px) scale(0.92);
 }
 
-/* Turn the lower-right diamond into the frame behind the seated optics. */
+/* Expand the lower-right square into the frame behind the seated optics. */
 #square {
-    --shape-pose: translate(245px, 145px) rotate(-45deg) scale(0.27, 0.495);
+    --shape-pose: translate(245px, 145px) rotate(0deg) scale(0.27, 0.495);
     --motion: seat-frame;
 }
 #triangle { --shape-pose: translate(-5px, -49px); --motion: seat-prism; }
