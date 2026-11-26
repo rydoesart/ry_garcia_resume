@@ -1,7 +1,7 @@
 /* Let the opening shape study settle before assembly begins. */
 .svg-project {
     --assembly-delay: 450ms;
-    --shape-duration: 8s;
+    --shape-duration: 16s;
 }
 
 /* Keep transforms centered on each independent shape. */
@@ -9,7 +9,7 @@
     transform-box: fill-box;
     transform-origin: center;
     transform: var(--camera-pose, none);
-    animation: camera-assembly var(--shape-duration) var(--ease-standard) var(--assembly-delay) infinite both;
+    animation: var(--motion, camera-assembly) var(--shape-duration) var(--ease-standard) var(--assembly-delay) infinite both;
 }
 
 #circle {
@@ -42,7 +42,10 @@
 }
 
 /* Center the middle column between the controls and the optics. */
-#square { --shape-pose: translateY(92px) scale(0.323, 0.592); }
+#square {
+    --shape-pose: translateY(92px) rotate(-45deg) scale(0.323, 0.592);
+    --motion: seat-frame;
+}
 #triangle { --shape-pose: translate(-5px, 4px); }
 
 @keyframes camera-assembly {
@@ -76,6 +79,17 @@
 /* The free-standing bar meets the expanding frame to build the two-tone body. */
 .body-panel {
     --shape-pose: translate(0px, -43px) scale(0.50, 0.18);
+    --motion: seat-panel;
+}
+
+@keyframes seat-frame {
+    0%, 10%, 100% { transform: var(--shape-pose); }
+    17%, 98% { transform: none; }
+}
+
+@keyframes seat-panel {
+    0%, 17%, 98%, 100% { transform: var(--shape-pose); }
+    23%, 96% { transform: none; }
 }
 
 /* The dot framed by the opening square becomes the center of the lens. */
