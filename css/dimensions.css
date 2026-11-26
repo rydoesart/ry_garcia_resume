@@ -196,6 +196,17 @@
     }
 }
 
+/* Interpolate the inherited rotation phase for the original XW projection. */
+@property --form-turn {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0deg;
+}
+
+@keyframes form-turn {
+    to { --form-turn: 360deg; }
+}
+
 /* Project the connected four-dimensional structure into the shared viewport. */
 .form-camera {
     inset-block: 0;
@@ -205,6 +216,7 @@
 }
 
 .form-model {
+    animation: form-turn 36s linear infinite;
     --form-angle: var(--form-turn, 24deg);
     --form-distance: 3.6;
     --form-unit: calc(var(--stage-unit) * 11.5);
@@ -306,6 +318,10 @@
     .field-dot {
         opacity: 0.65;
         transform: translateY(calc(sin(var(--column) * 22deg + var(--row) * 10deg) * var(--stage-unit) * 1.2));
+    }
+
+    .form-model {
+        --form-turn: 24deg;
     }
 
     .dimensions-stage--field:is(:hover, :focus-visible) .magnetic-field {
