@@ -43,7 +43,7 @@
 }
 
 #rings, .lens-mount, .lens-core {
-    --camera-pose: translate(-230px, -90px) scale(0.92);
+    --camera-pose: translate(-240px, -100px) scale(0.92);
 }
 
 /* Turn the lower-right diamond into the frame behind the seated optics. */
@@ -102,10 +102,10 @@
     23%, 96% { transform: none; }
 }
 
-/* The center disk establishes the optical axis before the larger pieces dock. */
+/* Keep the center disk fixed while the other eight pieces join its optical axis. */
 .lens-core {
     --motion: seat-aperture;
-    --shape-pose: translate(-240px, -100px) scale(1.05);
+    --shape-pose: var(--camera-pose);
 }
 
 @keyframes seat-grip {
