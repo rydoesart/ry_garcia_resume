@@ -22,7 +22,8 @@
 }
 
 #rectangle {
-    --flight: -89px -45px;
+    /* Lift the finder clear of the lens rim as their paths cross. */
+    --flight: -89px -84px;
     transform-origin: left center;
     transform: translate(-60px, -141px) scale(0.3, 0.24);
 }
