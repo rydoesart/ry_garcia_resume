@@ -196,7 +196,29 @@
     }
 }
 
-/* Place the two retained studies beside each other. */
+/* Project the connected four-dimensional structure into the shared viewport. */
+.form-camera {
+    inset-block: 0;
+    inset-inline: 0;
+    perspective: var(--stage-width);
+    position: absolute;
+}
+
+.form-model {
+    --form-angle: var(--form-turn, 24deg);
+    --form-distance: 3.6;
+    --form-unit: calc(var(--stage-unit) * 11.5);
+    --form-cos: cos(var(--form-angle));
+    --form-sin: sin(var(--form-angle));
+    inset-block: 0;
+    inset-inline: 0;
+    position: absolute;
+    transform: rotateX(-20deg) rotateY(30deg) rotateZ(-3deg);
+    transform-style: preserve-3d;
+    transition: transform var(--motion-transition) var(--motion-easing);
+}
+
+/* Place the retained studies beside each other. */
 
 @media (min-width: 40.625rem) {
     .dimensions {
