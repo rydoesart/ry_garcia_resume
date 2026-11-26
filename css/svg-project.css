@@ -16,14 +16,9 @@
     transform: translate(120px, 9px) scale(0.34, 0.13);
 }
 
-/* Rotate the semicircle and let it settle. */
-#semicircle { animation-name: semicircle-enter, camera-burst; }
-
-@keyframes semicircle-enter {
-    0%, 90.5%, 100% { opacity: 0; transform: rotate(-110deg) translateY(2rem); }
-    6% { opacity: 1; transform: rotate(8deg) translateY(0); }
-    8%, 20% { opacity: 1; transform: rotate(0deg) translateY(0); }
-    48%, 87% { opacity: 1; transform: translate(375px, -90px) rotate(-90deg) scale(1.03, 0.86); }
+#semicircle {
+    --flight: 146px 0px;
+    transform: translate(375px, -90px) rotate(-90deg) scale(1.03, 0.86);
 }
 
 /* Expand the rectangle from its left edge. */
@@ -50,7 +45,6 @@
 /* Lift the top controls and pull the lens and grip clear of the body. */
 #square { --flight: 7px 79px; }
 #triangle { --flight: 0px -57px; }
-#semicircle { --flight: 146px 0px; }
 #rectangle { --flight: -89px -45px; }
 #rings { --flight: -276px 12px; }
 
